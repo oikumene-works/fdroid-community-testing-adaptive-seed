@@ -48,5 +48,8 @@ require_text docs/session-continuity.md 'No actionable change'
 require_text docs/session-continuity.md 'broaden an earlier approval.'
 require_text scripts/session-bootstrap.sh 'For a grow-only session'
 require_text scripts/session-bootstrap.sh 'Before entering the community-testing workflow'
+require_text README.md 'oikumene-works/fdroid-community-testing-starter-kit'
+require_text docs/publication-plan.md 'oikumene-works/fdroid-community-testing-seed'
+require_text docs/publication-plan.md 'No publication action is authorized'
 
 echo "Static publication-readiness assertions passed: $passed"

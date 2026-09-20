@@ -1,9 +1,9 @@
 # Security Policy
 
-This kit reduces accidental scope expansion; it is not a sandbox proof or a
+This seed reduces accidental scope expansion; it is not a sandbox proof or a
 security certification system. Treat third-party source and APKs as hostile.
 
-Please report a vulnerability in the kit privately to the repository owner
+Please report a vulnerability in the seed privately to the repository owner
 through GitHub's private vulnerability reporting feature when available. Do
 not attach a third-party APK, credential, raw device log, private file, or
 personal data. Include a minimal reproduction using fictional data.

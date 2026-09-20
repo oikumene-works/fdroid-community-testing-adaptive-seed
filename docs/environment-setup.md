@@ -7,16 +7,16 @@ workflow expects Bash, Git, Bubblewrap, curl, jq, XML tools, ShellCheck, Android
 SDK command-line tools, GitHub CLI, and GitLab CLI. Usable KVM acceleration and
 a graphical display are required by the supported reference execution profile.
 
-Run `./scripts/doctor.sh` first. It is read-only and reports missing tools, SDK
-components, KVM access, display state, and Git remote state as `READY`,
-`WARNING`, or `BLOCKED`. A normal clone remote is only a warning and authorizes
-nothing. The doctor does not use the network, download, accept licenses, start
-ADB, or start an emulator.
+Run `./seed grow` first for the adaptive entry path; it proposes one local
+growth slice and stops. For the fixed reference path, run `./scripts/doctor.sh`
+first. The doctor reports tools, SDK components, KVM, display, and Git remote
+state as `READY`, `WARNING`, or `BLOCKED`. Both commands are read-only and do not
+download, accept licenses, start ADB, or start an emulator.
 
 ## Android SDK
 
 Install Android Studio or the official command-line tools yourself. Review the
-package list and license text before explicitly using `sdkmanager`; this kit
+package list and license text before explicitly using `sdkmanager`; this project
 does not hide SDK downloads or license acceptance.
 
 The default configuration expects:

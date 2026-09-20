@@ -132,6 +132,16 @@ Status: complete when the initial commit and clean-worktree checks pass. This
 checkpoint grants no authority to choose a public host, create a remote, push,
 tag, release, or change the original project.
 
+### Publication preparation checkpoint
+
+Audit the local source and history, propose the public identity and metadata,
+link the exact original project and derivation commit, and define an exact later
+mutation and recovery boundary.
+
+Status: complete when `docs/publication-plan.md` and the final clean checks pass.
+The proposed destination is not reserved, and preparation creates no remote,
+tag, release, public project, or modification to the original starter kit.
+
 ## Deliberately parked possibilities
 
 The following are not part of the first implementation:
@@ -162,10 +172,9 @@ A local adaptation becomes portable source only when:
 
 ## Next decision after this slice
 
-Review the clean independent local project. If accepted, separately scope only
-public-release preparation: final naming, public description, source review,
-and an exact proposed destination. Stop before creating a remote, pushing,
-tagging, releasing, or changing the original starter kit.
+Review the clean publication candidate and its exact plan. A later approval must
+bind the clean commit, public owner/name, visibility, description, topics, and
+mutation sequence. Stop before remote creation or publication until then.
 No executable APK, emulator, ADB, network, credential, external mutation,
 remote, push, branch publication, tag, release, or metadata change is authorized
 by this plan.

@@ -203,3 +203,13 @@ retained:
 | The seed can retain the starter kit's exact Git ancestry instead of beginning with a history-free copy | Reviewers can inspect both the common base and the seed-specific change | Make the published starter-kit commit the parent of the first seed commit | Adopted now; Codex-owned |
 | The design worktree contained a valid ignored machine profile | Copying it would falsely make one machine's adaptation part of the new project | Exclude `.local` completely; let the independent seed begin with discovery | Adopted now; invariant/local boundary preserved |
 | The first local commit attempt inherited an email containing a private machine hostname | Publishing that metadata later would leak machine-specific identity | Replace it before any remote with the established public no-reply bot identity and require metadata review before publication | Adopted now; Codex-owned, no external mutation |
+
+## Publication preparation retrospective
+
+The bounded audit retained three findings:
+
+| Evidence | Impact | Smallest response | Disposition |
+| --- | --- | --- | --- |
+| The seed README named the original but did not link its public source or exact derivation commit | A reviewer had to trust local prose to find the comparison base | Add public links to the original repository and immutable commit | Adopted now; Codex-owned |
+| The proposed GitHub URL returned 404 anonymously | The name appears available, but treating absence as a reservation could create a race or wrong-target publication | Recheck immediately before an approved create action and stop on any change | Adopted as a later gate |
+| Public repository metadata had not been decided | Creating first and improvising description or topics would make the external mutation under-specified | Record the proposed owner, name, visibility, description, topics, and bounded initial surface | Adopted now; operator approval still required |

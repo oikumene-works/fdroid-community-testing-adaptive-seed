@@ -7,8 +7,9 @@ Guarded F-Droid Community Testing Starter Kit. The original kit remains a fully
 usable implementation for anyone who prefers its complete reference workflow
 or wants to compare it with the seed approach.
 
-The seed was developed from published starter-kit commit
-`5a54da63a58b22c8715778a31931394769b60d72`. That provenance must remain visible.
+The seed was developed from published [starter-kit commit
+`5a54da63`](https://github.com/oikumene-works/fdroid-community-testing-starter-kit/commit/5a54da63a58b22c8715778a31931394769b60d72).
+That provenance must remain visible.
 The distribution is a separately named sibling project, not a new `main` that
 erases the original implementation. The sibling now exists locally with no
 remote or publication.

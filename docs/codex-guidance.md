@@ -1,7 +1,7 @@
 # Codex Guidance
 
 The root `AGENTS.md` is a public, reusable set of repository instructions for
-Codex. It is licensed with the rest of the kit under `0BSD` so operators can
+Codex. It is licensed with the rest of the project under `0BSD` so operators can
 inspect, copy, and adapt it.
 
 ## How it is loaded

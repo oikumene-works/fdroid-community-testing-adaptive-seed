@@ -45,6 +45,10 @@ must preserve the published kit's safety and authority boundaries.
   different design premises and their observed implementation effects.
 - The local sibling-project checkpoint is complete when the initial seed commit
   and final clean-worktree verification pass. No `.local` state was copied.
+- Publication preparation is documented in `docs/publication-plan.md`. The
+  proposed public destination is
+  `oikumene-works/fdroid-community-testing-seed`; an anonymous check returned
+  404 on 2026-09-20, which is not a reservation. No remote was created.
 - Only growth-session guidance in `session-bootstrap.sh` changed; all
   community-testing gates and operational actions retain their behavior.
 - No active candidate is selected in the distributed repository.
@@ -66,9 +70,9 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next slice
 
-Stop at the independent local-project checkpoint. If accepted, separately scope
-only public-release preparation: final identity, public description, source
-review, and exact proposed destination. Do not create a remote or publish it.
+Stop at the local publication-candidate checkpoint. Any next slice must approve
+the exact clean commit, owner, repository name, public visibility, description,
+topics, and mutation sequence before creating a remote or publishing.
 
 No further script implementation, candidate selection, network use, executable
 download, Android action, remote, push, branch publication, tag, release, or
