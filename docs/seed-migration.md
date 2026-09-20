@@ -5,8 +5,9 @@
 This plan classifies the published kit and tracks bounded local growth while
 leaving the published starter-kit project unchanged. This independent local
 seed project preserves exact published commit
-`5a54da63a58b22c8715778a31931394769b60d72` in its ancestry, has no remote, and
-creates no authority to publish or modify the original project.
+`5a54da63a58b22c8715778a31931394769b60d72` in its ancestry and is now public as
+a separate repository. Publication creates no authority for later mutations or
+for modifying the original project.
 
 The completed slices provide read-only discovery, one ignored profile, and an
 exactly guarded offline-verification wrapper. They do not install anything, use
@@ -132,15 +133,15 @@ Status: complete when the initial commit and clean-worktree checks pass. This
 checkpoint grants no authority to choose a public host, create a remote, push,
 tag, release, or change the original project.
 
-### Publication preparation checkpoint
+### Publication checkpoint
 
 Audit the local source and history, propose the public identity and metadata,
 link the exact original project and derivation commit, and define an exact later
 mutation and recovery boundary.
 
-Status: complete when `docs/publication-plan.md` and the final clean checks pass.
-The proposed destination is not reserved, and preparation creates no remote,
-tag, release, public project, or modification to the original starter kit.
+Status: complete. `docs/publication-plan.md` records the approved commit,
+mutation sequence, verification, and retrospective. Publication created no tag,
+release, or modification to the original starter kit.
 
 ## Deliberately parked possibilities
 
@@ -170,11 +171,9 @@ A local adaptation becomes portable source only when:
 - maintenance and approval ownership are explicit; and
 - the operator deliberately approves the promotion and any publication.
 
-## Next decision after this slice
+## Next decision after initial publication
 
-Review the clean publication candidate and its exact plan. A later approval must
-bind the clean commit, public owner/name, visibility, description, topics, and
-mutation sequence. Stop before remote creation or publication until then.
-No executable APK, emulator, ADB, network, credential, external mutation,
-remote, push, branch publication, tag, release, or metadata change is authorized
-by this plan.
+Review the local post-publication record commit. A later approval must bind its
+exact clean commit and destination before any push. No executable APK, emulator,
+ADB, network, credential, further external mutation, push, branch publication,
+tag, release, or metadata change is authorized by this plan.

@@ -81,7 +81,8 @@ a universal claim that one approach is better.
 
 ## Current boundary
 
-This independent local project uses the selected publication-candidate name
-`fdroid-community-testing-adaptive-seed` and retains the starter-kit ancestry.
-Adding a remote, publishing source, or modifying the original starter kit are
-later and distinct decisions. This document authorizes none of them.
+This independent project is public as
+`oikumene-works/fdroid-community-testing-adaptive-seed` and retains the exact
+starter-kit ancestry. Later pushes, cross-links, metadata changes, or changes
+to the original starter kit remain distinct decisions. This document authorizes
+none of them.

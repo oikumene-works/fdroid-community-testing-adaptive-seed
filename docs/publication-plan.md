@@ -1,17 +1,14 @@
-# Publication Preparation
+# Publication Record
 
 ## Status and authority
 
-This is a local publication candidate, not a published project. Preparing this
-plan authorizes no GitHub repository creation, remote, push, topic change, tag,
-release, announcement, or modification to the original starter kit.
+The public repository was created on 2026-09-20 from exact approved commit
+`e371eb9ccdf298330a9c20fb51a35b85dfc765d1`. The approved initial mutation
+created the repository, pushed only `main`, and applied the recorded metadata.
+This record authorizes no later push, metadata change, tag, release,
+announcement, or modification to the original starter kit.
 
-No publication action is authorized until the operator approves the exact clean
-commit, owner, repository name, visibility, description, topics, and mutation
-sequence. A technical command or authenticated account never supplies that
-approval.
-
-## Proposed public identity
+## Public identity
 
 - **Owner:** `oikumene-works`
 - **Repository:** `fdroid-community-testing-adaptive-seed`
@@ -24,13 +21,13 @@ approval.
 - **Exact derivation point:**
   <https://github.com/oikumene-works/fdroid-community-testing-starter-kit/commit/5a54da63a58b22c8715778a31931394769b60d72>
 
-Proposed GitHub description:
+GitHub description:
 
 > Independent adaptive alternative to the Guarded F-Droid Community Testing
 > Starter Kit: discovers local capabilities, grows through explicit choices,
 > and preserves strict approval boundaries.
 
-Proposed topics:
+GitHub topics:
 
 - `fdroid`
 - `android-testing`
@@ -38,10 +35,10 @@ Proposed topics:
 - `adaptive-seed`
 - `shell`
 
-The operator selected this public name during preparation. An anonymous GitHub
-check on 2026-09-20 found the original project public and the proposed adaptive
-seed URL returning 404. A 404 is not a reservation; availability must be
-rechecked immediately before an approved create operation.
+The operator selected this public name during preparation. Immediately before
+creation, anonymous and authenticated checks found no repository at the target.
+After creation, the uncached anonymous page and public API both returned HTTP
+200 while the original project remained public and unchanged.
 
 ## Local source audit
 
@@ -66,10 +63,10 @@ portable to every host, or suitable for every F-Droid case.
 
 ## Public presentation boundary
 
-The initial publication should expose the repository and `main` only. It should
-not create a tag, GitHub Release, package, Pages site, announcement, issue,
-discussion, or backlink mutation in the original project. Each later public
-surface adds its own review and maintenance boundary.
+The initial publication exposed the repository and `main` only. It created no
+tag, GitHub Release, package, Pages site, announcement, issue, discussion, or
+backlink mutation in the original project. Each later public surface adds its
+own review and maintenance boundary.
 
 The seed README links to the original project and exact derivation commit. A
 backlink from the original project would modify that independent project and
@@ -77,7 +74,7 @@ therefore needs its own later review and approval.
 
 ## Exact pre-publication gate
 
-Immediately before any approved publication:
+Immediately before the approved publication, the gate required:
 
 1. run `REQUIRE_NO_REMOTE=1 ./scripts/check-all.sh`;
 2. require a clean `main` and record its exact commit identifier;
@@ -90,15 +87,14 @@ Immediately before any approved publication:
    sequence for operator approval; and
 8. stop if the name, commit, account, source tree, or requested metadata differs.
 
-## Proposed later mutation sequence
+## Executed mutation sequence
 
-After exact approval, create the empty public repository without initializing
-files, add its HTTPS URL as `origin`, push only the approved clean `main`, apply
-the approved description and topics, then verify the public default branch and
-commit. If repository creation or push has an ambiguous result, do not retry or
-delete automatically; inspect public and authenticated state first.
+After exact approval, the process created the empty public repository without
+initializing files, added its HTTPS URL as `origin`, pushed only the approved
+clean `main`, applied the approved description and topics, and verified the
+public default branch and commit. No ambiguous mutation result occurred.
 
-The proposed commands, to be re-presented rather than run without approval, are:
+The approved commands executed once were:
 
 ```sh
 gh repo create oikumene-works/fdroid-community-testing-adaptive-seed --public \
@@ -112,6 +108,14 @@ gh repo edit oikumene-works/fdroid-community-testing-adaptive-seed \
   --add-topic community-testing --add-topic adaptive-seed --add-topic shell
 ```
 
-Success must include the exact public URL, observed commit, visibility, default
-branch, description, topics, and confirmation that no tag or release exists.
-Local preparation alone satisfies none of those postconditions.
+Post-publication verification observed the exact public URL and commit, public
+visibility, `main` as the default and only branch, the approved description and
+topics, and zero tags and releases.
+
+## Publication retrospective
+
+| Evidence | Impact | Smallest response | Disposition |
+| --- | --- | --- | --- |
+| A browser fetch briefly repeated the pre-creation 404 after authenticated verification showed the repository public | A cached absence could be mistaken for a failed publication | Verify an ambiguous result through an uncached anonymous page and public API before mutating or retrying | Adopted during verification; no retry occurred |
+| Exact commit approval limited the first push to the reviewed tree | The durable handoff became stale as soon as publication succeeded | Record the outcome in a separate local commit and require new approval before pushing it | Adopted; authority boundary preserved |
+| The public repository contains only `main`, and tag and release counts are zero | The initial public surface matches the smallest useful seed publication | Leave announcements, backlinks, tags, and releases for separately justified slices | Adopted as the stop condition |

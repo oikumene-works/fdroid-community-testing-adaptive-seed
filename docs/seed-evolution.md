@@ -8,8 +8,8 @@ history. It must remain evidence-based and must not turn hindsight into a claim
 that every earlier decision was avoidable.
 
 This seed project preserves ancestry from published starter-kit commit
-`5a54da63a58b22c8715778a31931394769b60d72`. No remote or public seed location
-has been created. The local `grow` path reaches guarded offline verification.
+`5a54da63a58b22c8715778a31931394769b60d72`. It was published from approved
+commit `e371eb9ccdf298330a9c20fb51a35b85dfc765d1`. The local `grow` path reaches guarded offline verification.
 
 ## The original need
 
