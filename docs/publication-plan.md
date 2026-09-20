@@ -55,7 +55,7 @@ The preparation audit observed:
   keystores, or files larger than one megabyte;
 - the largest Git blob is below 16 KiB;
 - tracked source contains no detected credential pattern, workstation path,
-  private machine hostname, or ignored `.local` state;
+  private machine hostname, or ignored `.local` or `.idea` state;
 - local Markdown links, shell syntax, ShellCheck, denial tests, workflow tests,
   readiness tests, seed growth tests, and documentation budgets pass; and
 - the source uses the inherited `0BSD` license and retains third-party
@@ -82,8 +82,8 @@ Immediately before any approved publication:
 1. run `REQUIRE_NO_REMOTE=1 ./scripts/check-all.sh`;
 2. require a clean `main` and record its exact commit identifier;
 3. inspect every commit author and committer identity;
-4. repeat the credential, workstation-path, forbidden-artifact, symlink, and
-   large-blob checks;
+4. repeat the credential, workstation-path, forbidden-artifact, symlink,
+   ignored-local-state, and large-blob checks;
 5. recheck both proposed GitHub URLs anonymously;
 6. verify the authenticated GitHub account and authority for `oikumene-works`;
 7. present the exact description, topics, visibility, destination, and command

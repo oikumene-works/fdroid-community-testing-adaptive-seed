@@ -49,6 +49,7 @@ require_text docs/session-continuity.md 'broaden an earlier approval.'
 require_text scripts/session-bootstrap.sh 'For a grow-only session'
 require_text scripts/session-bootstrap.sh 'Before entering the community-testing workflow'
 require_text README.md 'oikumene-works/fdroid-community-testing-starter-kit'
+require_text .gitignore '.idea/'
 require_text docs/publication-plan.md 'oikumene-works/fdroid-community-testing-adaptive-seed'
 require_text docs/publication-plan.md 'No publication action is authorized'
 

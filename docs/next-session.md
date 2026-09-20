@@ -11,7 +11,7 @@ must preserve the published kit's safety and authority boundaries.
 
 - This independent local seed project preserves exact published starter-kit
   commit `5a54da63a58b22c8715778a31931394769b60d72` in its Git ancestry.
-- Local branch `main` has no remote, publication target, or approval.
+- Local branch `main` has no remote or publication-action approval.
 - `docs/seed-design.md` defines the growth contract and layer boundaries.
 - `docs/seed-evolution.md` records the design change, mistakes, evidence, and
   learning policy intended for eventual public review.
@@ -49,6 +49,8 @@ must preserve the published kit's safety and authority boundaries.
   proposed public destination is
   `oikumene-works/fdroid-community-testing-adaptive-seed`; an anonymous check
   returned 404 on 2026-09-20, which is not a reservation. No remote was created.
+- Android Studio's `.idea` directory is ignored local state. A publication-gate
+  check caught its workstation path after a project switch; it was not tracked.
 - Only growth-session guidance in `session-bootstrap.sh` changed; all
   community-testing gates and operational actions retain their behavior.
 - No active candidate is selected in the distributed repository.
