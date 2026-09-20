@@ -36,10 +36,10 @@ must preserve the published kit's safety and authority boundaries.
   `Grow this seed`, described the result as a proposed step, and stopped before
   preview. It made no local change. This verifies the revised wording in one
   agent environment, not general or human comprehension.
-- `tests/seed-grow-tests.sh` covers the current host, missing tools, an
-  unsupported host, exact profile preview and creation, a rejected broad apply,
-  no-op reapply, offline preview and execution, failure stop, conflict
-  preservation, and invalid commands or guards.
+- `tests/seed-grow-tests.sh` covers the exact Git root, a nested copy, a real
+  Git-less copy, missing Git, profile-guard refusal, supported and unsupported
+  hosts, profile adaptation, offline verification, failure stops, conflicts,
+  and invalid commands or guards.
 - Migration Slice 2 is complete. Its ignored profile behavior was verified in
   the design worktree. This independent project intentionally starts without a
   profile until one is separately previewed and approved.
@@ -59,17 +59,11 @@ must preserve the published kit's safety and authority boundaries.
   before the user's choice. The preview was read-only, the clone stayed clean,
   and no `.local` state was created. Treat this as a partial failure, not human
   usability evidence.
-- Three fixed-model follow-up sessions then tested the stop decision: two exact
-  prompt baselines and one live decision-record intervention. All three stopped
-  before preview. The small result cannot attribute benefit to the live record,
-  and the earlier unidentified-model failure remains contrary evidence.
-- Same-session interviews found that `AGENTS.md`, the handoff, and `CHOICE`
-  clearly require the stop, while the `STOP=Preview ... before choosing`
-  wording can be read differently in isolation. Treat this as a bounded
-  interpretation finding, not access to hidden model reasoning.
-- Codex CLI's read-only workspace mounts made the nominally empty acquisition
-  root non-empty. Evaluators recovered by cloning into another directory; this
-  is a harness confounder, not a demonstrated seed packaging defect.
+- Fixed-model baselines, a live decision-record intervention, and same-session
+  debriefs are recorded in `docs/seed-newcomer-evaluation.md`. They found a
+  wording ambiguity but did not establish that live logging improves behavior.
+  `docs/agent-evaluation-method.md` now separates direct behavior, reactive
+  action ledgers, retrospective self-report, independent reruns, and human tests.
 - A technical public-ZIP evaluation downloaded and validated exact public
   commit `b0beec0`, then ran bootstrap and discovery without `.git`. Acquisition
   and read-only safety passed, but the profile path requires a verified Git
@@ -77,6 +71,10 @@ must preserve the published kit's safety and authority boundaries.
   route to one. Codex CLI also required `--skip-git-repo-check` before the agent
   could start in the extracted directory. The agent stopped correctly but did
   not surface the Git uncertainty in its final response.
+- Local `main` now treats its own Git worktree root as an invariant for profile
+  growth. Git-less and nested copies receive one explicit cloned-copy proposal;
+  even an exact profile guard is refused without that root. The seed never
+  initializes Git, clones files, or replaces the copy automatically.
 - No unfamiliar non-technical person has run the acquisition or comprehension
   test. The ZIP result is a technical agent proxy, not human usability evidence.
 - Migration Slice 5's relationship decision is complete. The published starter
@@ -90,7 +88,7 @@ must preserve the published kit's safety and authority boundaries.
   contains the reviewed publication record.
 - Android Studio's `.idea` directory is ignored local state. A publication-gate
   check caught its workstation path after a project switch; it was not tracked.
-- Only growth-session guidance in `session-bootstrap.sh` changed; all
+- The correction changes seed discovery and proposal wording only; all
   community-testing gates and operational actions retain their behavior.
 - No active candidate is selected in the distributed repository.
 - No candidate APK, emulator session, isolated ADB server, or transient test
@@ -121,16 +119,14 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next step
 
-Pause at the completed technical public-ZIP and Git-less acquisition
-checkpoint. Before changing implementation, decide whether a verified Git
-worktree is a genuine invariant of this seed or an acquisition prerequisite
-that the seed should explain and help the grower establish through a separately
-approved step. The smallest useful outcome is that one decision plus its
-newcomer-facing consequence; stop before implementation. Repeating the same
-agent run has little marginal value, and a real human test remains parked until
-a suitable participant exists. Do not combine unrelated steps. Any later push
-or public mutation requires its own exact approval and a freshly verified
-external identity.
+Pause at the implemented Git-acquisition correction and evaluation-method
+checkpoint. The safest next bounded step is one fresh fixed-model agent recheck
+of an exact Git-less copy with only `Grow this seed`: verify that it names the
+Git prerequisite, offers cloning instructions or stop, makes no change, and
+does not cross the choice boundary. Stop and record that result; do not repeat
+it without a new comparison question. A real human test remains parked until a
+suitable participant exists. Any later push or public mutation requires its own
+exact approval and a freshly verified external identity.
 
 No further seed feature implementation, candidate selection, executable
 download, Android action, push, branch publication, tag, release, or metadata

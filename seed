@@ -13,7 +13,9 @@ Usage:
 The default and preview modes are read-only. Profile apply may create exactly
 .local/seed/profile.env. Offline verification runs only the repository checks
 and fictional dry run. No mode uses the network, installs software, or starts
-Android tooling. Exact technical guards never supply human authorization.
+Android tooling. Profile growth requires this directory to be a Git worktree
+root; no mode initializes Git or clones files. Exact technical guards never
+supply human authorization.
 EOF
 }
 
@@ -95,7 +97,7 @@ if [[ "$growth_mode" != profile-apply &&
     exit 2
 fi
 
-repo_root="$(cd -- "${BASH_SOURCE[0]%/*}" && pwd)"
+repo_root="$(cd -- "${BASH_SOURCE[0]%/*}" && pwd -P)"
 profile_relative=.local/seed/profile.env
 profile_directory="$repo_root/.local/seed"
 profile_target="$repo_root/$profile_relative"
@@ -173,11 +175,12 @@ fi
 if has_command git; then
     git_ready=true
     report READY command:git "resolves on PATH; operation beyond local inspection is untested"
-    if git -C "$repo_root" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    workspace_root="$(git -C "$repo_root" rev-parse --show-toplevel 2>/dev/null || true)"
+    if [[ "$workspace_root" == "$repo_root" ]]; then
         workspace_ready=true
-        report READY workspace:git "repository worktree detected"
+        report READY workspace:git "seed directory is the Git worktree root"
     else
-        report UNKNOWN workspace:git "Git is present but this worktree was not verified"
+        report UNKNOWN workspace:git "seed directory is not a Git worktree root"
     fi
 else
     report MISSING command:git "not found on PATH"
@@ -304,6 +307,12 @@ if [[ "$host_status" == READY && "$bash_ready" == true &&
             choice="Request conflict details or stop."
             ;;
     esac
+elif [[ "$host_status" == READY && "$bash_ready" == true &&
+        ( "$git_ready" != true || "$workspace_ready" != true ) ]]; then
+    echo "PROPOSED_STEP=Open a cloned copy of this seed before creating a local profile."
+    echo "EFFECTS=No changes; this seed will not initialize Git, clone files, or replace this copy."
+    echo "DONE_WHEN=Safe cloning options have been explained without changing this copy."
+    choice="Request cloning instructions or stop."
 else
     echo "PROPOSED_STEP=Review the unsupported or missing host foundation before selecting a growth lane."
     echo "EFFECTS=No changes; do not install or substitute tools automatically."
@@ -319,7 +328,8 @@ fi
 
 if [[ "$profile_compatible" != true ]]; then
     echo "PROFILE_STATUS=UNAVAILABLE"
-    echo "Refused: the Linux reference profile requires a verified Linux Git worktree." >&2
+    echo "Refused: profile growth requires this seed directory to be a Git worktree root." >&2
+    echo "Use a cloned copy; this seed will not initialize Git or replace files automatically." >&2
     exit 1
 fi
 

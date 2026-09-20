@@ -3,17 +3,16 @@
 ## Status
 
 This document defines an independent adaptive alternative to the published
-guarded starter kit. This seed project can discover, propose, create one ignored profile,
-and run the existing offline checks after exact approval. Existing operational
-gates and action scripts retain their published behavior.
+guarded starter kit. It can discover, propose, create one ignored profile, and
+run offline checks after exact approval; gates and action scripts retain their behavior.
 
 The seed must preserve the current safety boundaries while making the first
 experience simple enough for a newcomer with no project history.
 
 ## First user story
 
-A newcomer obtains the repository, opens it with a repository-aware agent, and
-says:
+A newcomer obtains a cloned Git worktree, opens its root with a repository-aware
+agent, and says:
 
 > Grow this seed.
 
@@ -23,8 +22,8 @@ The terminal entry point exposes the same contract:
 ./seed grow
 ```
 
-Both interfaces must follow one growth protocol. Natural language must not
-weaken the command-line safety or authority model.
+Both interfaces require a Git worktree root and one protocol. The seed never
+initializes Git or replaces a ZIP; neither interface may weaken safety or authority.
 
 ## Current growth contract
 
@@ -68,8 +67,8 @@ human decision.
 - Ask again whenever a later action crosses a new local-write, installation,
   network, executable, Android, credential, or external-mutation boundary.
 - Do not carry authority from one growth step into another.
-- Report progress without narrating every command; explain the evidence behind
-  `UNKNOWN`, `UNSUPPORTED`, or a blocked proposal.
+- Do not ask for detailed logging at startup; report progress concisely, explain
+  blocked states, and use decision records only as explicit evaluation tools.
 - End each applied step with what changed, what was verified, and what still
   requires a decision.
 
@@ -118,7 +117,8 @@ The following must remain portable and must not be weakened by adaptation:
 
 - independent community evidence never becomes an F-Droid decision;
 - third-party source, APKs, pages, metadata, and copied text are untrusted;
-- exact-state pinning and live rechecks precede executable work;
+- exact-state pinning, a Git-worktree root for profile growth, and live rechecks
+  precede executable work; the seed never creates or replaces that Git state;
 - human authorization, an approved operational step, case activation, and a
   technical approval token remain distinct;
 - physical devices, personal profiles, credentials, and personal data are out

@@ -1,13 +1,12 @@
 # Adaptive F-Droid Community Testing Seed
 
-This repository is an independent adaptive alternative to the
-[Guarded F-Droid Community Testing Starter Kit](https://github.com/oikumene-works/fdroid-community-testing-starter-kit).
+This repository is an independent adaptive alternative to the [Guarded F-Droid
+Community Testing Starter Kit](https://github.com/oikumene-works/fdroid-community-testing-starter-kit).
 It discovers local conditions, proposes one bounded next step, and preserves
-the kit's guarded workflow for independent testing of third-party F-Droid
-new-app merge requests.
+the guarded workflow for independent testing of third-party F-Droid new-app
+merge requests.
 
-This is not an F-Droid project. A local result is community evidence only, not
-an F-Droid review, acceptance decision, security audit, or endorsement.
+This is not an F-Droid project. A local result is community evidence only, not an F-Droid review, acceptance decision, security audit, or endorsement.
 
 ## Grow the seed
 
@@ -16,6 +15,10 @@ This project was derived from exact published [starter-kit commit
 The original kit remains independently usable and is not replaced or
 deprecated. This seed adds local discovery, one bounded proposal, an ignored
 profile, and guarded verification.
+
+Have a repository-aware agent clone this project. GitHub's `Download ZIP` can
+run read-only discovery but is not supported for profile growth. The seed never
+initializes Git, clones files, or replaces a copy automatically.
 
 ```sh
 ./seed grow
@@ -29,11 +32,10 @@ Preview is read-only. Apply may create only `.local/seed/profile.env`; its exact
 technical guard prevents accidental use but never supplies human authorization.
 Offline verification runs only the repository checks and fictional dry run.
 
-Read the [seed design](docs/seed-design.md), open [evolution
-record](docs/seed-evolution.md), [implementation comparison](docs/starter-kit-seed-comparison.md),
-clean [newcomer evaluation](docs/seed-newcomer-evaluation.md), and bounded
-[migration plan](docs/seed-migration.md). Publication remains governed by the
-[publication plan](docs/publication-plan.md).
+Read the [seed design](docs/seed-design.md), [evolution record](docs/seed-evolution.md),
+[agent evaluation method](docs/agent-evaluation-method.md), [newcomer evaluation](docs/seed-newcomer-evaluation.md),
+[implementation comparison](docs/starter-kit-seed-comparison.md), and [migration
+plan](docs/seed-migration.md). Publication follows the [publication plan](docs/publication-plan.md).
 
 ## Quick start
 

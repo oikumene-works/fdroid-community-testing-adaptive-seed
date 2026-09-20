@@ -6,12 +6,20 @@ cd -- "$repo_root"
 
 mkdir -p -- .local/runtime
 test_root="$(mktemp -d "$repo_root/.local/runtime/seed-grow-test.XXXXXX")"
+gitless_root=""
 cleanup() {
     [[ "$test_root" == "$repo_root"/.local/runtime/seed-grow-test.* ]] || {
         echo "Unexpected seed-grow test path" >&2
         exit 1
     }
     rm -rf -- "$test_root"
+    if [[ -n "$gitless_root" ]]; then
+        [[ "$gitless_root" == /tmp/seed-grow-gitless.* ]] || {
+            echo "Unexpected Git-less test path" >&2
+            exit 1
+        }
+        rm -rf -- "$gitless_root"
+    fi
 }
 trap cleanup EXIT
 
@@ -67,6 +75,69 @@ require_output "$normal_output" "READY       seed-capability:github-adapter"
 require_output "$normal_output" "client and network readiness are untested"
 require_output "$normal_output" "CHOICE="
 require_output "$normal_output" "No files were changed. No network or Android action was performed."
+
+nested_copy="$test_root/nested-copy"
+mkdir -p -- "$nested_copy"
+cp -- seed "$nested_copy/seed"
+chmod +x "$nested_copy/seed"
+nested_output="$("$nested_copy/seed" grow)"
+require_output "$nested_output" \
+    "UNKNOWN     workspace:git                  seed directory is not a Git worktree root"
+require_output "$nested_output" \
+    "PROPOSED_STEP=Open a cloned copy of this seed before creating a local profile."
+require_output "$nested_output" "CHOICE=Request cloning instructions or stop."
+[[ ! -e "$nested_copy/.local" ]] || {
+    echo "Nested-copy discovery unexpectedly created local state" >&2
+    exit 1
+}
+
+gitless_root="$(mktemp -d /tmp/seed-grow-gitless.XXXXXX)"
+cp -- seed "$gitless_root/seed"
+chmod +x "$gitless_root/seed"
+gitless_before="$(find "$gitless_root" -mindepth 1 -printf '%P\t%y\t%m\t%s\n' | sort;
+    find "$gitless_root" -type f -exec sha256sum {} + | sort)"
+gitless_output="$("$gitless_root/seed" grow)"
+require_output "$gitless_output" \
+    "UNKNOWN     workspace:git                  seed directory is not a Git worktree root"
+require_output "$gitless_output" \
+    "PROPOSED_STEP=Open a cloned copy of this seed before creating a local profile."
+require_output "$gitless_output" \
+    "EFFECTS=No changes; this seed will not initialize Git, clone files, or replace this copy."
+require_output "$gitless_output" \
+    "DONE_WHEN=Safe cloning options have been explained without changing this copy."
+require_output "$gitless_output" "CHOICE=Request cloning instructions or stop."
+if "$gitless_root/seed" grow --apply-profile \
+    --approval create-profile:linux-reference \
+    >"$test_root/gitless-apply.out" 2>"$test_root/gitless-apply.err"; then
+    echo "Git-less copy unexpectedly accepted the profile guard" >&2
+    exit 1
+fi
+rg -Fq "PROFILE_STATUS=UNAVAILABLE" "$test_root/gitless-apply.out" || {
+    echo "Git-less profile refusal did not report its status" >&2
+    exit 1
+}
+rg -Fq "requires this seed directory to be a Git worktree root" \
+    "$test_root/gitless-apply.err" || {
+    echo "Git-less profile refusal did not name the prerequisite" >&2
+    exit 1
+}
+gitless_after="$(find "$gitless_root" -mindepth 1 -printf '%P\t%y\t%m\t%s\n' | sort;
+    find "$gitless_root" -type f -exec sha256sum {} + | sort)"
+[[ "$gitless_before" == "$gitless_after" && ! -e "$gitless_root/.git" &&
+   ! -e "$gitless_root/.local" ]] || {
+    echo "Git-less growth changed the extracted copy" >&2
+    exit 1
+}
+
+git_missing_path="$test_root/git-missing-path"
+mkdir -p -- "$git_missing_path"
+printf '%s\n' '#!/bin/sh' 'printf "Linux\\n"' > "$git_missing_path/uname"
+printf '%s\n' '#!/bin/sh' 'exit 0' > "$git_missing_path/bash"
+chmod +x "$git_missing_path/uname" "$git_missing_path/bash"
+git_missing_output="$(PATH="$git_missing_path" /usr/bin/bash ./seed grow)"
+require_output "$git_missing_output" "MISSING     command:git"
+require_output "$git_missing_output" \
+    "PROPOSED_STEP=Open a cloned copy of this seed before creating a local profile."
 
 empty_path="$test_root/empty-path"
 mkdir -p -- "$empty_path"
@@ -305,4 +376,4 @@ rg -Fq "PROFILE_STATUS=CONFLICT" "$test_root/profile-conflict.out" || {
     exit 1
 }
 
-echo "Seed growth tests passed: discovery, profile adaptation, offline verification, failure stop, conflicts, and refusals."
+echo "Seed growth tests passed: discovery, Git-root gating, profile adaptation, offline verification, failure stop, conflicts, and refusals."

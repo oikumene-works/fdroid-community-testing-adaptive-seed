@@ -198,3 +198,11 @@ project purpose, not a temporary migration stage. Three findings were retained:
 Local project creation, publication preparation, naming corrections, and the
 publication handoff loop continue in the
 [Seed Publication Evolution Log](seed-publication-evolution.md).
+
+Later acquisition and stop-decision experiments are recorded in the
+[Clean Newcomer Evaluation](seed-newcomer-evaluation.md). They include a
+premature read-only preview, fixed-model baselines, an instrumented decision
+record, same-session debriefs, plain-language correction, and a Git-less ZIP
+test. The reusable evidence rules are separated into the
+[Agent Evaluation and Debrief Method](agent-evaluation-method.md); retrospective
+self-report is not treated as direct access to model reasoning.
