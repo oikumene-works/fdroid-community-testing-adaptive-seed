@@ -43,6 +43,14 @@ must preserve the published kit's safety and authority boundaries.
   state and performed no network, Android, credential, or external action.
 - Migration Slice 4 is complete. The clean newcomer evaluation is recorded in
   `docs/seed-newcomer-evaluation.md`; its two observed confusions were corrected.
+- A later public-acquisition agent proxy cloned exact public commit
+  `b0beec08c32ef321b2917d4fcbcacfc4e6de363b`, ran the expected discovery, and
+  then violated the first interaction stop by previewing the proposed profile
+  before the user's choice. The preview was read-only, the clone stayed clean,
+  and no `.local` state was created. Treat this as a partial failure, not human
+  usability evidence.
+- No unfamiliar non-technical person has run the acquisition test. GitHub ZIP
+  acquisition and Git-less continuation also remain untested.
 - Migration Slice 5's relationship decision is complete. The published starter
   kit remains usable and undeprecated; the seed is an independent alternative
   intended as this separate project. `docs/starter-kit-seed-comparison.md` records the
@@ -61,9 +69,10 @@ must preserve the published kit's safety and authority boundaries.
   evidence is expected to exist.
 - No further push, external upload, public comment, or other service mutation
   is authorized by this handoff.
-- The operator requested a pause and expects a later session to use a different
-  ChatGPT account. Treat repository state as the handoff and infer no identity,
-  authority, credential access, or approval from the earlier chat or account.
+- The prior pause has ended. Continue to treat repository state as the handoff
+  and infer no identity, authority, credential access, or approval from the
+  earlier chat or account. The proxy used only its separately approved
+  anonymous public read.
 
 ## Startup
 
@@ -81,10 +90,13 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next slice
 
-Pause at the completed process-audit checkpoint. On resume, choose at most one
-bounded next slice: documentation consistency or a real newcomer acquisition
-test. Do not begin either automatically. Any later push or public mutation
-requires its own exact approval and a freshly verified external identity.
+Pause at the completed public-acquisition proxy record checkpoint. The safest
+next bounded slice is documentation consistency. Alternatively, choose one
+separately scoped investigation of the premature preview or one technical
+GitHub ZIP and Git-less acquisition test. A real human test remains parked
+until a suitable participant exists. Do not combine or begin these
+automatically. Any later push or public mutation requires its own exact
+approval and a freshly verified external identity.
 
 No further script implementation, candidate selection, network use, executable
 download, Android action, push, branch publication, tag, release, or metadata
