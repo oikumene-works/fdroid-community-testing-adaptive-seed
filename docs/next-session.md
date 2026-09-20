@@ -49,6 +49,17 @@ must preserve the published kit's safety and authority boundaries.
   before the user's choice. The preview was read-only, the clone stayed clean,
   and no `.local` state was created. Treat this as a partial failure, not human
   usability evidence.
+- Three fixed-model follow-up sessions then tested the stop decision: two exact
+  prompt baselines and one live decision-record intervention. All three stopped
+  before preview. The small result cannot attribute benefit to the live record,
+  and the earlier unidentified-model failure remains contrary evidence.
+- Same-session interviews found that `AGENTS.md`, the handoff, and `CHOICE`
+  clearly require the stop, while the `STOP=Preview ... before choosing`
+  wording can be read differently in isolation. Treat this as a bounded
+  interpretation finding, not access to hidden model reasoning.
+- Codex CLI's read-only workspace mounts made the nominally empty acquisition
+  root non-empty. Evaluators recovered by cloning into another directory; this
+  is a harness confounder, not a demonstrated seed packaging defect.
 - No unfamiliar non-technical person has run the acquisition test. GitHub ZIP
   acquisition and Git-less continuation also remain untested.
 - Migration Slice 5's relationship decision is complete. The published starter
@@ -90,13 +101,14 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next slice
 
-Pause at the completed public-acquisition proxy record checkpoint. The safest
-next bounded slice is documentation consistency. Alternatively, choose one
-separately scoped investigation of the premature preview or one technical
-GitHub ZIP and Git-less acquisition test. A real human test remains parked
-until a suitable participant exists. Do not combine or begin these
-automatically. Any later push or public mutation requires its own exact
-approval and a freshly verified external identity.
+Pause at the completed stop-decision follow-up checkpoint. The safest next
+bounded slice is documentation consistency. A technical GitHub ZIP and Git-less
+acquisition test remains a separate option; a different-agent or wording
+experiment should begin only with a specific comparison question, not as
+open-ended repetition. A real human test remains parked until a suitable
+participant exists. Do not combine or begin these automatically. Any later
+push or public mutation requires its own exact approval and a freshly verified
+external identity.
 
 No further script implementation, candidate selection, network use, executable
 download, Android action, push, branch publication, tag, release, or metadata
