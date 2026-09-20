@@ -1,7 +1,7 @@
 # Adaptive F-Droid Community Testing Seed
 
-This repository is an adaptive companion to the [Guarded F-Droid Community
-Testing Starter Kit](https://github.com/oikumene-works/fdroid-community-testing-starter-kit).
+This repository is an independent adaptive alternative to the
+[Guarded F-Droid Community Testing Starter Kit](https://github.com/oikumene-works/fdroid-community-testing-starter-kit).
 It discovers local conditions, proposes one bounded growth slice, and preserves
 the kit's guarded workflow for independent testing of third-party F-Droid
 new-app merge requests.

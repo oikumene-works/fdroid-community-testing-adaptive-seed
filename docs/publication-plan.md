@@ -26,9 +26,9 @@ approval.
 
 Proposed GitHub description:
 
-> Adaptive companion to the Guarded F-Droid Community Testing Starter Kit:
-> discovers local capabilities, grows through explicit choices, and preserves
-> strict approval boundaries.
+> Independent adaptive alternative to the Guarded F-Droid Community Testing
+> Starter Kit: discovers local capabilities, grows through explicit choices,
+> and preserves strict approval boundaries.
 
 Proposed topics:
 
@@ -102,7 +102,7 @@ The proposed commands, to be re-presented rather than run without approval, are:
 
 ```sh
 gh repo create oikumene-works/fdroid-community-testing-adaptive-seed --public \
-  --description 'Adaptive companion to the Guarded F-Droid Community Testing Starter Kit: discovers local capabilities, grows through explicit choices, and preserves strict approval boundaries.'
+  --description 'Independent adaptive alternative to the Guarded F-Droid Community Testing Starter Kit: discovers local capabilities, grows through explicit choices, and preserves strict approval boundaries.'
 git remote add origin \
   https://github.com/oikumene-works/fdroid-community-testing-adaptive-seed.git
 git push --set-upstream origin main

@@ -2,8 +2,8 @@
 
 ## Goal
 
-Maintain an adaptive companion to the guarded starter kit in bounded slices. The
-target newcomer experience is to obtain the repository and say `Grow this seed`,
+Maintain an independent adaptive alternative to the guarded starter kit in
+bounded slices. The target newcomer experience is to obtain the repository and say `Grow this seed`,
 then receive truthful local discovery and one bounded growth proposal. The seed
 must preserve the published kit's safety and authority boundaries.
 
@@ -40,8 +40,8 @@ must preserve the published kit's safety and authority boundaries.
 - Migration Slice 4 is complete. The clean newcomer evaluation is recorded in
   `docs/seed-newcomer-evaluation.md`; its two observed confusions were corrected.
 - Migration Slice 5's relationship decision is complete. The published starter
-  kit remains usable and undeprecated; the seed is a parallel companion intended
-  as this separate project. `docs/starter-kit-seed-comparison.md` records the
+  kit remains usable and undeprecated; the seed is an independent alternative
+  intended as this separate project. `docs/starter-kit-seed-comparison.md` records the
   different design premises and their observed implementation effects.
 - The local sibling-project checkpoint is complete when the initial seed commit
   and final clean-worktree verification pass. No `.local` state was copied.

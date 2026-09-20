@@ -2,8 +2,8 @@
 
 ## Status
 
-This document defines an adaptive companion to the published guarded starter
-kit. This seed project can discover, propose, create one ignored profile,
+This document defines an independent adaptive alternative to the published
+guarded starter kit. This seed project can discover, propose, create one ignored profile,
 and run the existing offline checks after exact approval. Existing operational
 gates and action scripts retain their published behavior.
 

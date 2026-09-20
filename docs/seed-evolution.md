@@ -216,4 +216,5 @@ The bounded audit retained three findings:
 
 ## Public name refinement
 
-The operator selected `fdroid-community-testing-adaptive-seed`; `adaptive` exposes the different premise without implying replacement. When Android Studio later created ignored `.idea` state containing a workstation path, the publication gate caught it before commit.
+The operator selected `fdroid-community-testing-adaptive-seed`; `adaptive` exposes the different premise without implying replacement. `Independent alternative` replaced `companion` because the seed does not depend on the original kit.
+When Android Studio later created ignored `.idea` state containing a workstation path, the publication gate caught it before commit.
