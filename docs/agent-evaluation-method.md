@@ -97,6 +97,12 @@ agent safely stopped but omitted the Git-worktree obstacle from its final answer
 Its debrief acknowledged the omission. The file-state record proved safety; the
 self-report suggested what the interface needed to make explicit.
 
+After that interface was corrected, an exact-commit Git-less recheck named the
+Git prerequisite, offered cloning help or stop, made no change, and stopped.
+Direct evidence answered the named question, so another debrief was omitted.
+This is also a stop rule: do not collect weaker evidence merely because it is
+available.
+
 ## Durable record and privacy
 
 Retain enough information to reproduce or bound the claim:

@@ -75,6 +75,9 @@ must preserve the published kit's safety and authority boundaries.
   growth. Git-less and nested copies receive one explicit cloned-copy proposal;
   even an exact profile guard is refused without that root. The seed never
   initializes Git, clones files, or replaces the copy automatically.
+- A fresh `gpt-5.6-sol` recheck of exact commit `298c763` in a Git-less archive
+  named the Git prerequisite, offered cloning instructions or stop, and stopped.
+  The complete tree and file digests were unchanged; no debrief was needed.
 - No unfamiliar non-technical person has run the acquisition or comprehension
   test. The ZIP result is a technical agent proxy, not human usability evidence.
 - Migration Slice 5's relationship decision is complete. The published starter
@@ -119,14 +122,12 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next step
 
-Pause at the implemented Git-acquisition correction and evaluation-method
-checkpoint. The safest next bounded step is one fresh fixed-model agent recheck
-of an exact Git-less copy with only `Grow this seed`: verify that it names the
-Git prerequisite, offers cloning instructions or stop, makes no change, and
-does not cross the choice boundary. Stop and record that result; do not repeat
-it without a new comparison question. A real human test remains parked until a
-suitable participant exists. Any later push or public mutation requires its own
-exact approval and a freshly verified external identity.
+Pause at the completed Git-acquisition correction, clean fixed-model recheck,
+and repository evaluation-method checkpoint. No further identical agent run has
+material marginal value. A real human test remains parked until a suitable
+participant exists. The next separate decision is whether to review the local
+commit series for publication; any push or other public mutation requires its
+own exact approval and a freshly verified external identity.
 
 No further seed feature implementation, candidate selection, executable
 download, Android action, push, branch publication, tag, release, or metadata

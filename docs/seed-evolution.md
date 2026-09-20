@@ -203,6 +203,8 @@ Later acquisition and stop-decision experiments are recorded in the
 [Clean Newcomer Evaluation](seed-newcomer-evaluation.md). They include a
 premature read-only preview, fixed-model baselines, an instrumented decision
 record, same-session debriefs, plain-language correction, and a Git-less ZIP
-test. The reusable evidence rules are separated into the
+test. Exact local commit `298c763` then made the Git root explicit; a fresh
+Git-less recheck named the prerequisite, offered cloning help or stop, made no
+change, and stopped. The reusable evidence rules are separated into the
 [Agent Evaluation and Debrief Method](agent-evaluation-method.md); retrospective
 self-report is not treated as direct access to model reasoning.
