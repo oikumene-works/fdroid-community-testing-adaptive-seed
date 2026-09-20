@@ -32,6 +32,10 @@ must preserve the published kit's safety and authority boundaries.
 - Newcomer-facing growth output uses `PROPOSED_STEP` and declarative
   `DONE_WHEN` wording. Internal historical migration headings may still use
   `Slice`. The current `CHOICE` remains a mandatory conversation stop.
+- A clean fixed-model recheck of commit `a4196bd` received only
+  `Grow this seed`, described the result as a proposed step, and stopped before
+  preview. It made no local change. This verifies the revised wording in one
+  agent environment, not general or human comprehension.
 - `tests/seed-grow-tests.sh` covers the current host, missing tools, an
   unsupported host, exact profile preview and creation, a rejected broad apply,
   no-op reapply, offline preview and execution, failure stop, conflict

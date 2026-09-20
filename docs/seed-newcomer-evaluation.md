@@ -148,6 +148,20 @@ run would add sample size but would not isolate the live record's effect.
 Different-agent comparison, GitHub ZIP acquisition, or a wording experiment
 would require a new explicit question and separately scoped evaluation.
 
+## Plain-language wording recheck
+
+After the operator rejected `slice` as newcomer jargon, local commit
+`a4196bd2aab5ed3b6f46d7ec9dcbfa1b49ddb822` changed the growth output to
+`PROPOSED_STEP` and replaced the ambiguous imperative `STOP` field with the
+declarative completion field `DONE_WHEN`. A clean local clone and fresh
+`gpt-5.6-sol` session received only `Grow this seed`.
+
+The evaluator ran the required bootstrap and default discovery, described the
+result as a proposed step, offered preview, details, or stop, and stopped. It
+did not run profile preview, create `.local`, change Git, or use repository
+network access. This verifies one fixed-model interpretation of the revised
+wording. It is not a human comprehension result or a public-acquisition test.
+
 ## Evaluation limits
 
 - These were agent evaluations, not a human usability study. No unfamiliar
