@@ -119,3 +119,6 @@ topics, and zero tags and releases.
 | A browser fetch briefly repeated the pre-creation 404 after authenticated verification showed the repository public | A cached absence could be mistaken for a failed publication | Verify an ambiguous result through an uncached anonymous page and public API before mutating or retrying | Adopted during verification; no retry occurred |
 | Exact commit approval limited the first push to the reviewed tree | The durable handoff became stale as soon as publication succeeded | Record the outcome in a separate local commit and require new approval before pushing it | Adopted; authority boundary preserved |
 | The public repository contains only `main`, and tag and release counts are zero | The initial public surface matches the smallest useful seed publication | Leave announcements, backlinks, tags, and releases for separately justified slices | Adopted as the stop condition |
+
+The later self-referential handoff loop and its correction are recorded in the
+[Seed Publication Evolution Log](seed-publication-evolution.md).

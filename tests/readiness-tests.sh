@@ -51,6 +51,7 @@ require_text scripts/session-bootstrap.sh 'Before entering the community-testing
 require_text README.md 'oikumene-works/fdroid-community-testing-starter-kit'
 require_text README.md 'independent adaptive alternative'
 require_text .gitignore '.idea/'
+require_text docs/seed-publication-evolution.md 'A tracked handoff must not describe its own pending push as current project state'
 require_text docs/publication-plan.md 'oikumene-works/fdroid-community-testing-adaptive-seed'
 require_text docs/publication-plan.md 'authorizes no later push'
 
