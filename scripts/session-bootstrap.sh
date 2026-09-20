@@ -30,9 +30,12 @@ if [[ -s cases/active-case ]]; then
     }
     echo "Active case: $active_case"
     sed -n '1,120p' "cases/$active_case/case.md"
+    echo "Read AGENTS.md, docs/next-session.md, docs/session-continuity.md,"
+    echo "docs/protocol.md, docs/first-case-runbook.md, and all active case records."
 else
     echo "Active case: none"
+    echo "For a grow-only session, read AGENTS.md and docs/next-session.md,"
+    echo "then run ./seed grow and stop for a choice."
+    echo "Before entering the community-testing workflow, also read"
+    echo "docs/session-continuity.md, docs/protocol.md, and docs/first-case-runbook.md."
 fi
-
-echo "Read AGENTS.md, docs/next-session.md, docs/session-continuity.md,"
-echo "docs/protocol.md, and the complete active case records before acting."

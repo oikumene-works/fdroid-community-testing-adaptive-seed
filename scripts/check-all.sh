@@ -9,7 +9,10 @@ if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     git diff --cached --check
 fi
 
-mapfile -t scripts < <(find scripts tests -type f -name '*.sh' -print | sort)
+mapfile -t scripts < <(
+    printf '%s\n' seed
+    find scripts tests -type f -name '*.sh' -print | sort
+)
 shellcheck -x "${scripts[@]}"
 for script in "${scripts[@]}"; do
     bash -n "$script"
@@ -70,6 +73,7 @@ fi
 ./tests/apk-qualification-tests.sh
 ./tests/source-scan-tests.sh
 ./tests/readiness-tests.sh
+./tests/seed-grow-tests.sh
 
 if [[ "${REQUIRE_NO_REMOTE:-0}" == "1" ]] && git remote -v 2>/dev/null | rg -q .; then
     echo "A Git remote is configured but REQUIRE_NO_REMOTE=1." >&2

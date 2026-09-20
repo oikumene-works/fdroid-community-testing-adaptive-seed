@@ -1,0 +1,459 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+    cat <<'EOF'
+Usage:
+  ./seed grow
+  ./seed grow --preview-profile
+  ./seed grow --apply-profile --approval create-profile:linux-reference
+  ./seed grow --preview-offline
+  ./seed grow --verify-offline --approval verify-offline:linux-reference
+
+The default and preview modes are read-only. Profile apply may create exactly
+.local/seed/profile.env. Offline verification runs only the repository checks
+and fictional dry run. No mode uses the network, installs software, or starts
+Android tooling. Exact technical guards never supply human authorization.
+EOF
+}
+
+if (($# == 0)); then
+    usage >&2
+    exit 2
+fi
+
+command_name="$1"
+shift
+case "$command_name" in
+    grow)
+        ;;
+    help|-h|--help)
+        usage
+        exit 0
+        ;;
+    *)
+        printf 'Unknown seed command: %s\n' "$command_name" >&2
+        usage >&2
+        exit 2
+        ;;
+esac
+
+growth_mode=none
+approval_token=""
+while (($#)); do
+    case "$1" in
+        --preview-profile)
+            [[ "$growth_mode" == none ]] || {
+                echo "Choose only one growth mode." >&2
+                exit 2
+            }
+            growth_mode=profile-preview
+            ;;
+        --apply-profile)
+            [[ "$growth_mode" == none ]] || {
+                echo "Choose only one growth mode." >&2
+                exit 2
+            }
+            growth_mode=profile-apply
+            ;;
+        --preview-offline)
+            [[ "$growth_mode" == none ]] || {
+                echo "Choose only one growth mode." >&2
+                exit 2
+            }
+            growth_mode=offline-preview
+            ;;
+        --verify-offline)
+            [[ "$growth_mode" == none ]] || {
+                echo "Choose only one growth mode." >&2
+                exit 2
+            }
+            growth_mode=offline-verify
+            ;;
+        --approval)
+            shift
+            (($#)) || {
+                echo "--approval requires an exact value." >&2
+                exit 2
+            }
+            approval_token="$1"
+            ;;
+        --apply)
+            echo "Refused: use an exact preview and its named apply boundary." >&2
+            exit 2
+            ;;
+        *)
+            printf 'Unknown grow option: %s\n' "$1" >&2
+            exit 2
+            ;;
+    esac
+    shift
+done
+if [[ "$growth_mode" != profile-apply &&
+      "$growth_mode" != offline-verify && -n "$approval_token" ]]; then
+    echo "An approval token is accepted only with an exact apply mode." >&2
+    exit 2
+fi
+
+repo_root="$(cd -- "${BASH_SOURCE[0]%/*}" && pwd)"
+profile_relative=.local/seed/profile.env
+profile_directory="$repo_root/.local/seed"
+profile_target="$repo_root/$profile_relative"
+ready_count=0
+missing_count=0
+unsupported_count=0
+unknown_count=0
+host_status=UNKNOWN
+bash_ready=false
+git_ready=false
+workspace_ready=false
+
+report() {
+    local status="$1"
+    local subject="$2"
+    local detail="$3"
+    printf '%-11s %-30s %s\n' "$status" "$subject" "$detail"
+    case "$status" in
+        READY) ready_count=$((ready_count + 1)) ;;
+        MISSING) missing_count=$((missing_count + 1)) ;;
+        UNSUPPORTED) unsupported_count=$((unsupported_count + 1)) ;;
+        UNKNOWN) unknown_count=$((unknown_count + 1)) ;;
+        *)
+            printf 'Internal error: invalid discovery status %s\n' "$status" >&2
+            exit 1
+            ;;
+    esac
+}
+
+has_command() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+render_profile() {
+    echo "# Adaptive seed local profile v1"
+    echo "# This file records local choices, not authority for a later action."
+    echo "SEED_PROFILE_VERSION=1"
+    echo "SEED_SELECTED_LANE=linux-reference"
+    printf 'SEED_ANDROID_SDK_ROOT_SOURCE=%q\n' "$sdk_root_source"
+    printf 'SEED_ANDROID_SDK_ROOT=%q\n' "$sdk_root"
+    echo "SEED_REFERENCE_ANDROID_CONFIG=config/android.env.example"
+}
+
+echo "ADAPTIVE SEED DISCOVERY"
+echo "This run is read-only and grants no authority for a later action."
+echo
+
+if has_command uname; then
+    host_os="$(uname -s 2>/dev/null || true)"
+    case "$host_os" in
+        Linux)
+            host_status=READY
+            report READY host:operating-system "Linux reference host detected"
+            ;;
+        "")
+            report UNKNOWN host:operating-system "uname returned no operating-system value"
+            ;;
+        *)
+            host_status=UNSUPPORTED
+            report UNSUPPORTED host:operating-system \
+                "$host_os has no reviewed execution lane"
+            ;;
+    esac
+else
+    report UNKNOWN host:operating-system "uname is not available on PATH"
+fi
+
+if has_command bash; then
+    bash_ready=true
+    report READY command:bash "resolves on PATH; this prototype is running in Bash"
+else
+    report MISSING command:bash "not found on PATH"
+fi
+
+if has_command git; then
+    git_ready=true
+    report READY command:git "resolves on PATH; operation beyond local inspection is untested"
+    if git -C "$repo_root" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        workspace_ready=true
+        report READY workspace:git "repository worktree detected"
+    else
+        report UNKNOWN workspace:git "Git is present but this worktree was not verified"
+    fi
+else
+    report MISSING command:git "not found on PATH"
+    report UNKNOWN workspace:git "cannot inspect worktree state without Git"
+fi
+
+if has_command bwrap; then
+    report READY command:bwrap "resolves on PATH; parser sandbox operation is untested"
+else
+    report MISSING command:bwrap "required by the current APK-qualification lane"
+fi
+
+android_commands=(sdkmanager avdmanager emulator adb aapt apksigner zipalign)
+missing_android=()
+for tool in "${android_commands[@]}"; do
+    has_command "$tool" || missing_android+=("$tool")
+done
+if ((${#missing_android[@]} == 0)); then
+    report UNKNOWN android:commands \
+        "all reference commands resolve, but package compatibility is unverified"
+else
+    report MISSING android:commands \
+        "not found on PATH: ${missing_android[*]}"
+fi
+
+sdk_root_source=NONE
+if [[ -n "${ANDROID_SDK_ROOT:-}" ]]; then
+    sdk_root="$ANDROID_SDK_ROOT"
+    sdk_root_source=ANDROID_SDK_ROOT
+elif [[ -n "${ANDROID_HOME:-}" ]]; then
+    sdk_root="$ANDROID_HOME"
+    sdk_root_source=ANDROID_HOME
+else
+    sdk_root=""
+fi
+if [[ -n "$sdk_root" && -d "$sdk_root" ]]; then
+    report UNKNOWN android:sdk-root \
+        "configured directory exists; exact required packages are unverified"
+elif [[ -n "$sdk_root" ]]; then
+    report MISSING android:sdk-root "configured directory does not exist"
+else
+    report UNKNOWN android:sdk-root \
+        "ANDROID_SDK_ROOT and ANDROID_HOME are unset"
+fi
+
+if [[ "$host_status" == READY ]]; then
+    if [[ -e /dev/kvm && -r /dev/kvm && -w /dev/kvm ]]; then
+        report READY host:kvm-access "/dev/kvm is readable and writable"
+    elif [[ -e /dev/kvm ]]; then
+        report MISSING host:kvm-access "/dev/kvm exists without required access"
+    else
+        report MISSING host:kvm-access "/dev/kvm is absent"
+    fi
+
+    if [[ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]]; then
+        report READY host:display "graphical display environment is configured"
+    else
+        report MISSING host:display "DISPLAY and WAYLAND_DISPLAY are unset"
+    fi
+else
+    report UNSUPPORTED host:kvm-access "checked only for the Linux reference lane"
+    report UNSUPPORTED host:display "checked only for the Linux reference lane"
+fi
+
+if [[ -x "$repo_root/scripts/inspect-source-surface.sh" &&
+      -x "$repo_root/scripts/inspect-public-claims.sh" ]]; then
+    report READY seed-capability:github-adapter \
+        "reviewed adapter files are present; client and network readiness are untested"
+else
+    report MISSING seed-capability:github-adapter \
+        "reviewed adapter files are incomplete"
+fi
+if [[ -x "$repo_root/scripts/recheck-case.sh" ]]; then
+    report READY seed-capability:gitlab-adapter \
+        "reviewed adapter file is present; client and network readiness are untested"
+else
+    report MISSING seed-capability:gitlab-adapter \
+        "reviewed adapter file is absent"
+fi
+report UNSUPPORTED lane:network-capable-app \
+    "requires a separate traffic-observation protocol"
+
+profile_content="$(render_profile)"
+profile_action=CREATE
+if [[ -L "$repo_root/.local" || -L "$profile_directory" || -L "$profile_target" ]]; then
+    profile_action=CONFLICT
+elif [[ -e "$profile_target" ]]; then
+    if [[ ! -f "$profile_target" ]]; then
+        profile_action=CONFLICT
+    elif [[ "$(<"$profile_target")" == "$profile_content" ]]; then
+        profile_action=UNCHANGED
+    else
+        profile_action=CONFLICT
+    fi
+fi
+
+echo
+printf 'DISCOVERY_SUMMARY=READY:%d MISSING:%d UNSUPPORTED:%d UNKNOWN:%d\n' \
+    "$ready_count" "$missing_count" "$unsupported_count" "$unknown_count"
+echo "SEED_STATUS=GROWTH_PROPOSAL"
+echo
+
+profile_compatible=false
+if [[ "$host_status" == READY && "$bash_ready" == true &&
+      "$git_ready" == true && "$workspace_ready" == true ]]; then
+    profile_compatible=true
+    case "$profile_action" in
+        CREATE)
+            echo "PROPOSED_SLICE=Prepare an ignored local profile for the existing Linux reference lane."
+            echo "EFFECTS=One ignored local profile only; no installation, network, Android, or external action."
+            echo "STOP=Preview the exact profile before choosing whether to write it."
+            choice="Preview this profile, request details, or stop."
+            ;;
+        UNCHANGED)
+            echo "PROPOSED_SLICE=Preview and, after exact approval, run the selected profile's offline verification."
+            echo "EFFECTS=Bounded ignored-local test fixtures only; no network, APK, emulator, ADB, credential, or external action."
+            echo "STOP=Report the check and fictional-dry-run results, then stop."
+            choice="Preview offline verification, approve its exact execution, or stop."
+            ;;
+        CONFLICT)
+            echo "PROPOSED_SLICE=Review the existing local profile conflict without overwriting it."
+            echo "EFFECTS=No changes; preserve the existing local profile."
+            echo "STOP=Resolve the profile choice in a separately approved slice or stop."
+            choice="Request conflict details or stop."
+            ;;
+    esac
+else
+    echo "PROPOSED_SLICE=Review the unsupported or missing host foundation before selecting a growth lane."
+    echo "EFFECTS=No changes; do not install or substitute tools automatically."
+    echo "STOP=Choose a reviewed host path or stop without modifying the seed."
+    choice="Request details about the unsupported foundation or stop."
+fi
+
+if [[ "$growth_mode" == none ]]; then
+    echo "CHOICE=$choice"
+    echo "No files were changed. No network or Android action was performed."
+    exit 0
+fi
+
+if [[ "$profile_compatible" != true ]]; then
+    echo "PROFILE_STATUS=UNAVAILABLE"
+    echo "Refused: the Linux reference profile requires a verified Linux Git worktree." >&2
+    exit 1
+fi
+
+if [[ "$growth_mode" == profile-* ]]; then
+    echo
+    echo "PROFILE_PREVIEW"
+    echo "PROFILE_TARGET=$profile_relative"
+    echo "PROFILE_ACTION=$profile_action"
+    echo "PROFILE_CONTENT_BEGIN"
+    printf '%s\n' "$profile_content"
+    echo "PROFILE_CONTENT_END"
+
+    if [[ "$growth_mode" == profile-preview ]]; then
+        echo "PROFILE_STATUS=PREVIEW_ONLY"
+        echo "No files were changed. No network or Android action was performed."
+        exit 0
+    fi
+
+    expected_approval=create-profile:linux-reference
+    if [[ "$approval_token" != "$expected_approval" ]]; then
+        echo "PROFILE_STATUS=REFUSED"
+        printf 'Refused: expected technical guard --approval %s\n' \
+            "$expected_approval" >&2
+        exit 2
+    fi
+    echo "TECHNICAL_GUARD=accepted; it confirms the exact lane but does not create human authorization."
+
+    if [[ "$profile_action" == CONFLICT ]]; then
+        echo "PROFILE_STATUS=CONFLICT"
+        echo "Refused: an existing path differs or crosses a symlink boundary." >&2
+        exit 1
+    fi
+    if [[ "$profile_action" == UNCHANGED ]]; then
+        echo "PROFILE_STATUS=UNCHANGED"
+        echo "No files were changed. No network or Android action was performed."
+        exit 0
+    fi
+
+    umask 077
+    mkdir -p -- "$profile_directory"
+    profile_temp="$(mktemp "$profile_directory/profile.env.tmp.XXXXXX")"
+    # shellcheck disable=SC2329  # Invoked indirectly by the EXIT trap.
+    cleanup_profile_temp() {
+        if [[ -n "${profile_temp:-}" && -e "$profile_temp" ]]; then
+            rm -f -- "$profile_temp"
+        fi
+    }
+    trap cleanup_profile_temp EXIT
+    printf '%s\n' "$profile_content" > "$profile_temp"
+    chmod 600 "$profile_temp"
+    mv -- "$profile_temp" "$profile_target"
+    profile_temp=""
+    trap - EXIT
+
+    echo "PROFILE_STATUS=CREATED"
+    echo "PROFILE_WRITTEN=$profile_relative"
+    echo "No installation, network, Android, credential, or external action was performed."
+    exit 0
+fi
+
+echo
+echo "OFFLINE_VERIFICATION_PREVIEW"
+echo "OFFLINE_COMMAND_1=./scripts/check-all.sh"
+echo "OFFLINE_COMMAND_2=./scripts/fictional-dry-run.sh"
+echo "OFFLINE_EFFECTS=Bounded ignored-local fixtures may be created and removed."
+echo "OFFLINE_EXCLUDES=network, APK, emulator, ADB, credentials, and external mutation"
+
+if [[ "$profile_action" != UNCHANGED ]]; then
+    echo "OFFLINE_VERIFY_STATUS=PROFILE_MISMATCH"
+    echo "Refused: the stored profile does not exactly match current discovery." >&2
+    exit 1
+fi
+for offline_script in scripts/check-all.sh scripts/fictional-dry-run.sh; do
+    if [[ ! -f "$repo_root/$offline_script" ||
+          ! -x "$repo_root/$offline_script" || -L "$repo_root/$offline_script" ]]; then
+        echo "OFFLINE_VERIFY_STATUS=UNAVAILABLE"
+        printf 'Refused: expected a regular executable %s.\n' "$offline_script" >&2
+        exit 1
+    fi
+done
+
+if [[ "$growth_mode" == offline-preview ]]; then
+    echo "OFFLINE_VERIFY_STATUS=PREVIEW_ONLY"
+    echo "No files were changed. No command in the preview was run."
+    exit 0
+fi
+
+expected_approval=verify-offline:linux-reference
+if [[ "$approval_token" != "$expected_approval" ]]; then
+    echo "OFFLINE_VERIFY_STATUS=REFUSED"
+    printf 'Refused: expected technical guard --approval %s\n' \
+        "$expected_approval" >&2
+    exit 2
+fi
+echo "TECHNICAL_GUARD=accepted; it confirms the exact lane but does not create human authorization."
+
+profile_before="$(<"$profile_target")"
+profile_mode_before="$(stat -c '%a' "$profile_target")"
+worktree_before="$(git -C "$repo_root" status --short)"
+verify_offline_state() {
+    [[ ! -L "$profile_target" && -f "$profile_target" ]] || return 1
+    [[ "$(<"$profile_target")" == "$profile_before" ]] || return 1
+    [[ "$(stat -c '%a' "$profile_target")" == "$profile_mode_before" ]] || return 1
+    [[ "$(git -C "$repo_root" status --short)" == "$worktree_before" ]]
+}
+
+echo "OFFLINE_VERIFY_PHASE=check-all"
+if ! (cd -- "$repo_root" && ./scripts/check-all.sh); then
+    if ! verify_offline_state; then
+        echo "OFFLINE_VERIFY_STATUS=STATE_CHANGED"
+        echo "Refused: the failed check changed the profile or Git worktree." >&2
+    else
+        echo "OFFLINE_VERIFY_STATUS=CHECKS_FAILED"
+    fi
+    exit 1
+fi
+
+echo "OFFLINE_VERIFY_PHASE=fictional-dry-run"
+if ! (cd -- "$repo_root" && ./scripts/fictional-dry-run.sh); then
+    if ! verify_offline_state; then
+        echo "OFFLINE_VERIFY_STATUS=STATE_CHANGED"
+        echo "Refused: the failed dry run changed the profile or Git worktree." >&2
+    else
+        echo "OFFLINE_VERIFY_STATUS=FICTIONAL_DRY_RUN_FAILED"
+    fi
+    exit 1
+fi
+
+if ! verify_offline_state; then
+    echo "OFFLINE_VERIFY_STATUS=STATE_CHANGED"
+    echo "Refused: offline verification changed the profile or Git worktree." >&2
+    exit 1
+fi
+echo "PROFILE_PRESERVED=YES"
+echo "GIT_WORKTREE_PRESERVED=YES"
+echo "OFFLINE_VERIFY_STATUS=PASS"
+echo "No network, APK, emulator, ADB, credential, or external action was performed."

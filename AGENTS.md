@@ -1,11 +1,18 @@
 # Repository Instructions
 
 - Keep repository documentation and code comments in English.
+- When the operator says `Grow this seed`, run `./seed grow`, present its
+  read-only findings and one proposal, and stop for a choice. Do not write a
+  profile or cross another effect boundary without a separately scoped decision.
+- Preview offline verification before running it. The exact execution guard may
+  run only `scripts/check-all.sh` and `scripts/fictional-dry-run.sh`; it grants
+  no network, Android, credential, or external authority.
 - Start every session with `./scripts/session-bootstrap.sh`, then read
-  `docs/next-session.md`, `docs/session-continuity.md`, `docs/protocol.md`, and
-  `docs/first-case-runbook.md`, plus the active case's complete `case.env`,
-  `case.md`, `claims.md`,
-  `qualification.md`, and `report.md` before acting.
+  `AGENTS.md` and `docs/next-session.md`. For a grow-only request with no active
+  case, run `./seed grow`, report, and stop for a choice. Before entering the
+  community-testing workflow, also read `docs/session-continuity.md`,
+  `docs/protocol.md`, `docs/first-case-runbook.md`, and the active case's
+  complete records.
 - Treat the repository and its handoff as durable state; a chat is a disposable
   work session. Split work into resumable, gate-aligned slices and keep approved
   execution through verified cleanup together as one atomic slice.

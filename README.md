@@ -1,12 +1,36 @@
-# Guarded F-Droid Community Testing Starter Kit
+# Adaptive F-Droid Community Testing Seed
 
-This repository is a reusable Linux-host workflow for independent community
-testing of third-party F-Droid new-app merge requests. It separates public
-claim review, exact source preflight, built-APK qualification, disposable
-emulator execution, report review, and public posting.
+This repository is an adaptive companion to the Guarded F-Droid Community
+Testing Starter Kit. It discovers local conditions, proposes one bounded growth
+slice, and preserves the kit's guarded workflow for independent testing of
+third-party F-Droid new-app merge requests.
 
 This is not an F-Droid project. A local result is community evidence only, not
 an F-Droid review, acceptance decision, security audit, or endorsement.
+
+## Grow the seed
+
+This project was derived from exact published starter-kit commit
+`5a54da63a58b22c8715778a31931394769b60d72`. The original kit remains
+independently usable and is not replaced or deprecated. This seed adds local
+discovery, one bounded proposal, an ignored profile, and guarded verification.
+
+```sh
+./seed grow
+./seed grow --preview-profile
+./seed grow --apply-profile --approval create-profile:linux-reference
+./seed grow --preview-offline
+./seed grow --verify-offline --approval verify-offline:linux-reference
+```
+
+Preview is read-only. Apply may create only `.local/seed/profile.env`; its exact
+technical guard prevents accidental use but never supplies human authorization.
+Offline verification runs only the repository checks and fictional dry run.
+
+Read the [seed design](docs/seed-design.md), open [evolution
+record](docs/seed-evolution.md), [implementation comparison](docs/starter-kit-seed-comparison.md),
+clean [newcomer evaluation](docs/seed-newcomer-evaluation.md), and bounded
+[migration plan](docs/seed-migration.md).
 
 ## Quick start
 
