@@ -286,28 +286,28 @@ if [[ "$host_status" == READY && "$bash_ready" == true &&
     profile_compatible=true
     case "$profile_action" in
         CREATE)
-            echo "PROPOSED_SLICE=Prepare an ignored local profile for the existing Linux reference lane."
-            echo "EFFECTS=One ignored local profile only; no installation, network, Android, or external action."
-            echo "STOP=Preview the exact profile before choosing whether to write it."
+            echo "PROPOSED_STEP=Preview an ignored local profile for the existing Linux reference lane."
+            echo "EFFECTS=No file write, installation, network, Android action, or external change."
+            echo "DONE_WHEN=The exact profile has been shown without writing it."
             choice="Preview this profile, request details, or stop."
             ;;
         UNCHANGED)
-            echo "PROPOSED_SLICE=Preview and, after exact approval, run the selected profile's offline verification."
-            echo "EFFECTS=Bounded ignored-local test fixtures only; no network, APK, emulator, ADB, credential, or external action."
-            echo "STOP=Report the check and fictional-dry-run results, then stop."
-            choice="Preview offline verification, approve its exact execution, or stop."
+            echo "PROPOSED_STEP=Preview the selected profile's offline verification plan."
+            echo "EFFECTS=Planned commands are shown but not run; no network or external change."
+            echo "DONE_WHEN=The two planned commands and their exclusions have been shown without running them."
+            choice="Preview offline verification, request details, or stop."
             ;;
         CONFLICT)
-            echo "PROPOSED_SLICE=Review the existing local profile conflict without overwriting it."
+            echo "PROPOSED_STEP=Review the existing local profile conflict without overwriting it."
             echo "EFFECTS=No changes; preserve the existing local profile."
-            echo "STOP=Resolve the profile choice in a separately approved slice or stop."
+            echo "DONE_WHEN=Conflict details have been reported and the existing profile is unchanged."
             choice="Request conflict details or stop."
             ;;
     esac
 else
-    echo "PROPOSED_SLICE=Review the unsupported or missing host foundation before selecting a growth lane."
+    echo "PROPOSED_STEP=Review the unsupported or missing host foundation before selecting a growth lane."
     echo "EFFECTS=No changes; do not install or substitute tools automatically."
-    echo "STOP=Choose a reviewed host path or stop without modifying the seed."
+    echo "DONE_WHEN=The host-path options have been explained without modifying the seed."
     choice="Request details about the unsupported foundation or stop."
 fi
 

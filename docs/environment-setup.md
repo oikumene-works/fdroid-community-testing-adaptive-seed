@@ -8,7 +8,7 @@ SDK command-line tools, GitHub CLI, and GitLab CLI. Usable KVM acceleration and
 a graphical display are required by the supported reference execution profile.
 
 Run `./seed grow` first for the adaptive entry path; it proposes one local
-growth slice and stops. For the fixed reference path, run `./scripts/doctor.sh`
+next step and stops. For the fixed reference path, run `./scripts/doctor.sh`
 first. The doctor reports tools, SDK components, KVM, display, and Git remote
 state as `READY`, `WARNING`, or `BLOCKED`. Both commands are read-only and do not
 download, accept licenses, start ADB, or start an emulator.

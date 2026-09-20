@@ -11,8 +11,9 @@ The seed was developed from published [starter-kit commit
 `5a54da63`](https://github.com/oikumene-works/fdroid-community-testing-starter-kit/commit/5a54da63a58b22c8715778a31931394769b60d72).
 That provenance must remain visible.
 The distribution is a separately named sibling project, not a new `main` that
-erases the original implementation. The sibling now exists locally with no
-remote or publication.
+erases the original implementation. At the relationship-decision checkpoint,
+the sibling existed only locally and had no remote. It has since been published
+as the independent repository named in the current boundary below.
 
 ## Same need, different opening question
 

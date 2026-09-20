@@ -63,7 +63,7 @@ Implement one entry point that:
 - changes no files;
 - classifies selected capabilities as `READY`, `MISSING`, `UNSUPPORTED`, or
   `UNKNOWN`;
-- proposes one compatible local growth slice; and
+- proposes one compatible local next step; and
 - stops before applying it.
 
 Test a clean reference host, a host missing one required reference component,
@@ -171,9 +171,10 @@ A local adaptation becomes portable source only when:
 - maintenance and approval ownership are explicit; and
 - the operator deliberately approves the promotion and any publication.
 
-## Next decision after initial publication
+## Post-publication status
 
-Review the local post-publication record commit. A later approval must bind its
-exact clean commit and destination before any push. No executable APK, emulator,
-ADB, network, credential, further external mutation, push, branch publication,
-tag, release, or metadata change is authorized by this plan.
+The initial publication and the separately approved publication-record push
+are complete. `docs/next-session.md` owns the current gate and safest next step.
+This historical migration plan authorizes no executable APK, emulator, ADB,
+credential, further external mutation, push, branch publication, tag, release,
+or metadata change.

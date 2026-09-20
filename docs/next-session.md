@@ -3,7 +3,7 @@
 ## Goal
 
 Maintain an independent adaptive alternative to the guarded starter kit in
-bounded slices. The target newcomer experience is to obtain the repository and say `Grow this seed`,
+bounded steps. The target newcomer experience is to obtain the repository and say `Grow this seed`,
 then receive truthful local discovery and one bounded growth proposal. The seed
 must preserve the published kit's safety and authority boundaries.
 
@@ -18,14 +18,20 @@ must preserve the published kit's safety and authority boundaries.
   learning policy intended for eventual public review.
 - `docs/process-audit-2026-09-20.md` audits the path from the seed idea through
   publication, including operator actions, Codex actions, remaining evidence
-  gaps, and known documentation drift. Its recommendations are not implemented.
+  gaps, and known documentation drift. Its three in-project consistency
+  findings are now corrected; its evidence limits remain.
+- This file owns changing project-wide current state and the current gate.
+  Dated plans, audits, comparisons, and evolution records own historical facts.
 - `docs/seed-migration.md` maps the current kit into bounded migration slices.
 - The accepted communication contract is: discover facts without questioning
-  the grower, present one recommended slice with at most three choices, and ask
+  the grower, present one recommended step with at most three choices, and ask
   again only at a new effect or authority boundary.
 - Migration Slice 1 is complete. `./seed grow` performs read-only discovery,
   reports `READY`, `MISSING`, `UNSUPPORTED`, and `UNKNOWN`, proposes one next
-  slice, and stops. `--apply` is deliberately refused.
+  step, and stops. `--apply` is deliberately refused.
+- Newcomer-facing growth output uses `PROPOSED_STEP` and declarative
+  `DONE_WHEN` wording. Internal historical migration headings may still use
+  `Slice`. The current `CHOICE` remains a mandatory conversation stop.
 - `tests/seed-grow-tests.sh` covers the current host, missing tools, an
   unsupported host, exact profile preview and creation, a rejected broad apply,
   no-op reapply, offline preview and execution, failure stop, conflict
@@ -80,6 +86,9 @@ must preserve the published kit's safety and authority boundaries.
   evidence is expected to exist.
 - No further push, external upload, public comment, or other service mutation
   is authorized by this handoff.
+- The operator authorizes further bounded agent evaluations when they answer a
+  named question and their marginal value is material. This grants no candidate
+  action, credential use, publication, or other external mutation.
 - The prior pause has ended. Continue to treat repository state as the handoff
   and infer no identity, authority, credential access, or approval from the
   earlier chat or account. The proxy used only its separately approved
@@ -99,17 +108,18 @@ must preserve the published kit's safety and authority boundaries.
 5. If `cases/active-case` names a case, read that case's `case.env`, `case.md`,
    `claims.md`, `qualification.md`, and `report.md` completely.
 
-## Current gate and safest next slice
+## Current gate and safest next step
 
-Pause at the completed stop-decision follow-up checkpoint. The safest next
-bounded slice is documentation consistency. A technical GitHub ZIP and Git-less
-acquisition test remains a separate option; a different-agent or wording
-experiment should begin only with a specific comparison question, not as
-open-ended repetition. A real human test remains parked until a suitable
-participant exists. Do not combine or begin these automatically. Any later
-push or public mutation requires its own exact approval and a freshly verified
-external identity.
+Pause at the completed terminology and documentation-consistency checkpoint.
+The safest next bounded step is a technical GitHub ZIP and Git-less acquisition
+test. A different-agent or wording experiment should begin only with a
+specific comparison question, not as open-ended repetition. A real human test
+remains parked until a suitable participant exists. Do not combine unrelated
+steps. Any later push or public mutation requires its own exact approval and a
+freshly verified external identity.
 
-No further script implementation, candidate selection, network use, executable
+No further seed feature implementation, candidate selection, executable
 download, Android action, push, branch publication, tag, release, or metadata
-change is authorized by this handoff.
+change is authorized by this handoff. A bounded agent evaluation may use its
+model provider and anonymous public repository reads only as needed for its
+named question.

@@ -24,6 +24,15 @@ require_output() {
     }
 }
 
+reject_output() {
+    local output="$1"
+    local unexpected="$2"
+    [[ "$output" != *"$unexpected"* ]] || {
+        printf 'Seed output unexpectedly contained: %s\n' "$unexpected" >&2
+        exit 1
+    }
+}
+
 snapshot_local_state() {
     if [[ ! -d .local ]]; then
         echo "LOCAL_STATE=ABSENT"
@@ -48,7 +57,12 @@ after_local="$(snapshot_local_state)"
 }
 require_output "$normal_output" "ADAPTIVE SEED DISCOVERY"
 require_output "$normal_output" "SEED_STATUS=GROWTH_PROPOSAL"
-require_output "$normal_output" "PROPOSED_SLICE="
+require_output "$normal_output" \
+    "PROPOSED_STEP=Preview an ignored local profile for the existing Linux reference lane."
+require_output "$normal_output" \
+    "DONE_WHEN=The exact profile has been shown without writing it."
+reject_output "$normal_output" "PROPOSED_SLICE="
+reject_output "$normal_output" "STOP="
 require_output "$normal_output" "READY       seed-capability:github-adapter"
 require_output "$normal_output" "client and network readiness are untested"
 require_output "$normal_output" "CHOICE="
@@ -184,9 +198,11 @@ require_output "$unchanged_output" "PROFILE_STATUS=UNCHANGED"
 }
 adapted_output="$(ANDROID_SDK_ROOT="$profile_sdk" "$profile_repo/seed" grow)"
 require_output "$adapted_output" \
-    "PROPOSED_SLICE=Preview and, after exact approval, run the selected profile's offline verification."
+    "PROPOSED_STEP=Preview the selected profile's offline verification plan."
 require_output "$adapted_output" \
-    "CHOICE=Preview offline verification, approve its exact execution, or stop."
+    "DONE_WHEN=The two planned commands and their exclusions have been shown without running them."
+require_output "$adapted_output" \
+    "CHOICE=Preview offline verification, request details, or stop."
 
 offline_preview="$(ANDROID_SDK_ROOT="$profile_sdk" \
     "$profile_repo/seed" grow --preview-offline)"

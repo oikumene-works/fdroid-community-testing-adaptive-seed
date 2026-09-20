@@ -105,6 +105,12 @@ self-contained. It should identify:
 - external mutations already made; and
 - the single safest next slice.
 
+This handoff owns changing project-wide current state and the current gate.
+Dated audits, plans, comparisons, and evolution records own their historical
+facts and must label superseded state as historical instead of duplicating a
+second current handoff. Active case records continue to own case-specific
+pins, approvals, evidence, and cleanup state.
+
 The bootstrap prints this handoff, but printing is not a substitute for reading
 the complete active case configuration, case narrative, claim review,
 qualification, report, and protocol.

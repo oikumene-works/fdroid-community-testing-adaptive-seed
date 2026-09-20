@@ -12,7 +12,7 @@ announcement, or modification to the original starter kit.
 
 - **Owner:** `oikumene-works`
 - **Repository:** `fdroid-community-testing-adaptive-seed`
-- **Proposed URL:** <https://github.com/oikumene-works/fdroid-community-testing-adaptive-seed>
+- **Public URL:** <https://github.com/oikumene-works/fdroid-community-testing-adaptive-seed>
 - **Visibility:** public
 - **Default branch:** `main`
 - **License:** Zero-Clause BSD (`0BSD`)

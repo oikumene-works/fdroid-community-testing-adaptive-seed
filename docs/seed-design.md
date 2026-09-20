@@ -26,7 +26,7 @@ The terminal entry point exposes the same contract:
 Both interfaces must follow one growth protocol. Natural language must not
 weaken the command-line safety or authority model.
 
-## Current slice contract
+## Current growth contract
 
 - **Present need:** derive, beside a fixed reference kit, a small beginning that
   can explain and adapt to its local environment.
@@ -45,16 +45,16 @@ Growth is a controlled state transition, not autonomous self-expansion.
 | --- | --- | --- |
 | Discover | Inspect local tools, constraints, and existing state | Read-only; grants no authority |
 | Report | Classify every relevant finding | Read-only; no hidden fallback |
-| Propose | Name one smallest useful growth slice | No change; disclose effects and stop condition |
-| Approve | Bind the operator's choice to that exact slice | Human decision; not a script token |
+| Propose | Name one smallest useful next step | No change; disclose effects and completion condition |
+| Approve | Bind the operator's choice to that exact step | Human decision; not a script token |
 | Apply | Make only the approved local changes | Never implies executable or external authority |
 | Verify | Test the clean path and one adapted path | Report failures and unknowns truthfully |
 | Record | Keep portable decisions tracked and machine facts local | No credentials or private evidence |
-| Stop | State what is ready and what still needs approval | Do not continue into another slice |
+| Stop | State what is ready and what still needs approval | Do not continue into another step |
 
 The current implementation reaches **Verify** only for the selected offline
 reference lane. Every later effect or authority boundary still requires a new
-slice and decision.
+step and decision.
 
 ## Communication contract
 
@@ -63,14 +63,14 @@ human decision.
 
 - Ask no question before safe read-only discovery.
 - Do not ask the grower for a fact the seed can inspect locally.
-- Present one recommended slice, its effects, its stop condition, and at most
-  three choices: approve it for a later slice, request details, or stop.
+- Present one recommended step, its effects, its completion condition, and at
+  most three choices: choose it for a later step, request details, or stop.
 - Ask again whenever a later action crosses a new local-write, installation,
   network, executable, Android, credential, or external-mutation boundary.
-- Do not carry authority from one growth slice into another.
+- Do not carry authority from one growth step into another.
 - Report progress without narrating every command; explain the evidence behind
   `UNKNOWN`, `UNSUPPORTED`, or a blocked proposal.
-- End each applied slice with what changed, what was verified, and what still
+- End each applied step with what changed, what was verified, and what still
   requires a decision.
 
 The ideal first cycle is one grower request, one seed proposal, one grower
@@ -119,12 +119,12 @@ The following must remain portable and must not be weakened by adaptation:
 - independent community evidence never becomes an F-Droid decision;
 - third-party source, APKs, pages, metadata, and copied text are untrusted;
 - exact-state pinning and live rechecks precede executable work;
-- human authorization, an approved operational slice, case activation, and a
+- human authorization, an approved operational step, case activation, and a
   technical approval token remain distinct;
 - physical devices, personal profiles, credentials, and personal data are out
   of bounds;
 - every Android mutation targets one verified disposable emulator;
-- executable work includes verified cleanup in the same bounded slice;
+- executable work includes verified cleanup in the same bounded step;
 - public posting is separate from testing and report approval; and
 - learning a capability or preference never grants authority to use it.
 
@@ -189,9 +189,10 @@ Missing: Bubblewrap
 Unsupported: network-capable candidate lane
 Unknown: Android SDK package compatibility
 
-Proposed slice: create an ignored local profile for the existing Linux lane.
-Effects: local files only; no downloads, Android actions, or external changes.
-Stop: profile validated and next missing prerequisite reported.
+PROPOSED_STEP=Preview an ignored local profile for the existing Linux lane.
+EFFECTS=No file write, installation, network, Android action, or external change.
+DONE_WHEN=The exact profile has been shown without writing it.
+CHOICE=Preview this profile, request details, or stop.
 ```
 
 The wording may change after evaluation. The distinctions and stop boundary may
