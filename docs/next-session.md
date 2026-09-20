@@ -11,9 +11,8 @@ must preserve the published kit's safety and authority boundaries.
 
 - This independent local seed project preserves exact published starter-kit
   commit `5a54da63a58b22c8715778a31931394769b60d72` in its Git ancestry.
-- Local branch `main` tracks the HTTPS `origin`. The initial publication
-  approval was consumed; the post-publication record remains local until a
-  separate push approval.
+- Local branch `main` tracks the HTTPS `origin`. The initial publication and
+  the separately approved publication-record push are complete.
 - `docs/seed-design.md` defines the growth contract and layer boundaries.
 - `docs/seed-evolution.md` records the design change, mistakes, evidence, and
   learning policy intended for eventual public review.
@@ -48,8 +47,8 @@ must preserve the published kit's safety and authority boundaries.
 - The local sibling-project checkpoint is complete when the initial seed commit
   and final clean-worktree verification pass. No `.local` state was copied.
 - Publication is recorded in `docs/publication-plan.md`. The public repository
-  is `oikumene-works/fdroid-community-testing-adaptive-seed`; `main` points to
-  approved commit `e371eb9ccdf298330a9c20fb51a35b85dfc765d1`.
+  is `oikumene-works/fdroid-community-testing-adaptive-seed`; its public `main`
+  contains the reviewed publication record.
 - Android Studio's `.idea` directory is ignored local state. A publication-gate
   check caught its workstation path after a project switch; it was not tracked.
 - Only growth-session guidance in `session-bootstrap.sh` changed; all
@@ -73,8 +72,8 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next slice
 
-Stop at the completed initial-publication checkpoint. Any push of the local
-publication record or later public mutation requires its own exact approval.
+Stop at the completed publication-record checkpoint. Any later push or public
+mutation requires its own exact approval.
 
 No further script implementation, candidate selection, network use, executable
 download, Android action, push, branch publication, tag, release, or metadata
