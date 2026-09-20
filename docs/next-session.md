@@ -47,8 +47,8 @@ must preserve the published kit's safety and authority boundaries.
   and final clean-worktree verification pass. No `.local` state was copied.
 - Publication preparation is documented in `docs/publication-plan.md`. The
   proposed public destination is
-  `oikumene-works/fdroid-community-testing-seed`; an anonymous check returned
-  404 on 2026-09-20, which is not a reservation. No remote was created.
+  `oikumene-works/fdroid-community-testing-adaptive-seed`; an anonymous check
+  returned 404 on 2026-09-20, which is not a reservation. No remote was created.
 - Only growth-session guidance in `session-bootstrap.sh` changed; all
   community-testing gates and operational actions retain their behavior.
 - No active candidate is selected in the distributed repository.

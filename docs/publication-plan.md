@@ -14,8 +14,8 @@ approval.
 ## Proposed public identity
 
 - **Owner:** `oikumene-works`
-- **Repository:** `fdroid-community-testing-seed`
-- **Proposed URL:** <https://github.com/oikumene-works/fdroid-community-testing-seed>
+- **Repository:** `fdroid-community-testing-adaptive-seed`
+- **Proposed URL:** <https://github.com/oikumene-works/fdroid-community-testing-adaptive-seed>
 - **Visibility:** public
 - **Default branch:** `main`
 - **License:** Zero-Clause BSD (`0BSD`)
@@ -38,10 +38,10 @@ Proposed topics:
 - `adaptive-seed`
 - `shell`
 
-The public repository name is still a proposal. An anonymous GitHub check on
-2026-09-20 found the original project public and the proposed seed URL returning
-404. A 404 is not a reservation; availability must be rechecked immediately
-before an approved create operation.
+The operator selected this public name during preparation. An anonymous GitHub
+check on 2026-09-20 found the original project public and the proposed adaptive
+seed URL returning 404. A 404 is not a reservation; availability must be
+rechecked immediately before an approved create operation.
 
 ## Local source audit
 
@@ -101,12 +101,12 @@ delete automatically; inspect public and authenticated state first.
 The proposed commands, to be re-presented rather than run without approval, are:
 
 ```sh
-gh repo create oikumene-works/fdroid-community-testing-seed --public \
+gh repo create oikumene-works/fdroid-community-testing-adaptive-seed --public \
   --description 'Adaptive companion to the Guarded F-Droid Community Testing Starter Kit: discovers local capabilities, grows through explicit choices, and preserves strict approval boundaries.'
 git remote add origin \
-  https://github.com/oikumene-works/fdroid-community-testing-seed.git
+  https://github.com/oikumene-works/fdroid-community-testing-adaptive-seed.git
 git push --set-upstream origin main
-gh repo edit oikumene-works/fdroid-community-testing-seed \
+gh repo edit oikumene-works/fdroid-community-testing-adaptive-seed \
   --default-branch main \
   --add-topic fdroid --add-topic android-testing \
   --add-topic community-testing --add-topic adaptive-seed --add-topic shell

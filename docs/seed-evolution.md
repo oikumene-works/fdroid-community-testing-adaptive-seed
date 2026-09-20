@@ -213,3 +213,8 @@ The bounded audit retained three findings:
 | The seed README named the original but did not link its public source or exact derivation commit | A reviewer had to trust local prose to find the comparison base | Add public links to the original repository and immutable commit | Adopted now; Codex-owned |
 | The proposed GitHub URL returned 404 anonymously | The name appears available, but treating absence as a reservation could create a race or wrong-target publication | Recheck immediately before an approved create action and stop on any change | Adopted as a later gate |
 | Public repository metadata had not been decided | Creating first and improvising description or topics would make the external mutation under-specified | Record the proposed owner, name, visibility, description, topics, and bounded initial surface | Adopted now; operator approval still required |
+
+## Public name refinement
+
+The operator selected `fdroid-community-testing-adaptive-seed` because `adaptive` exposes
+the different premise without implying replacement; the shorter name was never public.
