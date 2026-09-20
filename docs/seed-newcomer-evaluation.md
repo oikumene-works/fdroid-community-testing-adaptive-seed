@@ -162,12 +162,51 @@ did not run profile preview, create `.local`, change Git, or use repository
 network access. This verifies one fixed-model interpretation of the revised
 wording. It is not a human comprehension result or a public-acquisition test.
 
+## Public ZIP and Git-less acquisition
+
+The next bounded question was whether the public GitHub ZIP could provide a
+useful `Grow this seed` path without Git metadata. Exact public commit
+`b0beec08c32ef321b2917d4fcbcacfc4e6de363b` was downloaded anonymously. SHA-256:
+`305ac44ffa0f156e1e3512479d2cea0adbbffe93d2bd110482e3db2c1889ed5e`.
+All 89 entries were checked for one expected root, safe relative paths, and no
+symbolic links. The extracted `seed` and bootstrap files matched the same local
+historical commit; the copy contained no `.git` directory.
+
+Direct bootstrap and `./seed grow` both ran successfully and changed no file.
+Discovery truthfully classified `workspace:git` as `UNKNOWN`. The public seed
+then proposed a generic review of the unsupported or missing host foundation.
+Its profile path is not available in this state: profile compatibility requires
+a verified Git worktree, and an attempted profile command would refuse it.
+
+A fresh `gpt-5.6-sol` agent received only `Grow this seed`. Codex CLI first
+refused to start outside a trusted Git directory. The evaluation was repeated
+with only its documented `--skip-git-repo-check` test-harness override; this
+separated the CLI's gate from the seed. The agent ran bootstrap and read-only
+growth, repeated the seed's host-foundation proposal, and stopped. The tree and
+all file digests remained unchanged; no `.git` or `.local` state appeared.
+
+The agent's final response named missing KVM access and the unsupported network
+lane but omitted the Git-worktree uncertainty. Its same-session, no-action
+debrief acknowledged that it gave no concrete newcomer-ready next step and did
+not distinguish which findings block profile preview. That is retrospective
+self-report, not independent evidence of its reasoning.
+
+Technical ZIP download, validation, bootstrap, discovery, and mutation safety
+therefore passed. The intended newcomer continuation is incomplete: a plain ZIP
+does not satisfy the seed's Git-worktree prerequisite, the CLI needs its own
+non-Git override in this harness, and the public seed does not explain a
+safe route from the generic proposal to profile preview. This does not decide
+whether Git metadata is invariant or optional; that is a separate design
+decision. The archive, copy, and agent session were removed after verification.
+
 ## Evaluation limits
 
 - These were agent evaluations, not a human usability study. No unfamiliar
   non-technical person has tested acquisition or comprehension.
-- The public proxy tested a Git clone, not GitHub ZIP acquisition or Git-less
-  continuation.
+- The ZIP result covers one Linux/Codex CLI environment and exact public commit
+  `b0beec0`; it does not establish general archive or Git-less usability. The
+  newer plain-language changes remain local and were not part of that public
+  archive.
 - The fixed-model comparison had only two baseline runs and one recording
   intervention. It cannot establish rates or causal benefit, and live
   decision recording is reactive rather than a neutral observation method.

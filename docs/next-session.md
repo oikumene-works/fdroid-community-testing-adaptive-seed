@@ -70,8 +70,15 @@ must preserve the published kit's safety and authority boundaries.
 - Codex CLI's read-only workspace mounts made the nominally empty acquisition
   root non-empty. Evaluators recovered by cloning into another directory; this
   is a harness confounder, not a demonstrated seed packaging defect.
-- No unfamiliar non-technical person has run the acquisition test. GitHub ZIP
-  acquisition and Git-less continuation also remain untested.
+- A technical public-ZIP evaluation downloaded and validated exact public
+  commit `b0beec0`, then ran bootstrap and discovery without `.git`. Acquisition
+  and read-only safety passed, but the profile path requires a verified Git
+  worktree and the generic host-foundation proposal gives no specific newcomer
+  route to one. Codex CLI also required `--skip-git-repo-check` before the agent
+  could start in the extracted directory. The agent stopped correctly but did
+  not surface the Git uncertainty in its final response.
+- No unfamiliar non-technical person has run the acquisition or comprehension
+  test. The ZIP result is a technical agent proxy, not human usability evidence.
 - Migration Slice 5's relationship decision is complete. The published starter
   kit remains usable and undeprecated; the seed is an independent alternative
   intended as this separate project. `docs/starter-kit-seed-comparison.md` records the
@@ -114,13 +121,16 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next step
 
-Pause at the completed terminology and documentation-consistency checkpoint.
-The safest next bounded step is a technical GitHub ZIP and Git-less acquisition
-test. A different-agent or wording experiment should begin only with a
-specific comparison question, not as open-ended repetition. A real human test
-remains parked until a suitable participant exists. Do not combine unrelated
-steps. Any later push or public mutation requires its own exact approval and a
-freshly verified external identity.
+Pause at the completed technical public-ZIP and Git-less acquisition
+checkpoint. Before changing implementation, decide whether a verified Git
+worktree is a genuine invariant of this seed or an acquisition prerequisite
+that the seed should explain and help the grower establish through a separately
+approved step. The smallest useful outcome is that one decision plus its
+newcomer-facing consequence; stop before implementation. Repeating the same
+agent run has little marginal value, and a real human test remains parked until
+a suitable participant exists. Do not combine unrelated steps. Any later push
+or public mutation requires its own exact approval and a freshly verified
+external identity.
 
 No further seed feature implementation, candidate selection, executable
 download, Android action, push, branch publication, tag, release, or metadata
