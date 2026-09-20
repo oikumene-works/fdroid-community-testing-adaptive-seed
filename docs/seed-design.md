@@ -2,17 +2,15 @@
 
 ## Status
 
-This document defines an independent adaptive alternative to the published
-guarded starter kit. It can discover, propose, create one ignored profile, and
-run offline checks after exact approval; gates and action scripts retain their behavior.
+This document defines an independent adaptive alternative to the published guarded
+starter kit. It can discover, propose, create one ignored profile, and run offline
+checks after exact approval; gates and action scripts retain their behavior.
 
-The seed must preserve the current safety boundaries while making the first
-experience simple enough for a newcomer with no project history.
+The seed must preserve current safety boundaries while remaining simple enough for a newcomer with no project history.
 
 ## First user story
 
-A newcomer obtains a cloned Git worktree, opens its root with a repository-aware
-agent, and says:
+A newcomer obtains a cloned Git worktree, opens its root with a repository-aware agent, and says:
 
 > Grow this seed.
 
@@ -27,14 +25,12 @@ initializes Git or replaces a ZIP; neither interface may weaken safety or author
 
 ## Current growth contract
 
-- **Present need:** derive, beside a fixed reference kit, a small beginning that
-  can explain and adapt to its local environment.
+- **Present need:** derive, beside a fixed reference kit, a small beginning that can explain and adapt to its local environment.
 - **Smallest useful outcome:** truthful discovery, one ignored profile, and
   guarded use of existing offline verification without installation, network
   access, Android mutation, or external mutation.
 - **Stop condition:** the local reference lane passes the repository checks and
-  fictional dry run. No candidate-handling or Android action behavior is
-  changed.
+  fictional dry run. No candidate-handling or Android behavior is changed.
 
 ## Growth protocol
 
@@ -51,9 +47,8 @@ Growth is a controlled state transition, not autonomous self-expansion.
 | Record | Keep portable decisions tracked and machine facts local | No credentials or private evidence |
 | Stop | State what is ready and what still needs approval | Do not continue into another step |
 
-The current implementation reaches **Verify** only for the selected offline
-reference lane. Every later effect or authority boundary still requires a new
-step and decision.
+The current implementation reaches **Verify** only for the selected offline reference
+lane. Every later effect or authority boundary still requires a new step and decision.
 
 ## Communication contract
 
@@ -125,7 +120,12 @@ The following must remain portable and must not be weakened by adaptation:
   of bounds;
 - every Android mutation targets one verified disposable emulator;
 - executable work includes verified cleanup in the same bounded step;
-- public posting is separate from testing and report approval; and
+- public posting is separate from testing and report approval;
+- project usefulness, credibility, and independent continuation must rest on
+  repository evidence, never a creator's identity, endorsement, availability,
+  contact, or approval; attribution is provenance rather than authority,
+  stewardship is replaceable and implies no canonical implementation or
+  personal support, and documentation must not create founder dependence; and
 - learning a capability or preference never grants authority to use it.
 
 ### Discovery

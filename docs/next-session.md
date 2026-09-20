@@ -14,6 +14,10 @@ must preserve the published kit's safety and authority boundaries.
 - Local branch `main` tracks the HTTPS `origin`. The initial publication and
   the separately approved publication-record push are complete.
 - `docs/seed-design.md` defines the growth contract and layer boundaries.
+- Its invariant kernel also requires project independence: usefulness,
+  credibility, and independent continuation must not depend on a creator's
+  identity, endorsement, availability, or approval. Attribution remains
+  provenance, not personal authority.
 - `docs/seed-evolution.md` records the design change, mistakes, evidence, and
   learning policy intended for eventual public review.
 - `docs/process-audit-2026-09-20.md` audits the path from the seed idea through

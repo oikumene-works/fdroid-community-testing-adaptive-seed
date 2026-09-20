@@ -2,9 +2,10 @@
 
 This repository is an independent adaptive alternative to the [Guarded F-Droid
 Community Testing Starter Kit](https://github.com/oikumene-works/fdroid-community-testing-starter-kit).
-It discovers local conditions, proposes one bounded next step, and preserves
-the guarded workflow for independent testing of third-party F-Droid new-app
-merge requests.
+It discovers local conditions and proposes one bounded next step while
+preserving the guarded workflow. It is a project artifact, not a
+founder-centered initiative: its use, credibility, and continuation do not
+depend on any creator's identity, endorsement, availability, or approval.
 
 This is not an F-Droid project. A local result is community evidence only, not an F-Droid review, acceptance decision, security audit, or endorsement.
 
@@ -12,9 +13,8 @@ This is not an F-Droid project. A local result is community evidence only, not a
 
 This project was derived from exact published [starter-kit commit
 `5a54da63`](https://github.com/oikumene-works/fdroid-community-testing-starter-kit/commit/5a54da63a58b22c8715778a31931394769b60d72).
-The original kit remains independently usable and is not replaced or
-deprecated. This seed adds local discovery, one bounded proposal, an ignored
-profile, and guarded verification.
+The original kit remains independently usable and undeprecated. This seed adds
+local discovery, one bounded proposal, an ignored profile, and guarded verification.
 
 Have a repository-aware agent clone this project. GitHub's `Download ZIP` can
 run read-only discovery but is not supported for profile growth. The seed never
