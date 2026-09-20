@@ -125,9 +125,9 @@ must preserve the published kit's safety and authority boundaries.
 Pause at the completed Git-acquisition correction, clean fixed-model recheck,
 and repository evaluation-method checkpoint. No further identical agent run has
 material marginal value. A real human test remains parked until a suitable
-participant exists. The next separate decision is whether to review the local
-commit series for publication; any push or other public mutation requires its
-own exact approval and a freshly verified external identity.
+participant exists. Further work must begin with a separately named need and
+bounded scope. Any external mutation requires its own exact approval and a
+freshly verified external identity.
 
 No further seed feature implementation, candidate selection, executable
 download, Android action, push, branch publication, tag, release, or metadata
