@@ -16,6 +16,9 @@ must preserve the published kit's safety and authority boundaries.
 - `docs/seed-design.md` defines the growth contract and layer boundaries.
 - `docs/seed-evolution.md` records the design change, mistakes, evidence, and
   learning policy intended for eventual public review.
+- `docs/process-audit-2026-09-20.md` audits the path from the seed idea through
+  publication, including operator actions, Codex actions, remaining evidence
+  gaps, and known documentation drift. Its recommendations are not implemented.
 - `docs/seed-migration.md` maps the current kit into bounded migration slices.
 - The accepted communication contract is: discover facts without questioning
   the grower, present one recommended slice with at most three choices, and ask
@@ -58,22 +61,30 @@ must preserve the published kit's safety and authority boundaries.
   evidence is expected to exist.
 - No further push, external upload, public comment, or other service mutation
   is authorized by this handoff.
+- The operator requested a pause and expects a later session to use a different
+  ChatGPT account. Treat repository state as the handoff and infer no identity,
+  authority, credential access, or approval from the earlier chat or account.
 
 ## Startup
 
 1. Run `./scripts/session-bootstrap.sh`.
-2. Read `AGENTS.md` and this file. For a grow-only session with no active case,
-   run `./seed grow`, report its one proposal, and stop for a choice.
-3. Before community-testing work, read `docs/session-continuity.md`,
+2. Read `AGENTS.md`, this file, and `docs/process-audit-2026-09-20.md`. For a
+   grow-only session with no active case, run `./seed grow`, report its one
+   proposal, and stop for a choice.
+3. Inspect Git status, HEAD, remotes, and any local changes before acting. If an
+   external action is later proposed, reverify and present the active external
+   account; do not infer it from the previous ChatGPT account.
+4. Before community-testing work, read `docs/session-continuity.md`,
    `docs/protocol.md`, and `docs/first-case-runbook.md` completely.
-4. If `cases/active-case` names a case, read that case's `case.env`, `case.md`,
+5. If `cases/active-case` names a case, read that case's `case.env`, `case.md`,
    `claims.md`, `qualification.md`, and `report.md` completely.
-5. Verify the worktree and remote state before acting.
 
 ## Current gate and safest next slice
 
-Stop at the completed publication-record checkpoint. Any later push or public
-mutation requires its own exact approval.
+Pause at the completed process-audit checkpoint. On resume, choose at most one
+bounded next slice: documentation consistency or a real newcomer acquisition
+test. Do not begin either automatically. Any later push or public mutation
+requires its own exact approval and a freshly verified external identity.
 
 No further script implementation, candidate selection, network use, executable
 download, Android action, push, branch publication, tag, release, or metadata
