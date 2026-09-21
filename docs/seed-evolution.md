@@ -208,3 +208,10 @@ Git-less recheck named the prerequisite, offered cloning help or stop, made no
 change, and stopped. The reusable evidence rules are separated into the
 [Agent Evaluation and Debrief Method](agent-evaluation-method.md); retrospective
 self-report is not treated as direct access to model reasoning.
+
+The first bounded real-case growth integration attempt and its correction are
+recorded in the
+[Real-Case Growth Evaluation](real-case-growth-evaluation-2026-09-21.md).
+An ignored local profile exposed a live-worktree test assumption before any
+candidate or external action; the corrected test passed an isolated
+profile-bearing offline-verification rerun.
