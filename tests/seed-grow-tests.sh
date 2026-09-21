@@ -65,10 +65,11 @@ after_local="$(snapshot_local_state)"
 }
 require_output "$normal_output" "ADAPTIVE SEED DISCOVERY"
 require_output "$normal_output" "SEED_STATUS=GROWTH_PROPOSAL"
-require_output "$normal_output" \
-    "PROPOSED_STEP=Preview an ignored local profile for the existing Linux reference lane."
-require_output "$normal_output" \
-    "DONE_WHEN=The exact profile has been shown without writing it."
+# The development worktree may legitimately have absent, exact, or conflicting
+# ignored-local profile state. Exact state-specific proposals are exercised in
+# controlled repositories below; this live-root check owns state preservation.
+require_output "$normal_output" "PROPOSED_STEP="
+require_output "$normal_output" "DONE_WHEN="
 reject_output "$normal_output" "PROPOSED_SLICE="
 reject_output "$normal_output" "STOP="
 require_output "$normal_output" "READY       seed-capability:github-adapter"
@@ -202,6 +203,15 @@ printf '%s\n' \
 chmod +x "$profile_repo/scripts/check-all.sh" \
     "$profile_repo/scripts/fictional-dry-run.sh"
 git -C "$profile_repo" init -q
+
+initial_profile_output="$(ANDROID_SDK_ROOT="$profile_sdk" \
+    "$profile_repo/seed" grow)"
+require_output "$initial_profile_output" \
+    "PROPOSED_STEP=Preview an ignored local profile for the existing Linux reference lane."
+require_output "$initial_profile_output" \
+    "DONE_WHEN=The exact profile has been shown without writing it."
+require_output "$initial_profile_output" \
+    "CHOICE=Preview this profile, request details, or stop."
 
 preview_output="$(ANDROID_SDK_ROOT="$profile_sdk" \
     "$profile_repo/seed" grow --preview-profile)"
