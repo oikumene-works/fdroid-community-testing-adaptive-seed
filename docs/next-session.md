@@ -44,16 +44,15 @@ must preserve the published kit's safety and authority boundaries.
   Git-less copy, missing Git, profile-guard refusal, supported and unsupported
   hosts, profile adaptation, offline verification, failure stops, conflicts,
   and invalid commands or guards.
-- A bounded real-case growth evaluation of public commit `ff45f27` created the
-  exact ignored profile and then stopped before the fictional dry run because
-  the live-root growth test incorrectly assumed that no profile existed. No
-  candidate was selected and no network, APK, Android, credential, or external
-  action occurred. `docs/real-case-growth-evaluation-2026-09-21.md` preserves
-  the failure, cause, correction, rerun, and evidence limits.
-- Corrective commit `bb9bef6` moves the exact absent-profile expectation into a
-  controlled test repository. The full checks and an isolated exact-commit
-  profile-bearing offline verification passed while preserving the profile and
-  Git state. Public acquisition of the correction has not yet been evaluated.
+- A bounded real-case growth evaluation of public commit `ff45f27` exposed a
+  profile-sensitive test-isolation defect before candidate selection. Commit
+  `bb9bef6` corrected the test and `f53fc5a` published the evidence record.
+- A fresh public HTTPS clone at exact commit `f53fc5a` then followed every
+  growth choice through offline verification. The full checks and fictional
+  dry run passed; the profile and Git state were preserved, no runtime residue
+  remained, and no candidate, APK, Android, credential, or external action was
+  used. `docs/real-case-growth-evaluation-2026-09-21.md` records both outcomes
+  and their evidence limits.
 - Migration Slice 2 is complete. Its ignored profile behavior was verified in
   the design worktree. This independent project intentionally starts without a
   profile until one is separately previewed and approved.
@@ -136,14 +135,12 @@ must preserve the published kit's safety and authority boundaries.
 
 ## Current gate and safest next step
 
-Pause at the corrected profile-bearing offline-verification checkpoint. The
-next materially useful seed evaluation is one fresh public-acquisition rerun
-after the correction and this evidence record have been separately approved
-for publication. That rerun stops at successful offline verification before
-candidate selection. Repeating the local corrected-commit run has no material
-marginal value. A real human test remains parked until a suitable participant
-exists. Any external mutation requires its own exact approval and a freshly
-verified external identity.
+Pause at the completed public-acquisition and profile-bearing offline-
+verification checkpoint. Repeating the same agent integration run has no
+material marginal value. A real human test remains parked until a suitable
+participant exists; other work must begin with a separately named need and
+bounded scope. Any candidate selection or external mutation requires its own
+exact approval and, where relevant, a freshly verified external identity.
 
 No further seed feature implementation, candidate selection, executable
 download, Android action, push, branch publication, tag, release, or metadata

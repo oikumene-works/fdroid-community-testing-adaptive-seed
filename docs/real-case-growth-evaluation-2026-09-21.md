@@ -94,16 +94,41 @@ OFFLINE_VERIFY_STATUS=PASS
 The corrected rerun also performed no network, APK, emulator, ADB, credential,
 upload, or external mutation.
 
+## Public-acquisition recheck
+
+After commits `bb9bef6` and `f53fc5a` were published, a new clone was acquired
+from the public HTTPS remote. Both local `HEAD` and `origin/main` resolved to
+exact commit `f53fc5a8ab6c3220de3523ada3849ec9aec03d26`.
+
+The operator again made each growth choice separately: initial discovery,
+profile preview, exact profile creation, continued discovery, offline-plan
+preview, and exact offline verification. The profile was mode `600`, remained
+byte-for-byte unchanged through verification, and stayed ignored. The complete
+repository checks and fictional dry run passed. Independent before-and-after
+checks also found a clean Git worktree and no runtime residue.
+
+The frozen result was:
+
+```text
+EVALUATION_HEAD=f53fc5a8ab6c3220de3523ada3849ec9aec03d26
+FULL_LOCAL_STATE_PRESERVED=YES
+GIT_STATE_PRESERVED=YES
+OFFLINE_VERIFY_STATUS=PASS
+RUNTIME_RESIDUE=NONE
+```
+
+No candidate was selected. The run used the network only for the approved
+read-only public HTTPS clone; growth and verification used no network, APK,
+emulator, ADB, credential, upload, or external mutation.
+
 ## Evidence limits and next gate
 
 The first failure remains evidence against public commit `ff45f27`; the
-corrected rerun does not erase it. The rerun proves the corrected commit in an
-isolated local Git clone, not acquisition from the corrected public remote.
-No raw private transcript, machine path, local profile, or generated test
-artifact is retained.
+corrected reruns do not erase it. The public-acquisition recheck closes the
+specific integration question; another identical agent run has no material
+marginal value. It still does not provide unfamiliar-user, non-technical-human,
+cross-platform, candidate-selection, executable, or Android evidence.
 
-A useful follow-up is one new public-acquisition run after the correction is
-separately approved and published. It should begin from a fresh clone of the
-new public commit and may proceed only to the same read-only offline
-verification boundary. Candidate selection and every executable, Android, or
-external effect remain outside that evaluation unless separately authorized.
+No raw private transcript, machine path, local profile, or generated test
+artifact is retained. Candidate selection and every executable, Android, or
+external effect remain separate future decisions.
