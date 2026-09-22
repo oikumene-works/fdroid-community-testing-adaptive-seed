@@ -1,7 +1,8 @@
 # Workflow-link reply preparation — 2026-09-22
 
-DRAFT ONLY. Not approved or published. Do not use the original report posting
-helper by clearing its posted-note receipt; this is a distinct later reply.
+APPROVED FOR PUBLICATION; not yet posted at this checkpoint. Do not use the
+original report posting helper by clearing its posted-note receipt; this is a
+distinct later reply.
 
 The operator approved checking both public entry points, preparing bounded
 newcomer guidance and checking 1.0.13 before drafting a short reply. He requested
@@ -9,17 +10,25 @@ that reusable answers live in the linked documentation, with direct individual
 help only when necessary. He also requested explaining the value of a perspective
 from someone unfamiliar with the workflows, which neither collaborator now has.
 The draft invites optional experience with either workflow, not an obligation to
-evaluate both or enroll in research. The revised reply explicitly identifies Codex as the executor of the source
-comparison and correction review and as the reply drafter. It does not claim
-human execution or independent human verification.
+evaluate both or enroll in research. The reply explicitly identifies Codex as
+the executor of the source comparison and correction review. Codex also drafted
+the reply; the operator explicitly requested removing only that drafting clause
+from the public reply and approved the full chain with this change. No human
+execution or independent human verification is claimed.
 
-Proposed destination: fdroid/fdroiddata!49547; established account: Jyriwee.
+Approved destination: fdroid/fdroiddata!49547; established account: Jyriwee.
 Canonical text: workflow-links-draft.md. SHA-256 with final newline:
-25d06a999e44d30a8556c656d8ac2c76cc2032e0540a940c6fa61cd7c2ae7be9.
+8980b7a638b5e3cb3cbc9a8c07122cac770c73a232a79817e563fc80d1629adb.
 
-## Current review checkpoint
+## Approved publication checkpoint
 
-The operator requested this revision and explicitly prohibited publication.
+On 2026-09-22 the operator approved the complete publication chain, then
+explicitly continued that approval with only the final drafting clause removed.
+This supersedes the preparation-only prohibition. Approval covers the exact
+revised body/digest above, fdroid/fdroiddata!49547 as @Jyriwee, the reviewed
+guide commits and related reply/closeout records on both existing GitHub main
+branches as oikumene-admin. No tag, release, forced push, previous-note edit,
+Android action or other repository is included.
 The draft now explains why no new APK test was run: application code, resources
 and build configuration match 1.0.12 except for version numbers, so the reported
 description fixes were checked in source. Runtime evidence remains specific to
@@ -30,19 +39,21 @@ The already checked local guide commits are:
 - Starter kit: 969e2d60bee8d4a868dc707bc74a48aafdbe5bd0.
 - Adaptive seed: a83116a0994a2398db703f4d42cd9e61c2ad97fe.
 
-This reply revision and its records form a subsequent local seed checkpoint.
-No live remote refresh or public-link verification occurred in this revision.
-After explicit publication approval, the required order is:
+The earlier preparation checkpoint was e7ef90233529beb8e8dd0c1b708597ea380e7fc2.
+The final clause removal and this approval record form the clean pre-publication
+checkpoint. Live reads confirmed the reviewed MR head, successful pipeline,
+1.0.13 tag/release and both unchanged public repository baselines below.
+Authenticated accounts match the approved identities. The required order is:
 
 1. Push the reviewed guide changes to both existing repositories.
 2. Verify both public README entrances and linked starting guides.
 3. Only then post the exact approved reply to the destination/account above,
    after the normal fresh-state and duplicate checks, and verify its receipt.
 
-Until that decision, stop at the checked local checkpoint and display the exact
-reply for operator review. Text review alone does not authorize publication.
+Continue the authorized chain from a checked clean checkpoint. On any ambiguous
+POST result, recover through read-only lookup and never retry automatically.
 
-## Public links and documentation work
+## Preparation history and public baselines
 
 Both GitHub repositories were verified public with default branch main:
 
@@ -90,8 +101,8 @@ local documentation commits. No script or execution gate was changed.
   perspective and requested documentation-first help. The draft invites optional
   feedback; it does not claim a human onboarding test or a research enrollment.
 
-Stop at checked local commits and operator review. Start a fresh session for
-any later authorized publication; verify both guide links before posting.
+The preparation slice stopped at checked local commits and operator review.
+The later approval above now authorizes publication after public guide checks.
 
 Revision retrospective: the retained source comparison was sufficient for this
 wording change; no new environment or runtime work was needed. Codex made the

@@ -11,4 +11,4 @@ Each README links to a short starting guide. If you try either, your experience 
 
 If a question exposes a gap in the guidance, we would aim to improve the shared instructions so the answer helps the next person too.
 
-Codex performed the source comparison and correction review and drafted this reply.
+Codex performed the source comparison and correction review.

@@ -2,28 +2,27 @@
 
 ## Current task and gate
 
-Local documentation and revised reply preparation is complete; repository checks
-passed. The operator requested the explicit no-new-APK rationale and prohibited
-publication. The revised exact text awaits review; it identifies Codex's source
-comparison, correction review and drafting contribution.
-Read cases/battleship-49547-v1012/workflow-links-record.md, its draft and
-v1013-source-review.md. The developer requested both workflow links in note
-3882563252. Codex verified the five reported description corrections at 1.0.13
-source 35e98a6744eb32d9934278925f374dad61abf24e. The app tree is identical to
-1.0.12; no new APK qualification or Android run occurred or is recommended for
-this description-only delta. Prior runtime evidence remains specific to 1.0.12.
+The operator approved the complete workflow-link publication chain on 2026-09-22,
+then requested removal of only the final reply-drafting clause and explicitly
+continued the whole chain. Canonical body, approved SHA-256, destination/account,
+guide commits and publication receipts belong to
+cases/battleship-49547-v1012/workflow-links-record.md. Read that record and
+workflow-links-draft.md before any public action. The exact reply identifies
+Codex's source comparison and correction review; Codex also prepared the draft.
 
-Both workflows now have local start-here guides and documentation-first help.
-The traditional-kit changes are in sibling checkout starter-kit-docs, based on
-its public main; the historical comparison checkout is untouched. The short
-reply values a perspective unfamiliar with either workflow, without requiring
-both to be evaluated. Neither guide updates nor reply are published. A later
-explicit publication decision must cover both guide changes and the exact reply;
-push the reviewed guide changes to both repositories first, then verify both
-public README entrances and starting guides, and only then post the approved
-MR reply. No push/post authority is inherited. No external action occurred in
-the reply-revision slice; the draft digest and guide commits are recorded in
-workflow-links-record.md.
+At this checkpoint publication has not begun. The authorized order is guide
+pushes to both existing repositories, public README/starting-guide verification,
+then the exact approved MR reply as @Jyriwee, followed by verified receipt and
+closeout records. The starter-kit changes are in sibling starter-kit-docs;
+the historical comparison checkout is untouched. Do not repost an existing note
+or retry an ambiguous POST. No new approval is needed for this unchanged scope.
+
+The developer requested both links in note 3882563252. Codex verified the five
+reported description corrections at 1.0.13 source
+35e98a6744eb32d9934278925f374dad61abf24e; v1013-source-review.md owns evidence.
+The application code, resources and build configuration are unchanged from
+1.0.12 apart from version numbers. No new APK qualification or Android run
+occurred; prior runtime evidence remains specific to 1.0.12.
 
 ## Completed Android task
 
@@ -83,11 +82,11 @@ runtime proof, and old raw files remain unavailable.
 
 ## Stop and resume
 
-The 1.0.12 execution and publication closeout is complete. The current source
-check, guide changes and reply draft are prepared for operator review. Stop at
-the checked local commits. Use a fresh session before any authorized public
-action; recheck exact scope, text, destination and current state. No automatic
-monitoring, additional Android test or public reply is authorized.
+The 1.0.12 execution and report publication are complete. Continue the approved
+workflow-link publication in the order above, then stop after verified receipts,
+clean local worktrees and remote state. No monitoring, additional Android test
+or further public reply is included. Existing passing checks apply only to the
+unchanged tree; run the required checks after this final text/record revision.
 The closeout audit remains in docs/seed-publication-evolution.md; parked research
 in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
 
