@@ -2,12 +2,17 @@
 
 ## Current task and gate
 
-New local task: address newcomer issue #1 in both workflow repositories. The
-operator authorized implementation and a reply draft, with the Battleship MR
-left quiet. Read [missing-tool-review.md](missing-tool-review.md) for exact
-scope, reproduced facts, tests and the canonical reply digest. No new push or
-issue comment has been approved. Stop at checked local commits for review.
-The completed publication history below remains unchanged.
+The issue #1 fixes in both workflow repositories are committed locally. The
+operator revised the shared reply; Codex finalized its wording and saved the
+same body in both repositories. Read [missing-tool-review.md](missing-tool-review.md)
+for implementation checkpoints, reproduction, tests and the canonical reply
+digest, then [missing-tool-reply.md](missing-tool-reply.md) for the exact text.
+No correction from this issue round has been pushed and no issue reply posted.
+No new push or issue comment has been approved. Continue in a fresh session:
+review the final reply and publication scope, then seek approval for pushing both
+repositories, verifying the linked public notes, and posting the issue replies
+in that order. Leave the Battleship MR quiet. Earlier publication is complete
+and must not be repeated.
 
 The complete workflow-link publication chain is finished. Both repositories'
 guides were pushed and verified publicly before the approved MR reply was sent.
