@@ -43,7 +43,7 @@ without an added newline. No raw API reply, source archive, trace, or APK is ret
 | [app/src/main/java/com/cocode/battleship/presentation/medals/SharedPreferencesMedalsStorage.kt](https://github.com/cocodedk/Battleship/blob/35189f727db1cc80bdc55e9996bdcaa443914571/app/src/main/java/com/cocode/battleship/presentation/medals/SharedPreferencesMedalsStorage.kt) | `8548748a69809d352fe885d4290ac02a609bd697e38507c45d6a5319522a7c66` |
 | [app/src/main/java/com/cocode/battleship/presentation/medals/MedalsViewModel.kt](https://github.com/cocodedk/Battleship/blob/35189f727db1cc80bdc55e9996bdcaa443914571/app/src/main/java/com/cocode/battleship/presentation/medals/MedalsViewModel.kt) | `668b14e4c6a2cb3e35624c96701266b38b4c1f4c9de71cacb28066b65cd5523d` |
 
-## Provider text fields
+## Provider text fields — original preflight
 
 - MR description: `78b705231b6ffe5991f08e77c99525793b42a70aaf84f66bb3b0c290da5652d6`.
 - Release body: `15fa0e0be36d863e398508c41ee9655524e8677925ed5d0cd3c39d6ef2fcce9f`.

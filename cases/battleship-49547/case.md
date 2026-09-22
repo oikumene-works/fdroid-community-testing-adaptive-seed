@@ -7,8 +7,9 @@ Inactive after the completed bounded Android execution and verified cleanup on
 APK_QUALIFICATION_STATUS=PASS retain their unchanged bound review digests.
 report.md owns the actual runtime observations, partial coverage and cleanup.
 One synthetic AI game reached victory; four weapons were used and career
-persistence passed the sampled cold-relaunch check. The reviewed MR comment is
-now prepared for exact operator approval; it has not been posted.
+persistence passed the sampled cold-relaunch check. The reviewed MR comment was
+separately approved, posted and verified as note 3881992480 by @Jyriwee.
+public-comment-record.md owns the exact body digest, receipt and authority.
 
 The original source-only observations remain recorded. Missing advertised two-player/drag
 paths, backup wording and stale descriptions are retained as product/documentation
@@ -49,7 +50,7 @@ checkpoint below. No F-Droid comment was posted.
   These began as expectations and were matched by the local APK qualification.
 - MR is open, non-draft, conflict-free; blocking_discussions_resolved=true.
   Labels: New App, review-requested, reproducible-builds; no waiting-on-response.
-- Latest non-system note `3871514834`, `2026-09-20T09:40:31.791Z`, author
+- Original preflight latest non-system note `3871514834`, `2026-09-20T09:40:31.791Z`, author
   cocodedk, acknowledges the testing queue. All note/discussion pages were read;
   no resolvable unresolved thread was present. No posting occurred.
 
@@ -393,3 +394,31 @@ acceptance, and the deleted raw data limits independent audit. Do not silently
 convert a disputed proposal into a new mandatory gate, claim human testing, or
 send a separate preliminary message without operator instruction. No report
 text, publication authority, external service state or runtime state changed.
+
+## Verified MR report publication — 2026-09-22
+
+The operator authorized the current reviewed report and subsequent relevant
+pushes. The unchanged canonical comment was posted once to fdroid/fdroiddata
+!49547 at 04:25:57.665Z as note 3881992480 by @Jyriwee. The helper's live recheck
+passed before POST, and its response plus a separate GET and paginated note
+inspection verified the exact body/author and one matching note.
+public-comment-record.md owns the permanent receipt and publication scope.
+
+case.env now records that posted note and the current latest non-system note.
+Original source-preflight note hashes remain historical in evidence-index.md.
+No claim/qualification digest or reviewed comment bytes changed. The temporary
+receipt was removed after durable capture; the only local runtime-related files
+remain the two configuration files. No Android action, upstream follow-up,
+label/discussion edit, release or additional message occurred.
+
+The user also authorized relevant pushes to the current seed origin/main.
+Only this case's runtime/report history and publication records are selected;
+the traditional-process comparison remains in its separate local clone.
+Repository publication receipts are recorded in docs/publication-plan.md.
+
+Retrospective: stock posting guards and direct GET verification sufficed;
+unchanged text/identity and a single matching note avoided ambiguity. Codex
+continued under the operator's current instruction without asking for the
+same approval again. Owner: Codex/shared; disposition: no implementation
+change. After publication and verification, stop; a later reviewer response
+is a separate task and no automatic reply is authorized.

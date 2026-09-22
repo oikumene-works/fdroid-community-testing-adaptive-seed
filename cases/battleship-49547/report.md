@@ -5,7 +5,8 @@ This is independent community evidence, not an F-Droid decision or a general
 security, privacy, accessibility or usability assessment. Codex executed all
 input through the seed's targeted ADB procedure and inspected transient UI trees
 and screenshots. No operator interaction or human usability test was recorded;
-possible passive observation is not evidence of either. No publication is approved.
+possible passive observation is not evidence of either. A separately approved
+MR comment derived from this report was later posted; see public-comment-record.md.
 
 ## Candidate and authority
 
@@ -173,7 +174,10 @@ cannot be independently re-audited from raw artifacts. Later local absence check
 corroborate current cleanup state, not the historical uninstall/wipe sequence.
 
 There was no push, issue/comment mutation, upload, release or other publication
-in this slice. Network access was read-only candidate verification, exact APK
+in the execution-through-cleanup slice. Network access was read-only candidate verification, exact APK
 retrieval and pinned source interpretation. Historical issue #55 and the earlier
-static-result repository publication remain as recorded in case.md. This report
-is local, sanitized and not approved for public posting.
+static-result repository publication remain as recorded in case.md. In a later
+reporting slice, the operator approved the sanitized Codex-attributed MR comment
+and relevant repository pushes. The comment is published as note 3881992480;
+public-comment-record.md owns its exact receipt. This later publication adds no
+runtime evidence and is not a F-Droid acceptance decision.
