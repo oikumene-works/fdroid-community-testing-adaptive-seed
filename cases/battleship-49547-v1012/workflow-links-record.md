@@ -1,9 +1,9 @@
-# Workflow-link reply preparation — 2026-09-22
+# Workflow-link reply publication — 2026-09-22
 
-GUIDES PUBLISHED AND VERIFIED. One MR-reply POST attempt has no confirmed
-receipt; repeated independent reads found zero copies. No automatic retry.
-The operator asked for more robust handling but has not yet approved a new
-send after this ambiguous attempt. Do not clear the original report receipt.
+POSTED AND VERIFIED as note 3882930526 by @Jyriwee. Both guides were published
+and checked first. Do not repost. The original uncertain attempt was followed
+by one explicitly approved new attempt; the receipt and limits are below.
+Do not clear or change the original 1.0.12 report's publication receipt.
 
 The operator approved checking both public entry points, preparing bounded
 newcomer guidance and checking 1.0.13 before drafting a short reply. He requested
@@ -135,7 +135,7 @@ body digest was unchanged. This adds no APK or runtime evidence.
 Publication receipts and current handoffs are closeout descendants in the same
 approved scope. They do not recursively record their own receipt-only pushes.
 
-## MR attempt and recovery boundary
+## First MR attempt and recovery boundary (historical)
 
 From clean checkpoint 67d542775a2a4d9610a1a2f79f56e3746b3040b5, Codex made one
 POST attempt after all public guide checks and duplicate checks passed. The
@@ -163,8 +163,9 @@ a verified request-construction defect and a plausible explanation of rejection,
 not proof of the original missing response's cause or a GitLab outage.
 Primary source: https://gitlab.com/gitlab-org/cli/-/blob/v1.107.0/internal/commands/api/http.go
 
-The one-case helper .local/runtime/workflow-reply-publish.py is ignored local
-recovery tooling, not a new portable workflow or changed protocol. SHA-256:
+The one-case helper .local/runtime/workflow-reply-publish.py was ignored local
+recovery tooling, not a new portable workflow or changed protocol. Its SHA-256
+before authorized use and subsequent cleanup was:
 eb5a65e5bf0dc8637af99260c249a05ba2f8b76b23463a67ac18564688821349.
 Default invocation performs read-only preflight. A send additionally requires
 --post-once and --approved-retry-sha256 with the approved body digest, plus actual
@@ -186,13 +187,63 @@ six published guide-file digests and zero exact reply copies. No new APK,
 Android session or deployed application website check occurred.
 
 Temporary loopback configuration and test fixtures were removed. The ignored
-helper and its public-data publication/recovery receipts remain intentionally
-for the pending action; no browser session was opened. Keep them until a verified
-MR receipt is recorded, then remove the bounded recovery artifacts.
+helper and its public-data publication/recovery receipts were retained only
+until the authorized retry and durable receipt below; no browser session was
+opened. Those bounded recovery artifacts were removed during final closeout.
 
 Retrospective: Codex's one-off response handling lost necessary diagnostics and
 caused this recovery detour; the correction retains them before validation.
 The operator requested reliability work, and no second send was inferred from
 that question. Existing Git/HTTP tooling sufficed; no general retry service,
-monitor or additional permanent workflow is introduced. Resume from this clean
-checkpoint after the retry decision; a new chat may use these records.
+monitor or additional permanent workflow is introduced. The checked recovery checkpoint was 994a8731ec5edfd76f1efc85ab3bb06fbfbb6246.
+It allowed the later approved action to resume without relying on chat history.
+
+## Verified reply publication and final closeout
+
+On 2026-09-22 the operator explicitly approved one new send using the corrected
+one-attempt procedure and unchanged approved body, destination and account.
+Permission to consider an authentication change was conditional on need; the
+existing @Jyriwee authentication worked and no credential, scope, login or
+account setting was changed.
+
+Codex reverified the clean committed checkpoint, account, current MR/pipeline,
+source tag, developer-note digest, six published guide-file digests and absence
+of the exact reply. The corrected helper then made one POST with explicit JSON
+Content-Type and retained its response before verification:
+
+- Posting checkpoint: 994a8731ec5edfd76f1efc85ab3bb06fbfbb6246.
+- Destination: fdroid/fdroiddata!49547; author: Jyriwee.
+- Started: 2026-09-22T08:31:22.729542+00:00.
+- HTTP status: 201; process exit: 0.
+- Note ID: 3882930526; created: 2026-09-22T08:31:23.349Z.
+- URL: https://gitlab.com/fdroid/fdroiddata/-/merge_requests/49547#note_3882930526
+- Canonical body SHA-256 including final newline: 8980b7a638b5e3cb3cbc9a8c07122cac770c73a232a79817e563fc80d1629adb.
+- Separate note GET and paginated readback verified the exact body, author and
+  one matching copy at 2026-09-22T08:31:25.267521+00:00.
+
+The public body retains the APK-test rationale, limits runtime evidence to
+1.0.12 and identifies Codex's source comparison and correction review. Only the
+operator-requested drafting clause was removed before either attempt. There was
+one original unconfirmed POST invocation and one separately approved successful
+invocation; exactly one published reply was found. No earlier comment was edited,
+no discussion was resolved, and no label, application or Android state changed.
+
+The missing Content-Type was verified locally and the corrected send succeeded,
+but the original lost response still prevents a definitive diagnosis of its
+failure. No GitLab outage or authentication defect was established. The reply
+and repository-guide links were verified before the recovery files were removed.
+Only the existing ignored mode-600 seed/profile.env and config/android.env
+remain; no helper, lock, raw response/error, APK, AVD or browser session remains.
+
+This durable receipt and the current handoff are the final authorized closeout.
+The final changed tree passed check-all before its commit. Publish that closeout
+to the existing seed origin/main and verify local/Git/provider equality; the
+receipt does not recursively record its own push. The starter-kit guide and
+receipt were already published through 4575d121656a20420cf770bfb3c24b02cd757bff.
+
+Final retrospective: explicit request typing plus response retention and separate
+readback completed the approved publication using the existing account. The
+operator supplied the missing one-attempt approval; Codex performed execution,
+verification and cleanup. No permanent authentication or workflow change was
+needed. The bounded task is complete; a later unrelated task should start from
+a fresh session, without reposting or treating this receipt as new authority.

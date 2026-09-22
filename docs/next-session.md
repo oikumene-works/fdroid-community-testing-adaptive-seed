@@ -2,32 +2,34 @@
 
 ## Current task and gate
 
-The workflow guides are published and verified in both repositories. The MR
-reply has one attempted POST with no confirmed receipt: the one-off wrapper
-lost the response before validation, and repeated paginated reads found zero
-copies. Do not retry automatically. The operator asked for robust GitLab handling
-in response to the retry-approval question; this did not grant a new send.
+The complete workflow-link publication chain is finished. Both repositories'
+guides were pushed and verified publicly before the approved MR reply was sent.
+The exact reply is note 3882930526 by @Jyriwee, created at
+2026-09-22T08:31:23.349Z. Separate note GET and paginated readback verified the
+approved body/digest, author and one copy. Do not repost. Canonical body and
+full authority/publication receipts are in
+cases/battleship-49547-v1012/workflow-links-draft.md and workflow-links-record.md.
 
-Read cases/battleship-49547-v1012/workflow-links-record.md for approved body digest,
-publication receipts, the failed-attempt evidence limit and local recovery helper.
-workflow-links-draft.md is unchanged from the final approved text, with only the
-reply-drafting clause removed at the operator's request. Source comparison and
-correction review remain explicitly attributed to Codex; Codex also drafted it.
+The first one-off POST invocation had no confirmed receipt because its wrapper
+lost the response; repeated reads found zero copies. The operator explicitly
+approved one new send after a bounded transport correction. The corrected helper
+sent once from clean checkpoint 994a8731ec5edfd76f1efc85ab3bb06fbfbb6246 and
+received HTTP 201. Missing JSON Content-Type was reproduced locally, but the
+original lost response prevents a definitive failure diagnosis. The existing
+GitLab authentication worked; no credentials, scopes or account settings changed.
 
-Codex verified a missing JSON Content-Type in the original invocation on a local
-loopback receiver and corrected it in ignored .local/runtime/workflow-reply-publish.py.
-The original failure cause remains unproven. The helper retains diagnostics,
-bounds timeouts, blocks duplicate sends and recovers by readback; four offline
-failure-path checks and its live read-only preflight passed. No second POST.
+The reply includes the source-only/no-new-APK rationale and identifies Codex's
+source comparison and correction review. Codex also drafted it; only the final
+drafting clause was removed at the operator's explicit request before sending.
+No further reply, monitoring, APK or Android action is authorized.
 
-Next gate: obtain explicit approval of one new attempt with the unchanged text,
-fdroid/fdroiddata!49547 and @Jyriwee, then run the helper's read-only preflight.
-Require a clean committed HEAD; use the helper's exact digest guard only with
-that approval. After a verified note, record the receipt, remove bounded recovery
-files and finish the authorized closeout. The guide/recovery receipts and helper
-remain intentionally under .local/runtime; no Android or browser session exists.
-The starter-kit checkout is starter-kit-docs; its guide publication and receipt
-are pushed. The historical comparison checkout is untouched.
+The local recovery helper, lock, raw response/error and temporary receipts were
+removed after durable receipt capture. Only the two existing ignored mode-600
+configuration/profile files remain. No browser session was opened. The starter-kit
+guide and receipt are published through 4575d121656a20420cf770bfb3c24b02cd757bff;
+its checkout is starter-kit-docs. The historical comparison checkout is untouched.
+This receipt/handoff closeout belongs to the approved seed publication scope;
+verify actual local/remote tips without recursively recording receipt-only pushes.
 
 The developer requested both links in note 3882563252. Codex verified the five
 reported description corrections at 1.0.13 source
@@ -94,11 +96,11 @@ runtime proof, and old raw files remain unavailable.
 
 ## Stop and resume
 
-The 1.0.12 execution/report publication and both workflow-guide publications are
-complete. The new MR reply remains unconfirmed and awaits one-new-attempt
-approval. Preserve the recovery state; do not resend earlier notes. No monitor,
-additional Android test or different public reply is included. A fresh session
-can resume from this checked checkpoint and the canonical workflow-link record.
+The 1.0.12 execution/report publication, both workflow-guide publications and
+the subsequent workflow-link MR reply are complete. Stop after checked closeout,
+clean worktrees and verified remote state. Start a fresh session for any later
+selected task. Do not resend earlier notes, infer a monitoring obligation or
+restart Android. There is no pending publication approval for this completed chain.
 The closeout audit remains in docs/seed-publication-evolution.md; parked research
 in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
 
