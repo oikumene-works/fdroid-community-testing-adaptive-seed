@@ -1,6 +1,24 @@
 # Next Session
 
-## Completed task and current gate
+## Current task and gate
+
+Local documentation and reply preparation is complete; repository checks passed.
+Read cases/battleship-49547-v1012/workflow-links-record.md, its draft and
+v1013-source-review.md. The developer requested both workflow links in note
+3882563252. Codex verified the five reported description corrections at 1.0.13
+source 35e98a6744eb32d9934278925f374dad61abf24e. The app tree is identical to
+1.0.12; no new APK qualification or Android run occurred or is recommended for
+this description-only delta. Prior runtime evidence remains specific to 1.0.12.
+
+Both workflows now have local start-here guides and documentation-first help.
+The traditional-kit changes are in sibling checkout starter-kit-docs, based on
+its public main; the historical comparison checkout is untouched. The short
+reply values a perspective unfamiliar with either workflow, without requiring
+both to be evaluated. Neither guide updates nor reply are published. A later
+explicit publication decision must cover both guide changes and the exact reply;
+verify the public guides before sending. No push/post authority is inherited.
+
+## Completed Android task
 
 The operator-authorized bounded adaptive re-verification of Battleship 1.0.12
 completed on 2026-09-22. Read cases/battleship-49547-v1012/report.md and its
@@ -25,7 +43,7 @@ case.env owns complete pins and digests. New APK qualification passed; safety
 PASS, claims FINDINGS_RECORDED. No app/src changes, but native-library packaging
 changed. No independent rebuild was performed.
 
-Both Fastlane descriptions still advertise two-human mode. Rotation wording
+At the pinned 1.0.12 source, both Fastlane descriptions still advertise two-human mode. Rotation wording
 should identify its button. English website retains one 15-medal heading;
 Persian site retains several 15-medal claims and whole-row Sonar wording.
 English web privacy text adds the backup-copy qualification, while privacy.md
@@ -58,11 +76,11 @@ runtime proof, and old raw files remain unavailable.
 
 ## Stop and resume
 
-The requested verification, report publication and scoped closeout are complete.
-Stop after final local/remote verification. No automatic monitoring, additional
-Android test or public reply is authorized. A later reviewer response is a new
-selected task; use a fresh session before a later public action and recheck its
-exact scope, text, destination and current state.
+The 1.0.12 execution and publication closeout is complete. The current source
+check, guide changes and reply draft are prepared for operator review. Stop at
+the checked local commits. Use a fresh session before any authorized public
+action; recheck exact scope, text, destination and current state. No automatic
+monitoring, additional Android test or public reply is authorized.
 The closeout audit remains in docs/seed-publication-evolution.md; parked research
 in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
 

@@ -2,15 +2,16 @@
 
 This repository is an independent adaptive alternative to the [Guarded F-Droid
 Community Testing Starter Kit](https://github.com/oikumene-works/fdroid-community-testing-starter-kit).
-It discovers local conditions and proposes one bounded next step while
-preserving the guarded workflow. It is a project artifact, not a
-founder-centered initiative: its use, credibility, and continuation do not
-depend on any creator's identity, endorsement, availability, or approval.
+It discovers local conditions and proposes one bounded next step while preserving
+the guarded workflow. Its use and continuation do not depend on a creator's
+identity, endorsement, availability or approval.
+
+**New here?** [Start with one read-only exercise](docs/start-here.md), including
+prerequisites, scope limits and where to ask useful questions. This is experimental.
 
 This is not an F-Droid project. A local result is community evidence only, not an F-Droid review, acceptance decision, security audit, or endorsement.
 
 ## Grow the seed
-
 This project was derived from exact published [starter-kit commit
 `5a54da63`](https://github.com/oikumene-works/fdroid-community-testing-starter-kit/commit/5a54da63a58b22c8715778a31931394769b60d72).
 The original kit remains independently usable and undeprecated. This seed adds
@@ -32,12 +33,11 @@ Preview is read-only. Apply may create only `.local/seed/profile.env`; its exact
 technical guard prevents accidental use but never supplies human authorization.
 Offline verification runs only the repository checks and fictional dry run.
 
-Read the [seed design](docs/seed-design.md), [evolution record](docs/seed-evolution.md),
-[agent evaluation method](docs/agent-evaluation-method.md), [newcomer evaluation](docs/seed-newcomer-evaluation.md),
-[implementation comparison](docs/starter-kit-seed-comparison.md), and [migration
-plan](docs/seed-migration.md). Publication follows the [publication plan](docs/publication-plan.md).
+Further reading: [seed design](docs/seed-design.md), [evolution](docs/seed-evolution.md),
+[agent evaluation](docs/agent-evaluation-method.md), [newcomer evaluation](docs/seed-newcomer-evaluation.md),
+[comparison](docs/starter-kit-seed-comparison.md), [migration](docs/seed-migration.md) and [publication](docs/publication-plan.md).
 
-## Quick start
+## Reference setup after the first exercise
 
 The supported reference environment is a Linux host with Bubblewrap, an Android
 SDK, a visible Android emulator, and usable KVM acceleration.
