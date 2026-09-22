@@ -9,7 +9,9 @@ and duplicate checks passed; one new POST and separate readback verified the
 exact body/author and one copy. Do not post again. Read
 [the publication record](../cases/battleship-49547/public-comment-record.md#follow-up-reply-published-after-authorized-retry--2026-09-22).
 The original report remains unchanged. No Android action or repository push
-occurred in the follow-up task; the temporary posting receipt was deleted.
+occurred during the follow-up posting task; the temporary receipt was deleted.
+Its records were subsequently published and verified at seed checkpoint
+6e21f2fee2f1fb66a1c7e419f91006ad8e83e2ab; the case receipt records that push.
 
 Battleship !49547 completed its bounded Codex-executed Android test and verified
 cleanup on 2026-09-22. The case is inactive; cases/active-case is absent.

@@ -172,7 +172,6 @@ applied without changing test evidence. Codex/shared coordination used the
 operator's existing publication instruction, with no additional authority or
 material process change. This is a known rule, not a new improvement proposal.
 
-
 ## Codex runtime report and MR receipt publication — 2026-09-22
 
 The operator reviewed the report and Codex attribution, then instructed posting
@@ -216,5 +215,6 @@ from `61ef7b8904cee1c1999e7ce33d52e9168e69240f` to
 commit/tree at 04:56:05Z. Both commits had passed offline checks; a scoped
 publication audit of five changed blobs passed with public bot identities.
 This published the research proposal and verified developer-feedback record.
+Later follow-up publication: [case receipt](../cases/battleship-49547/public-comment-record.md#follow-up-records-published-to-the-seed-repository--2026-09-22).
 The same bounded push task includes this receipt; no GitLab reply, Android
 action, force, tag, release or settings change is included.

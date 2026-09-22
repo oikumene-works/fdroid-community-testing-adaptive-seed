@@ -111,3 +111,20 @@ The temporary receipt was removed after durable capture. No Android action,
 APK download, Git push, GitHub issue edit or other public message occurred.
 Retrospective: the explicit retry instruction, fresh duplicate check and
 separate readback resolved the uncertain state; no portable tooling change.
+
+## Follow-up records published to the seed repository — 2026-09-22
+
+The operator explicitly requested pushing the records and performing bounded
+cross-project cleanup and verification. Codex published the three follow-up
+commits to the existing adaptive-seed origin/main as a normal fast-forward
+from 7722a57a7e928d480d64aef04edfbac8b6bf272d to
+6e21f2fee2f1fb66a1c7e419f91006ad8e83e2ab. Git and the GitHub API verified the
+exact commit and tree at 05:30:38Z. Account: oikumene-admin; outgoing author and
+committer identities remained the established public bot identity.
+
+The unchanged commits had passed the offline suite. A scoped audit of all three
+commits and eight changed blobs passed checks for known credential/workstation
+patterns, forbidden artifacts, symlinks, local state and oversized files.
+The current publication task includes this completed-effect receipt. No force,
+tag, release, new GitLab message, upstream issue mutation or Android action was
+part of the push. The separate traditional comparison remains local.
