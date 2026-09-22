@@ -19,7 +19,14 @@ The successful AI-game path, four weapons, sampled career persistence and
 cleanup are bounded runtime observations. Two-human/drag, backup wording and
 stale descriptions remain findings; raw evidence was deleted and cannot be
 independently re-audited. This is not a human usability test, an all-functions
-pass, or F-Droid acceptance. No response or acceptance after our note is claimed.
+pass, or F-Droid acceptance. Developer @cocodedk responded in GitLab note
+3882043297 at 04:46:37.108Z, confirming the findings from his source review and
+reporting description corrections on a branch for the next release.
+[The case record](../cases/battleship-49547/case.md#developer-response-verified-and-recorded--2026-09-22)
+owns the verified location, body digest and attributed summary. This is a
+separate MR comment responding in substance to our report; GitHub issue #55
+still had zero comments. The corrections and unchanged-behavior claim were not
+independently checked. No human Android rerun or F-Droid acceptance is established.
 
 ## Exact candidate
 
@@ -30,8 +37,9 @@ pass, or F-Droid acceptance. No response or acceptance after our note is claimed
 - APK SHA-256 27c558552dc9cbd00fbb34c619aab72dbc21bd870d68a48f4cc4bc9f7b32a0d9.
 - TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED,
   APK_QUALIFICATION_STATUS=PASS; static review digests are unchanged.
-- case.env records posted/latest non-system note 3881992480. Original
-  preflight note information in evidence-index.md is historical.
+- case.env records our posted note 3881992480 and the observed latest
+  non-system note 3882043297. Original preflight information is historical;
+  the feedback check did not revalidate the full candidate.
 
 ## Local state and external effects
 

@@ -422,3 +422,58 @@ continued under the operator's current instruction without asking for the
 same approval again. Owner: Codex/shared; disposition: no implementation
 change. After publication and verification, stop; a later reviewer response
 is a separate task and no automatic reply is authorized.
+
+## Developer response verified and recorded — 2026-09-22
+
+The operator supplied a notification and requested recording the response and
+clarifying whether it belonged to the GitHub issue or GitLab report. Codex
+verified the public comment and its context through read-only provider APIs,
+then prepared this summary. The developer's statements below are attributed
+claims, not new Codex runtime observations or independently verified fixes.
+
+- Location: [fdroiddata !49547, note 3882043297](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/49547#note_3882043297).
+- Author: Babak Bandpey, @cocodedk.
+- Created and last updated: 2026-09-22T04:46:37.108Z (07:46:37 Helsinki).
+- GitLab reports noteable_type=MergeRequest, noteable_iid=49547, system=false.
+- Discussion ID: 7dadf0e656dce9658f203692786d2ccd45112dbf;
+  individual_note=true. It is a separate top-level MR comment, not a threaded
+  reply under our note 3881992480. Its cold-relaunch, Sonar and shot-count
+  references identify the runtime report as its substantive context.
+- Body SHA-256, UTF-8 as returned, without an added newline:
+  774a23183adc1313a8fa47a05231d783e8c094f1d0bc197d2119abf7b3e002ef.
+- Paginated MR discussions contained four non-system notes; this was the latest.
+- [GitHub upstream issue #55](https://github.com/cocodedk/Battleship/issues/55)
+  remained open with zero comments at the same check. The notification refers
+  to GitLab, not to a new comment on that issue.
+
+The developer states that he checked every finding against source and confirms
+the absent pass-and-play and drag gestures, 33 medals, persisted career/medal
+data, clipped five-cell Sonar and the Android-backup wording qualification.
+He reports corresponding description corrections on a branch for the next
+release, after which he intends to update the MR. No branch, diff, release or
+new candidate was inspected during this recording task.
+
+He also confirms that area weapons count each resolved cell again, including
+an existing HIT: 59 shots over 58 distinct cells follows the current code.
+He regards this as expected behavior rather than a defect, while noting that
+the counting semantics were not deliberately chosen and remain to be settled.
+This corroborates the report's cautious interpretation; it does not establish
+that all possible counting behavior is correct or that a change is required.
+
+The developer says app behavior is unchanged and the tested observations remain
+applicable. That is his statement, not our verification of an updated artifact.
+His source review is not an independent Android rerun or F-Droid acceptance.
+Deleted raw runtime evidence remains unavailable. The response supports the
+report's practical usefulness, not adaptive superiority over the fixed kit.
+
+case.env retains our POSTED_NOTE_ID and unchanged report/review digests; its
+latest-note expectation now reflects this observed response. No full candidate
+revalidation occurred, and the inactive case is not authorized for execution.
+No public reply, issue/MR edit, push, APK download or Android action occurred.
+Private email addresses, notification tokens and raw API payloads were not saved.
+
+Retrospective: direct note/discussion metadata resolved the location ambiguity;
+the separate issue count prevented conflating two reporting channels. Codex
+recorded the developer's claims separately from tested evidence. Owner: Codex;
+disposition: no tooling change. Stop at this local record; any later response,
+release review, test or publication requires its own selected scope.
