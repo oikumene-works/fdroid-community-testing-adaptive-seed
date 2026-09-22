@@ -67,3 +67,12 @@ crash/ANR or cleanup failure. Reconcile merged components before execution.
 The old raw evidence was deleted and cannot be reviewed again. The previous
 sanitized report is historical context, not proof about this new APK. No workflow
 superiority or fair process comparison is claimed for this informed rerun.
+
+## Fresh qualification reconciliation
+
+The new APK was inspected and deleted; qualification.md records identity,
+signer, two non-dangerous requested permissions, AndroidX provider/guarded
+receiver and four native ABIs. No new network/sensitive route was found in this
+bounded manifest inspection. Safety PASS and claims FINDINGS_RECORDED remain
+applicable to the same authorized scope. This does not resolve listing errors
+or turn any game feature into a runtime pass.

@@ -5,7 +5,7 @@
 The operator authorized bounded adaptive re-verification of Battleship 1.0.12
 on 2026-09-22. The new case is cases/battleship-49547-v1012; read all its records.
 The source preflight is complete, safety PASS, claims FINDINGS_RECORDED.
-APK qualification is next, followed by its clean checkpoint, activation,
+APK qualification passed after fresh inspection and deletion; next is activation,
 exact execution re-download and disposable Android test through verified cleanup.
 The present authorization covers these proposed effects for this exact version;
 no redundant approval is required while scope and pins remain unchanged.
@@ -31,7 +31,7 @@ Use existing local reference tools/config; no SDK changes are needed.
 The case is inactive and no Android tooling has yet been started for this rerun.
 Ignored temporary source review files exist and must be removed at cleanup.
 Initial HEAD was 1ad497d, clean and three commits ahead of origin/main.
-Local configuration/profile remain; no APK has yet been downloaded.
+Local configuration/profile remain; the qualification APK was downloaded and deleted.
 
 The completed 1.0.11 case remains in cases/battleship-49547 with unchanged pins
 and historical reports. Its report and two replies were already published and
