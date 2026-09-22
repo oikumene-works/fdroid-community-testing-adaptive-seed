@@ -2,7 +2,10 @@
 
 ## Current task and gate
 
-Local documentation and reply preparation is complete; repository checks passed.
+Local documentation and revised reply preparation is complete; repository checks
+passed. The operator requested the explicit no-new-APK rationale and prohibited
+publication. The revised exact text awaits review; it identifies Codex's source
+comparison, correction review and drafting contribution.
 Read cases/battleship-49547-v1012/workflow-links-record.md, its draft and
 v1013-source-review.md. The developer requested both workflow links in note
 3882563252. Codex verified the five reported description corrections at 1.0.13
@@ -16,7 +19,11 @@ its public main; the historical comparison checkout is untouched. The short
 reply values a perspective unfamiliar with either workflow, without requiring
 both to be evaluated. Neither guide updates nor reply are published. A later
 explicit publication decision must cover both guide changes and the exact reply;
-verify the public guides before sending. No push/post authority is inherited.
+push the reviewed guide changes to both repositories first, then verify both
+public README entrances and starting guides, and only then post the approved
+MR reply. No push/post authority is inherited. No external action occurred in
+the reply-revision slice; the draft digest and guide commits are recorded in
+workflow-links-record.md.
 
 ## Completed Android task
 

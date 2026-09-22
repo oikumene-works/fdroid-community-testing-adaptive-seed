@@ -9,13 +9,38 @@ that reusable answers live in the linked documentation, with direct individual
 help only when necessary. He also requested explaining the value of a perspective
 from someone unfamiliar with the workflows, which neither collaborator now has.
 The draft invites optional experience with either workflow, not an obligation to
-evaluate both or enroll in research. The chain already explicitly identifies
-Codex's work; the short reply does not repeat that explanation or claim human
-execution of the new source check. Codex prepared the draft and source review.
+evaluate both or enroll in research. The revised reply explicitly identifies Codex as the executor of the source
+comparison and correction review and as the reply drafter. It does not claim
+human execution or independent human verification.
 
 Proposed destination: fdroid/fdroiddata!49547; established account: Jyriwee.
 Canonical text: workflow-links-draft.md. SHA-256 with final newline:
-afea50071bfb32dd24e3c0a70d16d7bdd487076252bb4294c54acb4e89cda3ff.
+25d06a999e44d30a8556c656d8ac2c76cc2032e0540a940c6fa61cd7c2ae7be9.
+
+## Current review checkpoint
+
+The operator requested this revision and explicitly prohibited publication.
+The draft now explains why no new APK test was run: application code, resources
+and build configuration match 1.0.12 except for version numbers, so the reported
+description fixes were checked in source. Runtime evidence remains specific to
+1.0.12; the new APK has not been qualified or run by Codex.
+
+The already checked local guide commits are:
+
+- Starter kit: 969e2d60bee8d4a868dc707bc74a48aafdbe5bd0.
+- Adaptive seed: a83116a0994a2398db703f4d42cd9e61c2ad97fe.
+
+This reply revision and its records form a subsequent local seed checkpoint.
+No live remote refresh or public-link verification occurred in this revision.
+After explicit publication approval, the required order is:
+
+1. Push the reviewed guide changes to both existing repositories.
+2. Verify both public README entrances and linked starting guides.
+3. Only then post the exact approved reply to the destination/account above,
+   after the normal fresh-state and duplicate checks, and verify its receipt.
+
+Until that decision, stop at the checked local checkpoint and display the exact
+reply for operator review. Text review alone does not authorize publication.
 
 ## Public links and documentation work
 
@@ -67,3 +92,8 @@ local documentation commits. No script or execution gate was changed.
 
 Stop at checked local commits and operator review. Start a fresh session for
 any later authorized publication; verify both guide links before posting.
+
+Revision retrospective: the retained source comparison was sufficient for this
+wording change; no new environment or runtime work was needed. Codex made the
+evidence limits and contribution explicit. The operator supplied the publication
+order and stop condition. No additional process change is proposed.
