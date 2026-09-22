@@ -38,6 +38,23 @@ The application code, resources and build configuration are unchanged from
 1.0.12 apart from version numbers. No new APK qualification or Android run
 occurred; prior runtime evidence remains specific to 1.0.12.
 
+## Waiting condition
+
+The operator selected a clean stop after publication. Await voluntary feedback
+on either workflow or a concrete later need; no response, adoption or newcomer
+benefit is assumed. There is no scheduled monitor or additional experiment.
+Revisit the existing guide when an actual question exposes a gap. Research
+remains parked until separately selected. The operator requested flagging any
+future GitLab authentication change that observed friction would justify;
+current authentication succeeded and needs no change from this evidence.
+
+The reusable publication lesson is now in docs/troubleshooting.md under
+"A custom GitLab reply request fails" in both workflows. Codex documented the
+observed request-format issue, response-retention rule and evidence limits;
+no script, credential or execution gate changed. The final documentation-only
+closeout is within the operator's 2026-09-22 authorization to finish both
+repositories and local continuity records.
+
 ## Completed Android task
 
 The operator-authorized bounded adaptive re-verification of Battleship 1.0.12
