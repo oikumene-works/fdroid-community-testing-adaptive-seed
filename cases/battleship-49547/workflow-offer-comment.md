@@ -1,0 +1,1 @@
+If either workflow might be useful when you start testing other submissions, I’d be happy to share the links. Both are experimental, and your perspective as an app developer and tester would be welcome.

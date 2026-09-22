@@ -128,3 +128,19 @@ patterns, forbidden artifacts, symlinks, local state and oversized files.
 The current publication task includes this completed-effect receipt. No force,
 tag, release, new GitLab message, upstream issue mutation or Android action was
 part of the push. The separate traditional comparison remains local.
+
+## Developer closing feedback and approved workflow-link offer — 2026-09-22
+
+Developer @cocodedk posted note 3882192208 at 05:40:37.840Z, thanking the
+report's six findings and especially its explicit evidence limits. He said
+he intends to help test other queued submissions and wished both workflows
+well. This expresses interest in testing; interest in using or developing our
+workflows is only a possibility, not a confirmed request or collaboration.
+
+The operator reviewed the short proposed offer to share workflow links and
+explicitly instructed removing its final Codex-drafting sentence and posting
+the remainder. This is a text-specific exception to the standing attribution
+preference, not a change to that preference or to the earlier published texts.
+Codex prepared workflow-offer-comment.md. The approved destination remains
+fdroid/fdroiddata!49547 and account Jyriwee. This offer grants no authority to
+send later links, recruit a participant, start a test or claim acceptance.
