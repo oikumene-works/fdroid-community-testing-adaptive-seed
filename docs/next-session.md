@@ -4,8 +4,11 @@
 
 Battleship !49547 completed its operator-authorized bounded Android test and
 verified cleanup on 2026-09-22. The case is inactive; cases/active-case is absent.
-Stop at this clean local checkpoint. No publication is authorized or performed
-in this slice. The functional report is not approved for public posting.
+The exact MR comment is now prepared in cases/battleship-49547/public-comment.md.
+Its digest and proposed account Jyriwee are pinned in case.env, but operator
+approval of the exact text, destination fdroid/fdroiddata!49547 and account is
+still pending. Nothing has been posted. The report review clarifications are
+incorporated in report.md; no new runtime evidence was collected.
 
 TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED and
 APK_QUALIFICATION_STATUS=PASS retain the unchanged static review digests.
@@ -55,6 +58,12 @@ marker and only the intentional force-stop exit.
 ## External state
 
 No push, upload, issue/comment mutation or release occurred in this slice.
+During MR-report preparation, live MR/source/artifact pins passed the stock
+read-only recheck. The MR is open/mergeable, review-requested; the reviewer
+invites test reports before merging. This does not guarantee acceptance of
+partial coverage. The pinned metadata categories fit the tested game path.
+Upstream issue #55 remains open with zero comments; @Jyriwee is the verified
+GitLab identity. The proposed comment leaves icon/terms/policy/scan gaps explicit.
 Historical source-only issue: <https://github.com/cocodedk/Battleship/issues/55>;
 its original body/receipt are retained. Earlier static-result publication is
 recorded in case.md and docs/publication-plan.md. GitHub main remains at the
@@ -63,10 +72,15 @@ No further publication authority follows from the previous actions.
 
 ## Resume and stop
 
-Recommend a new session for a later report-review or separately authorized
-publication slice. Begin with ./scripts/session-bootstrap.sh, AGENTS.md,
+Continue here for the short exact-text review. If the operator approves the
+canonical comment, destination and account, use the stock guarded posting
+helper after fresh exact-state and duplicate checks. Verify and record the
+returned note/body/author, remove its receipt and leave a clean checkpoint.
+Do not infer posting approval from a prepared digest or configured identity. Begin with ./scripts/session-bootstrap.sh, AGENTS.md,
 docs/session-continuity.md, docs/protocol.md, docs/first-case-runbook.md and all
 cases/battleship-49547 records. Recheck local/external state; infer no identity,
 credential access, authority or approval from configured clients or history.
 Any later execution needs a new bounded decision and fresh exact-state recheck.
 Keep Codex observations separate from human testing and static source findings.
+Do not resume Android, change labels/discussions, publish repository commits or
+add an upstream follow-up as part of the proposed one-comment action.

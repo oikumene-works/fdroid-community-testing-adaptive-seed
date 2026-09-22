@@ -91,9 +91,11 @@ runtime permission section was empty. No permission grant was sent by the test.
 The result screen's 59 shots and 18 hits exceed the reconstructed 58 distinct
 attacked cells and 17 distinct hit cells by one. The last pre-victory UI tree
 contained 57 attacked cells/16 hits; the final new F9 hit completed the fleet.
-Barrage included the previously hit D5, explaining one repeated hit-cell attempt.
-This is a runtime counting observation, not a proven violation of a documented
-unique-cell metric or a comprehensive score defect.
+Barrage included the previously hit D5, consistent with one repeated hit-cell
+attempt being counted. This is a reconstruction from the recorded UI observations;
+the deleted UI trees and screenshots cannot now be independently recounted.
+It is not a proven violation of a documented unique-cell metric or a
+comprehensive score defect.
 
 A separate read-only inspection of the exact source supports that interpretation:
 GameViewModel passes every resolved weapon cell to updateTrackersForFire;
@@ -106,11 +108,19 @@ that expectation needs clarification before proposing a correction.
 ## Existing findings and exclusions
 
 The original source-only two-human/drag findings remain open; normal tap/AI
-success does not validate those advertised features. Backup wording and stale
-llms.txt remain documentation findings. The observed 33-item registry count and
-career persistence now provide separate runtime corroboration for those two
-previous source observations; the original claim-review bytes remain historical
-and unchanged. The whole-row wording remains broader than the sampled Sonar use.
+success does not validate those advertised features. The listing/README claim
+15 medals, while both observed registries displayed 33 total entries. llms.txt
+says there is no persistence, while the sampled career values survived force-stop
+and relaunch. Those runtime observations corroborate the earlier source findings
+without validating every award or persistence condition.
+
+The privacy policy already discloses possible OS-managed backup, but its broader
+local-only/deletion wording needs to distinguish that backup from app-controlled
+transmission and deletion of the local copy. No backup or hidden transmission
+was observed or tested. The website source's whole-row Sonar wording is broader
+than the sampled three-cell edge use. These are specific product/documentation
+findings, not a general rejection of the app. Original claim-review bytes remain
+historical and unchanged; exact claim/source pointers remain in claims.md.
 
 No external link, account, real data, backup/restore, profiling/benchmark broadcast,
 permission grant, APK rebuild, network-traffic audit, physical device, alternate
@@ -157,6 +167,10 @@ cleanup, the case-created AVD was explicitly deleted and its now-empty Android
 state directories removed. Recursive local-file inventory showed only the
 mode-600 seed profile and completed mode-600 Android configuration. No device
 state, APK, source snippet, raw evidence or emulator/isolated-ADB session remains.
+Deletion followed the evidence policy. Only sanitized observations survive, so
+the original UI readings, counter reconstruction and historical tool responses
+cannot be independently re-audited from raw artifacts. Later local absence checks
+corroborate current cleanup state, not the historical uninstall/wipe sequence.
 
 There was no push, issue/comment mutation, upload, release or other publication
 in this slice. Network access was read-only candidate verification, exact APK

@@ -7,7 +7,8 @@ Inactive after the completed bounded Android execution and verified cleanup on
 APK_QUALIFICATION_STATUS=PASS retain their unchanged bound review digests.
 report.md owns the actual runtime observations, partial coverage and cleanup.
 One synthetic AI game reached victory; four weapons were used and career
-persistence passed the sampled cold-relaunch check. No publication is authorized.
+persistence passed the sampled cold-relaunch check. The reviewed MR comment is
+now prepared for exact operator approval; it has not been posted.
 
 The original source-only observations remain recorded. Missing advertised two-player/drag
 paths, backup wording and stale descriptions are retained as product/documentation
@@ -318,3 +319,44 @@ resumption or public-action authority is implied by the retained local config.
    Timing separates helper/execution/cleanup intervals but not active/waiting
    subphases. Retain that limitation rather than infer precise effort. Owner:
    Codex/shared; disposition: no additional process change in this slice.
+
+## MR-report preparation — 2026-09-22
+
+The operator requested a proper F-Droid MR report for the tested app. Codex
+prepared public-comment.md as a self-contained partial functional test report
+aligned with the official Tester Review checklist. This request authorizes
+preparation; exact body/destination/account approval is still pending.
+
+The earlier report review's two necessary clarifications were incorporated in
+report.md: raw-evidence deletion prevents independent recount/re-audit, and
+existing medal/persistence/backup description findings are explicit. The
+area-weapon explanation is phrased as a source-supported interpretation, not
+a proven counting or score defect. No claim-review/qualification digest changed.
+
+Read-only live checks confirmed the original MR head, successful pipeline and
+all stock recheck pins. MR !49547 remains open, non-draft and mergeable with
+review-requested; reviewer note 3871316922 explicitly invites test reports and
+says testing precedes merging. This is reviewer context, not a promise that
+this partial report satisfies every remaining acceptance condition. Both
+non-system notes and discussions were read; no new note was found.
+The authenticated GitLab identity is Jyriwee. Upstream issue #55 is still open
+with zero comments at this check; no upstream message was sent.
+
+The pinned metadata was freshly read: Board Game and Strategy Game fit the
+observed path. Unique icon, additional-terms audit, comprehensive Inclusion
+Policy review and external scanner results are explicitly not claimed. The
+official checklist was read from the F-Droid wiki API after its web page
+returned no readable body. No Android action or APK download occurred.
+
+Proposed destination: fdroid/fdroiddata!49547; proposed account: @Jyriwee.
+The canonical body digest is pinned in case.env. Those fields prepare the
+technical guard and are not a record of operator publication approval.
+POSTED_NOTE_ID remains empty. No external mutation occurred in this slice.
+Do not push this repository, alter MR labels or resolve discussions.
+
+Retrospective: existing read-only clients and local records sufficed; no new
+tooling was needed. Explicitly marking unchecked F-Droid items prevents a
+partial game test becoming an all-functions/policy pass. Codex prepared the
+exact reviewable body before asking for publication approval. Owner: Codex/shared;
+disposition: no process implementation change. Continue in this conversation
+for exact-text review; publication remains its own short guarded slice.
