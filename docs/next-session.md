@@ -1,101 +1,49 @@
 # Next Session
 
-## Completed work and current gate
+## Current task
 
-After developer closing note 3882192208, the operator approved a short offer
-to share workflow links, explicitly omitting its final drafting attribution.
-The exact offer was posted once as note 3882222351 by @Jyriwee at 05:51:47.783Z
-on 2026-09-22 and independently verified. The body and receipt are in the case
-publication record. No later link message, collaboration or test is authorized.
+The operator authorized bounded adaptive re-verification of Battleship 1.0.12
+on 2026-09-22. The new case is cases/battleship-49547-v1012; read all its records.
+The source preflight is complete, safety PASS, claims FINDINGS_RECORDED.
+APK qualification is next, followed by its clean checkpoint, activation,
+exact execution re-download and disposable Android test through verified cleanup.
+The present authorization covers these proposed effects for this exact version;
+no redundant approval is required while scope and pins remain unchanged.
+No publication or repository push is authorized by this task.
 
-The approved follow-up reply is published and verified as GitLab note 3882155370
-by @Jyriwee at 2026-09-22T05:25:53.191Z. After an ambiguous first attempt, the
-operator checked its absence and explicitly authorized retrying. Fresh preflight
-and duplicate checks passed; one new POST and separate readback verified the
-exact body/author and one copy. Do not post again. Read
-[the publication record](../cases/battleship-49547/public-comment-record.md#follow-up-reply-published-after-authorized-retry--2026-09-22).
-The original report remains unchanged. No Android action or repository push
-occurred during the follow-up posting task; the temporary receipt was deleted.
-Its records were subsequently published and verified at seed checkpoint
-6e21f2fee2f1fb66a1c7e419f91006ad8e83e2ab; the case receipt records that push.
+## Pinned state and scope
 
-Battleship !49547 completed its bounded Codex-executed Android test and verified
-cleanup on 2026-09-22. The case is inactive; cases/active-case is absent.
-The operator reviewed the report, required prominent Codex attribution, then
-authorized publication and relevant pushes. The exact MR comment was posted
-and independently read back as note 3881992480 by @Jyriwee at 04:25:57.665Z.
+MR !49547 head dc779e4e3ddacfaa69edeadecd5e744f81b6e883;
+pipeline 2870057107; build job 16644446213; source/tag
+ d1cdd2e3afe02865a901a51d3e05daedbc4b24ed / v1.0.12.
+case.env owns exact pins and review digests. Stock live rechecks remain required.
+No app/src files changed, but native-library packaging did. Source descriptions
+remain partly wrong; see claims.md. Do not call the release fully corrected.
 
-- MR report: https://gitlab.com/fdroid/fdroiddata/-/merge_requests/49547#note_3881992480
-- Canonical text: cases/battleship-49547/public-comment.md.
-- Body SHA-256: 35e71817fac4cf92c88706f97e0678984e689177aa1838d4c0777c3e27c952e1.
-- Receipt/authority: cases/battleship-49547/public-comment-record.md.
-- Runtime/report checkpoint 81fd860e38b6a8909264364ded4de1d7482d42d0 was
-  published and verified on origin/main; receipts: docs/publication-plan.md.
+Test launch, sampled placement/rotation, AI play and nonzero career persistence
+within at most one 15-minute game, then package/crash checks and full cleanup.
+Codex executes; this is not a human usability test or workflow comparison.
+No external links, accounts, real data, backup/restore or physical device.
+Use existing local reference tools/config; no SDK changes are needed.
 
-The successful AI-game path, four weapons, sampled career persistence and
-cleanup are bounded runtime observations. Two-human/drag, backup wording and
-stale descriptions remain findings; raw evidence was deleted and cannot be
-independently re-audited. This is not a human usability test, an all-functions
-pass, or F-Droid acceptance. Developer @cocodedk responded in GitLab note
-3882043297 at 04:46:37.108Z, confirming the findings from his source review and
-reporting description corrections on a branch for the next release.
-[The case record](../cases/battleship-49547/case.md#developer-response-verified-and-recorded--2026-09-22)
-owns the verified location, body digest and attributed summary. This is a
-separate MR comment responding in substance to our report; GitHub issue #55
-still had zero comments. The corrections and unchanged-behavior claim were not
-independently checked. No human Android rerun or F-Droid acceptance is established.
+## Local and historical state
 
-## Exact candidate
+The case is inactive and no Android tooling has yet been started for this rerun.
+Ignored temporary source review files exist and must be removed at cleanup.
+Initial HEAD was 1ad497d, clean and three commits ahead of origin/main.
+Local configuration/profile remain; no APK has yet been downloaded.
 
-- com.cocode.battleship 1.0.11 (1000011), fdroiddata !49547.
-- MR head f2577e78cab813fde78b11d16b7c7b05dd88ea69; pipeline 2867295579;
-  build job 16624306623.
-- Source 35189f727db1cc80bdc55e9996bdcaa443914571, tag v1.0.11.
-- APK SHA-256 27c558552dc9cbd00fbb34c619aab72dbc21bd870d68a48f4cc4bc9f7b32a0d9.
-- TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED,
-  APK_QUALIFICATION_STATUS=PASS; static review digests are unchanged.
-- case.env records our posted note 3881992480 and the observed latest
-  non-system note 3882222351. The stock full read-only case recheck passed before
-  the workflow offer; this does not validate a later release or behavior change.
+The completed 1.0.11 case remains in cases/battleship-49547 with unchanged pins
+and historical reports. Its report and two replies were already published and
+verified in MR notes 3881992480, 3882155370 and 3882222351. Do not repost them.
+Developer release update 3882248703 prompted the separately requested new test.
+Old raw evidence was deleted; it cannot be re-audited or transferred to 1.0.12.
 
-## Local state and external effects
+The closeout audit is in docs/seed-publication-evolution.md; parked research is
+in docs/starter-kit-seed-comparison.md. Neither authorizes a new research task.
+Continue this bounded task through cleanup and report, then stop at a clean
+local checkpoint for human review. Rebootstrap and inspect actual state after
+any interruption; do not assume an emulator target or resume gameplay blindly.
 
-Only the ignored mode-600 seed/profile.env and config/android.env remain from
-local preparation. No APK, AVD, screenshots, UI dumps, raw journals, automation
-helper, emulator or isolated-ADB session remains for this case. The temporary
-posting receipt was deleted after permanent capture and separate verification.
-No Android action was performed during report review or publication.
-
-The original report, approved follow-up and short workflow offer are published
-GitLab comments. Historical upstream issue #55 remains separately recorded; no GitHub
-follow-up or edit was sent.
-The operator also authorized relevant normal pushes to the existing adaptive
-seed origin/main. No label/discussion edit, tag, release, forced update or
-repository setting change is included. The traditional comparison remains in
-its separate local clone and is not part of this publication.
-
-## Resume and stop
-
-The operator-requested closeout self-audit, his premise clarification and the
-authorized administrative consolidation are recorded in
-[the evolution log](seed-publication-evolution.md#battleship-closeout-audit--2026-09-22).
-Use the consolidated-closeout rule for later work; it does not select a new
-experiment, Android action or publication.
-
-The authorized report and runtime-record publication is complete. Stop here.
-A later response or new test is a separate task; no automatic monitoring, reply,
-Android action or additional public message is authorized by this handoff.
-Recommend a new session if the operator selects a later reviewer-response slice.
-
-The operator also requested recording a possible seed-research continuation in
-[the comparison document](starter-kit-seed-comparison.md#proposed-research-continuation--2026-09-22).
-It proposes a one-page study plan as the next separately selected outcome,
-followed conditionally by an unfamiliar-human introductory evaluation and a
-common-policy comparison. Recording does not authorize those activities.
-After the break, use a new session if the operator selects that research work.
-
-Start with ./scripts/session-bootstrap.sh, AGENTS.md, docs/session-continuity.md,
-docs/protocol.md, docs/first-case-runbook.md and complete case records. Recheck
-actual local/remote state; infer no identity, credential access, authority or
-approval from configured clients, successful checks or historical records.
-Keep source interpretations, Codex runtime observations and human actions distinct.
+Start with ./scripts/session-bootstrap.sh and the project instructions; infer no identity,
+credential access or action authority from configured clients or passing checks.
