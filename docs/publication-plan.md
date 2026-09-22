@@ -171,3 +171,39 @@ local identity issue before exposure; the existing public-identity rule was
 applied without changing test evidence. Codex/shared coordination used the
 operator's existing publication instruction, with no additional authority or
 material process change. This is a known rule, not a new improvement proposal.
+
+
+## Codex runtime report and MR receipt publication — 2026-09-22
+
+The operator reviewed the report and Codex attribution, then instructed posting
+it and making the relevant pushes. MR note 3881992480 was posted once and
+verified; cases/battleship-49547/public-comment-record.md owns that receipt.
+The same instruction authorized this seed clone's runtime/report history and
+publication records on its existing public origin/main, including this receipt.
+The traditional-process comparison remains local in its separate clone.
+
+Commit `81fd860e38b6a8909264364ded4de1d7482d42d0` was published as a normal
+fast-forward from `bec8dfbe9cff45dad7464cb539ebfba79bcac5ae` and verified at
+2026-09-22T04:32:06Z through Git and the GitHub commits API. Both matched the
+exact commit and tree `b75778ab9d439fd7307522a1826ae7a60d9063df`.
+The authenticated account was oikumene-admin; every outgoing commit retained
+the established public bot author and committer identity.
+
+All offline checks passed. A bounded audit of six outgoing commits and 24
+changed blobs found no known credential/workstation patterns, forbidden raw
+artifacts, symlinks, ignored local state or oversized blobs. The tree was clean
+before push. This is a scoped publication audit, not a security guarantee.
+Only main was updated; no force, tag, release or repository setting change.
+
+The published result is the partial Codex-executed Android test, its disclosed
+limitations, prominent execution/authorship attribution and verified MR receipt.
+Deleted raw evidence remains unavailable; publication adds no runtime evidence
+and does not imply F-Droid acceptance. No Android action or additional message
+was performed. This completed-content checkpoint remains a historical receipt
+after later documentation commits; it does not describe its own pending push.
+
+Retrospective: standard Git/GitHub tooling and independent remote/API checks
+sufficed. Codex recorded the completed effect and continued the authorized
+receipt push without a repeated approval loop. Owner: Codex/shared; disposition:
+no process change. The bounded publication task is complete after verification;
+any reviewer-response work is a separately selected later slice.

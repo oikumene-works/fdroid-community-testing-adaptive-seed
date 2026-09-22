@@ -12,7 +12,8 @@ and independently read back as note 3881992480 by @Jyriwee at 04:25:57.665Z.
 - Canonical text: cases/battleship-49547/public-comment.md.
 - Body SHA-256: 35e71817fac4cf92c88706f97e0678984e689177aa1838d4c0777c3e27c952e1.
 - Receipt/authority: cases/battleship-49547/public-comment-record.md.
-- Repository publication receipts: docs/publication-plan.md.
+- Runtime/report checkpoint 81fd860e38b6a8909264364ded4de1d7482d42d0 was
+  published and verified on origin/main; receipts: docs/publication-plan.md.
 
 The successful AI-game path, four weapons, sampled career persistence and
 cleanup are bounded runtime observations. Two-human/drag, backup wording and
@@ -49,7 +50,7 @@ its separate local clone and is not part of this publication.
 
 ## Resume and stop
 
-Stop after completing and verifying the authorized repository publication.
+The authorized report and runtime-record publication is complete. Stop here.
 A later response or new test is a separate task; no automatic monitoring, reply,
 Android action or additional public message is authorized by this handoff.
 Recommend a new session if the operator selects a later reviewer-response slice.
