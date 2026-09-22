@@ -1,25 +1,36 @@
-# Public Claim Review
+# Public Claim and Bounded Test Safety Review
+
+TEST_SAFETY_STATUS=NOT_REVIEWED
+CLAIM_REVIEW_STATUS=CLARIFICATION_REQUIRED
 
 ## Exact sources
 
-Record the fdroiddata metadata and upstream localized listing, README, release,
-privacy, and other public claim paths at the pinned commits. State which text is
-expected to become the effective F-Droid listing.
+Record the pinned metadata, effective localized listing, README, release,
+privacy and public claim paths. State evidence limits and unresolved sources.
 
 ## Claim-to-behavior matrix
 
-For each material claim, record its source, a short paraphrase, exact static/UI
-or qualified-APK evidence, and one assessment: `consistent`,
-`clarification-required`, or `not-applicable`.
+For every material claim record source, paraphrase, exact evidence, consequence
+for the proposed test, and classification: consistent, product-finding,
+safety-blocker, unclassified or not-applicable. Separate static from runtime
+observations. Review permissions/network/uploads, retention/original-file writes,
+accounts/payments/tracking, formats and every advertised primary function.
+Examine universal wording in context, including disclosed exceptions.
 
-Review permissions, networking, uploads, data retention, original-file
-mutation, accounts, payments, tracking, supported formats, and every advertised
-primary function. Examine “never”, “no”, “every”, “all”, “only”, “unchanged”,
-and “untouched” adversarially.
+## Bounded safety decision and test scope
 
-## Gate decision
+Use docs/test-eligibility.md. Identify synthetic inputs, included/excluded actions,
+identity/permission/containment evidence, stop conditions and pending APK facts.
+Explain why each product finding is safe to investigate or excluded from execution
+while retained in the report. Unresolved risk means BLOCKED/NOT_REVIEWED.
+Safety PASS means eligibility for the next separately approved gate, not a
+security guarantee or execution approval.
 
-Use `PASS` only when all material claims are consistent or explicitly scoped.
-An unresolved contradiction uses `CLARIFICATION_REQUIRED` and blocks
-activation, APK download, emulator/ADB use, installation, and execution. State
-the narrow factual clarification needed for a new exact preflight.
+## Claim decision
+
+PASS: no identified material discrepancy within the reviewed scope.
+FINDINGS_RECORDED: known discrepancies, evidence and their safe handling recorded.
+CLARIFICATION_REQUIRED: insufficient classification; executable gates stay closed.
+Copy both final status markers to case.env and recompute this file's digest.
+Preserve previous decisions when reassessing an existing case. Never drop a
+finding or infer runtime success to make a candidate eligible.

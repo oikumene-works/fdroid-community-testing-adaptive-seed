@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# shellcheck source-path=SCRIPTDIR
 
 repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd -- "$repo_root"
+# shellcheck source=scripts/lib/common.sh
+source "$repo_root/scripts/lib/common.sh"
 
 active_case=""
 if [[ -e cases/active-case ]]; then
@@ -43,8 +46,12 @@ while IFS= read -r case_dir; do
             echo "Active case contains unresolved values" >&2
             exit 1
         fi
-        rg -Fxq 'CLAIM_REVIEW_STATUS=PASS' "$case_dir/case.env" || {
-            echo "Active case claim review is not PASS" >&2
+        rg -xq 'CLAIM_REVIEW_STATUS=(PASS|FINDINGS_RECORDED)' "$case_dir/case.env" || {
+            echo "Active case claim review is not classified for testing" >&2
+            exit 1
+        }
+        rg -Fxq 'TEST_SAFETY_STATUS=PASS' "$case_dir/case.env" || {
+            echo "Active case test safety is not PASS" >&2
             exit 1
         }
         rg -Fxq 'APK_QUALIFICATION_STATUS=PASS' "$case_dir/case.env" || {
@@ -55,6 +62,12 @@ while IFS= read -r case_dir; do
             echo "Active case still has a pending built-APK surface" >&2
             exit 1
         }
+        (
+            resolve_case --case "$case_id"
+            load_case
+            require_claim_gate
+            require_qualification_gate
+        )
         echo "Active case record: $case_id (activation gates complete)"
     else
         echo "Inactive pending case checkpoint: $case_id"

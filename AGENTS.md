@@ -36,7 +36,8 @@
   qualification, emulator/ADB use, external upload, report approval, and
   public posting are separate operator decisions for one exact case.
 - Do not activate, download, or execute a case unless its digest-bound public
-  claim review is `PASS`.
+  review records `TEST_SAFETY_STATUS=PASS` and claim status `PASS` or
+  `FINDINGS_RECORDED`; see `docs/test-eligibility.md`.
 - Finish an approved download-inspect-delete APK qualification and record its
   clean checkpoint before requesting emulator/ADB approval.
 - Require a committed clean HEAD before qualification, execution download,

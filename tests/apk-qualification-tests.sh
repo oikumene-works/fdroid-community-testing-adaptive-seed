@@ -14,7 +14,7 @@ cp "$repo_root/scripts/lib/apk.sh" "$fixture/scripts/lib/apk.sh"
 cp "$repo_root/scripts/qualify-case-apk.sh" "$fixture/scripts/qualify-case-apk.sh"
 chmod +x "$fixture/scripts/qualify-case-apk.sh"
 printf '%s\n' '.local/' >"$fixture/.gitignore"
-printf '%s\n' 'reviewed claims' >"$fixture/cases/pending-case/claims.md"
+printf '%s\n' 'TEST_SAFETY_STATUS=PASS' 'CLAIM_REVIEW_STATUS=FINDINGS_RECORDED' 'Known missing optional function; safe synthetic scope.' >"$fixture/cases/pending-case/claims.md"
 claims_sha="$(sha256sum "$fixture/cases/pending-case/claims.md" | cut -d' ' -f1)"
 apk_sha="$(printf 'synthetic apk bytes' | sha256sum | cut -d' ' -f1)"
 cat >"$fixture/cases/pending-case/case.env" <<EOF
@@ -34,11 +34,13 @@ UPSTREAM_APK_SHA256=$apk_sha
 CODE_QUALITY_APK_URL=https://example.invalid/pending.apk
 CLAIM_REVIEW_FILE=claims.md
 EXPECTED_CLAIM_REVIEW_SHA256=$claims_sha
-CLAIM_REVIEW_STATUS=PASS
+CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
+TEST_SAFETY_STATUS=PASS
 EOF
 cat >"$fixture/scripts/recheck-case.sh" <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
+printf '%s\n' recheck >> "$MOCK_EFFECT_LOG"
 echo READ_ONLY_RECHECK=PASS
 EOF
 chmod +x "$fixture/scripts/recheck-case.sh"
@@ -47,6 +49,7 @@ cat >"$fake_bin/curl" <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 output=""
+printf '%s\n' download >> "$MOCK_EFFECT_LOG"
 while (($#)); do
     case "$1" in
         --output) output="$2"; shift 2 ;;
@@ -130,6 +133,7 @@ git -C "$fixture" -c user.name=Test -c user.email=test.invalid add .
 git -C "$fixture" -c user.name=Test -c user.email=test.invalid commit -qm fixture
 
 output="$(PATH="$fake_bin:$PATH" MOCK_FAKE_BIN="$fake_bin" ANDROID_SDK_ROOT="$fake_sdk" \
+    MOCK_EFFECT_LOG="$test_root/effects" \
     "$fixture/scripts/qualify-case-apk.sh" --case pending-case \
     --approval qualify-apk:pending-case)"
 rg -Fq 'APK_QUALIFICATION=RECONCILIATION_REQUIRED' <<<"$output"
@@ -138,5 +142,31 @@ rg -Fq 'APK_USES_FEATURES=android.hardware.faketouch,android.hardware.touchscree
 rg -Fq 'APK_NATIVE_CODE=arm64-v8a,x86_64' <<<"$output"
 rg -Fq 'E: activity' <<<"$output"
 [[ -z "$(find "$fixture/.local/downloads" -type f -name '*.apk' -print)" ]]
+[[ "$(cat "$test_root/effects")" == $'recheck\ndownload' ]]
 
-echo "Pending qualification and complete built-surface test passed: 1"
+# Coherent blocked/unknown reviews must stop the real qualification entry point
+# before even the mocked live read or download. Keep each fixture committed so
+# an unrelated dirty-checkpoint refusal cannot mask a gate regression.
+for safety_status in BLOCKED NOT_REVIEWED; do
+    sed -i "s/^TEST_SAFETY_STATUS=.*/TEST_SAFETY_STATUS=$safety_status/" \
+        "$fixture/cases/pending-case/case.env" "$fixture/cases/pending-case/claims.md"
+    claims_sha="$(sha256sum "$fixture/cases/pending-case/claims.md" | cut -d' ' -f1)"
+    sed -i "s/^EXPECTED_CLAIM_REVIEW_SHA256=.*/EXPECTED_CLAIM_REVIEW_SHA256=$claims_sha/" \
+        "$fixture/cases/pending-case/case.env"
+    git -C "$fixture" add cases
+    git -C "$fixture" -c user.name=Test -c user.email=test.invalid commit -qm "$safety_status"
+    rm "$test_root/effects"
+    if PATH="$fake_bin:$PATH" MOCK_FAKE_BIN="$fake_bin" ANDROID_SDK_ROOT="$fake_sdk" \
+        MOCK_EFFECT_LOG="$test_root/effects" \
+        "$fixture/scripts/qualify-case-apk.sh" --case pending-case \
+        --approval qualify-apk:pending-case >"$test_root/denial" 2>&1; then
+        echo "Unsafe qualification unexpectedly passed" >&2
+        exit 1
+    fi
+    rg -Fq "Bounded test safety is not PASS: $safety_status" "$test_root/denial"
+    [[ ! -e "$test_root/effects" ]]
+    # The next iteration removes the marker without special-casing this state.
+    touch "$test_root/effects"
+done
+
+echo "Safe findings qualification and pre-effect safety denial tests passed: 3"

@@ -1,6 +1,10 @@
 # Battleship public claim review
 
-Status: `CLARIFICATION_REQUIRED`. Evidence class: exact-source review only.
+TEST_SAFETY_STATUS=PASS
+CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
+
+Evidence class: exact-source review only; bounded eligibility, not a security
+assessment or execution approval. Reassessed under docs/test-eligibility.md.
 
 ## Bound inputs
 
@@ -24,9 +28,9 @@ behavior are static findings, not observations of a running app.
 
 | Public claim | Exact evidence | Assessment |
 | --- | --- | --- |
-| Fastlane short/full descriptions and README advertise two-player pass-and-play. | `MenuScreen.kt` has one start callback. `BattleshipNavHost.kt` routes that callback directly to placement. `GameUiState.kt` models playerBoard and aiBoard. `GameViewModel.confirmPlacement()` always generates an AI board; `playerAttack()` schedules `aiAttack()`, which always calls `BattleshipAI.chooseAttack()`. `strings.xml` explicitly labels the mode single player against AI. No second-human mode, selector, placement, handoff, or turn path was found across main source. The privacy policy also calls it single-player. | Material contradiction. Clarify/remove the advertised mode or provide the corresponding implementation at a newly pinned version. This finding alone closes the claim gate. |
-| Fastlane and README promise manual drag-and-drop placement. | `PlacementScreen.kt` wires cell clicks to `placeShip`, with separate rotation and auto-place buttons; `BattleGrid.kt` passes onCellClick; `GridCell.kt:133` uses Modifier.clickable. No drag or pointer-gesture placement path was found. | Clarification required: the inspected path is tap placement, not a drag-and-drop path. Runtime gestures were not tested. |
-| Privacy text says game data is only on the device, never sent to any third party, and removed upon app deletion/data clearing. | Manifest sets allowBackup=true and references backup_rules.xml and data_extraction_rules.xml. Both contain no operative exclusion of shared preferences. Career data and medal counts use private SharedPreferences named career_stats. The policy itself later permits Android/Google backup. | Clarification required: distinguish app-controlled transmission and local deletion from OS-managed backup/restore. This does not establish that any backup actually occurred. |
+| Fastlane short/full descriptions and README advertise two-player pass-and-play. | `MenuScreen.kt` has one start callback. `BattleshipNavHost.kt` routes that callback directly to placement. `GameUiState.kt` models playerBoard and aiBoard. `GameViewModel.confirmPlacement()` always generates an AI board; `playerAttack()` schedules `aiAttack()`, which always calls `BattleshipAI.chooseAttack()`. `strings.xml` explicitly labels the mode single player against AI. No second-human mode, selector, placement, handoff, or turn path was found across main source. The privacy policy also calls it single-player. | Product finding. Keep the two-human mode as unverified/missing at source level; a synthetic one-human-versus-AI scope does not depend on that advertised mode. Correct the description or investigate a newly supplied implementation path. This finding does not itself create an unsafe test action. |
+| Fastlane and README promise manual drag-and-drop placement. | `PlacementScreen.kt` wires cell clicks to `placeShip`, with separate rotation and auto-place buttons; `BattleGrid.kt` passes onCellClick; `GridCell.kt:133` uses Modifier.clickable. No drag or pointer-gesture placement path was found. | Product finding: the inspected path is tap placement, not a drag-and-drop path. A synthetic tap/rotation test is bounded; runtime gestures remain untested. |
+| Privacy text says game data is only on the device, never sent to any third party, and removed upon app deletion/data clearing. | Manifest sets allowBackup=true and references backup_rules.xml and data_extraction_rules.xml. Both contain no operative exclusion of shared preferences. Career data and medal counts use private SharedPreferences named career_stats. The policy itself later permits Android/Google backup. | Documentation finding: distinguish app-controlled transmission and local deletion from OS-managed backup/restore. The backup path is already disclosed. Use synthetic game state only, no Google account or cloud-backed image, and no backup/restore action. This does not establish that any backup occurred. |
 | No internet, account, ads, tracking, or sensitive permissions; VIBRATE is the only declared permission. | Main source manifest declares only android.permission.VIBRATE, exports only launcher MainActivity, and defines no service/receiver/provider. Declared production dependencies are AndroidX/Compose/navigation/lifecycle and Kotlin coroutines. No app network/account/billing/analytics client was found. | Consistent at source level. Merged dependencies, certificate, binary identity and all built surfaces remain unqualified. Read the third-party-SDK wording narrowly as tracking SDKs; standard third-party libraries clearly exist. |
 | Footer links open externally. | MenuFooter.kt delegates only the fixed developer URL and GitHub latest-release page to LocalUriHandler.openUri. No embedded browser, downloader, document/share input, or app link was found. | Consistent statically. No link was opened in an Android app. Source web-font URLs belong to website HTML, not the app network surface. |
 | 10x10 board, five ships, five unlockable weapons, eight ranks, generated audio, and career persistence. | Board/GameConfig/ShipType, SuperWeapon, Rank, SoundManager, GameViewModel, SessionStats and SharedPreferences storage provide those paths. | Source support, no functional result. Boundary weapon patterns are clipped by resolveWeaponCells; a five-cell sweep does not cover a whole ten-cell row. English/Persian website wording describing a whole row is overbroad. |
@@ -34,22 +38,55 @@ behavior are static findings, not observations of a running app.
 | llms.txt says there is no persistence. | SharedPreferencesSessionStatsStorage and SharedPreferencesMedalsStorage persist career data. | Stale auxiliary documentation. It is untrusted claim material, not an instruction for this review. |
 | MR says the build is reproducible and offline. | Exact-head pipeline and build succeeded; trace reports verification and emits the Code Quality APK URL. GitHub reports an uploaded asset digest; fdroiddata pins the signer. | Provider evidence only. No independent rebuild or binary inspection was performed. |
 
-## Scope and decision
+## Bounded safety assessment and decision
 
-Reject this exact candidate from later gates as `CLARIFICATION_REQUIRED`.
-The missing advertised two-human path is independent of the backup-wording
-finding observed in the earlier Chess Puzzles case. No runtime failure, security
-vulnerability, or F-Droid acceptance/rejection decision is claimed.
+The source evidence supports eligibility for the next separately approved
+APK download-inspect-delete qualification. App identity/source/release/signer
+expectations and the exact artifact URL remain pinned. The source declares
+VIBRATE only, exports a launcher, and has no observed network, account, payment,
+sensitive permission, document input or arbitrary-file write path. APK parsers
+must use the existing no-network read-only sandbox; actual sandbox behavior and
+merged APK contents remain unverified until that separate qualification.
 
-The live custom website and canonical hosted privacy page could not be read
-through the web reader; this review binds the website files at the exact source,
-not an assertion that the currently deployed site has identical bytes. A future
-passing preflight must also establish the then-current effective live claims.
+The eventual bounded functional scope would use only synthetic game moves in
+the disposable AOSP API34 x86_64 environment, no account, no Google/cloud-backed
+image, no external-link activation, and no backup/restore attempt. Include
+single-player placement, AI turns, reachable weapons and synthetic local career
+state. The two-human and drag claims remain source-only findings, never silently
+counted as runtime passes. Stale counts/persistence descriptions do not create
+an additional execution effect. No personal file, real-world credential or
+security-critical operation is needed. All scope and cleanup conditions in
+case.md remain mandatory, with separate exact operator approval.
 
-Do not clear the status locally to bypass these conflicts. A materially changed
-MR/source/listing requires a new exact review and digest. This review authorizes
-no APK download, qualification, activation, Android action, upstream contact,
-issue/comment, push, upload, or publication.
+This scope excludes the app's external footer links and any OS/cloud backup
+behavior. If qualification reveals INTERNET, sensitive permissions, an
+unexpected component/data route, a different identity/signer or unexplained
+writes, stop and reassess. Unknown built surfaces are a qualification prerequisite,
+not evidence that the executable is already safe. No qualification or Android
+approval is present and no case is active.
+
+The deployed website could not previously be read through the web reader. The
+review binds its exact source files and retains this limitation. It does not
+assert a clean live listing or currently deployed byte identity. That product-
+claim evidence gap does not itself enable network access or expand this scope.
+
+Current decisions: safety PASS for the described gated scope; claims
+FINDINGS_RECORDED. The code and wording have not been corrected by this review.
+The detailed findings remain open. A changed MR/source/artifact requires a fresh
+preflight; new evidence that changes safety or scope requires a fresh digest.
+
+## Decision history and communication
+
+At checkpoint 641156a, the older policy classified these findings as
+CLARIFICATION_REQUIRED and stopped every later gate. On 2026-09-22 the operator
+explicitly authorized separating test safety from product findings. The new
+assessment above changes our policy/classification, not the candidate or its
+observed behavior. Earlier evidence remains in Git history and evidence-index.md.
+
+The separately authorized courteous source-only issue was published and verified
+at <https://github.com/cocodedk/Battleship/issues/55>. See upstream-issue-record.md
+and upstream-issue-body.md for exact text, digest, identity and authorization.
+It grants no approval for further comments, APK action, Android or publication.
 
 Android backup interpretation follows the official documentation:
 <https://developer.android.com/identity/data/autobackup>. Shared preferences are

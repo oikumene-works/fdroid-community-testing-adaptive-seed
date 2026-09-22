@@ -1,10 +1,10 @@
 # Adaptive Seed Design
 
 ## Status
-
 This document defines an independent adaptive alternative to the published guarded
 starter kit. It can discover, propose, create one ignored profile, and run offline
-checks after exact approval; gates and action scripts retain their behavior.
+checks after exact approval. The case workflow separates bounded test safety
+from product findings; see [Test Eligibility](test-eligibility.md).
 
 The seed must preserve current safety boundaries while remaining simple enough for a newcomer with no project history.
 
@@ -30,7 +30,7 @@ initializes Git or replaces a ZIP; neither interface may weaken safety or author
   guarded use of existing offline verification without installation, network
   access, Android mutation, or external mutation.
 - **Stop condition:** the local reference lane passes the repository checks and
-  fictional dry run. No candidate-handling or Android behavior is changed.
+  fictional dry run. The discovery path grants no candidate or Android authority.
 
 ## Growth protocol
 

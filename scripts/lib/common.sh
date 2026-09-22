@@ -100,15 +100,37 @@ verify_digest_bound_file() {
     [[ "$actual" == "$expected" ]] || die "$label digest changed: $actual"
 }
 
-require_claim_gate() {
+verify_claim_review() {
     require_tools sha256sum
-    for name in CLAIM_REVIEW_FILE EXPECTED_CLAIM_REVIEW_SHA256 CLAIM_REVIEW_STATUS; do
+    local name
+    for name in CLAIM_REVIEW_FILE EXPECTED_CLAIM_REVIEW_SHA256 CLAIM_REVIEW_STATUS TEST_SAFETY_STATUS; do
         require_value "$name"
     done
-    [[ "$CLAIM_REVIEW_STATUS" == "PASS" ]] || \
-        die "Public-claim review is not PASS: $CLAIM_REVIEW_STATUS"
+    case "$CLAIM_REVIEW_STATUS" in
+        PASS | FINDINGS_RECORDED | CLARIFICATION_REQUIRED) ;;
+        *) die "Invalid claim status: $CLAIM_REVIEW_STATUS" ;;
+    esac
+    case "$TEST_SAFETY_STATUS" in
+        PASS | BLOCKED | NOT_REVIEWED) ;;
+        *) die "Invalid test safety status: $TEST_SAFETY_STATUS" ;;
+    esac
     verify_digest_bound_file "$CLAIM_REVIEW_FILE" "$EXPECTED_CLAIM_REVIEW_SHA256" \
         "public claim review"
+    # Bind both decisions to the reviewed text; an env-only edit is insufficient.
+    for name in TEST_SAFETY_STATUS CLAIM_REVIEW_STATUS; do
+        [[ "$(sed -n "/^${name}=/p" "$case_dir/$CLAIM_REVIEW_FILE")" == "$name=${!name}" ]] || \
+            die "Review decision missing, duplicated or mismatched: $name"
+    done
+}
+
+require_claim_gate() {
+    verify_claim_review
+    [[ "$TEST_SAFETY_STATUS" == PASS ]] || \
+        die "Bounded test safety is not PASS: $TEST_SAFETY_STATUS"
+    case "$CLAIM_REVIEW_STATUS" in
+        PASS | FINDINGS_RECORDED) ;;
+        *) die "Public-claim review needs classification: $CLAIM_REVIEW_STATUS" ;;
+    esac
 }
 
 require_qualification_gate() {

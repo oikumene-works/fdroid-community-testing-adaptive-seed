@@ -23,4 +23,4 @@ template_marker="CHANGE""ME"
 sed -i "s/^CASE_ID=${template_marker}$/CASE_ID=${case_id}/" "$destination/case.env"
 
 echo "Created $destination with every executable and public gate closed."
-echo "Fill exact public facts; do not activate until claims and qualification pass."
+echo "Fill exact public facts; activation needs reviewed safe scope, classified claims and qualification."

@@ -26,6 +26,9 @@ initial no-network lane. Built fields remain pending until qualification.
 
 Link `claims.md`, record its digest and status, and summarize every material
 claim inconsistent with source, UI paths, or the qualified merged APK.
+Record TEST_SAFETY_STATUS separately, with scope and the consequence of each
+finding under docs/test-eligibility.md. Known product findings need not block
+a safe bounded test; identity, authority and containment questions do.
 
 ## Intended functional test
 

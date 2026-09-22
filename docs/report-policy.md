@@ -10,7 +10,7 @@ Every report should include:
 - exact candidate identifiers and digests;
 - executor and human involvement;
 - completed checks and explicit untested surfaces;
-- claim-review status and any material contradiction;
+- separate test-safety and claim-review statuses and all known product findings;
 - observations separated from inference;
 - a sanitized timeline and phase durations;
 - cleanup and upload state; and
@@ -19,6 +19,11 @@ Every report should include:
 Do not call a pre-installation stop a failed or completed functional test. Do
 not generalize a bounded pass into security, privacy, accessibility, usability,
 policy compliance, or publication acceptance.
+
+Preserve unresolved product findings when a safe function passes. Explain
+excluded coverage and source-only evidence without presenting the candidate or
+author as generally rejected. Public findings should identify the version,
+contrast evidence with the claim, suggest a small correction and invite correction.
 
 Before publication, audit names, paths, identities, links, licenses, secrets,
 and third-party material. Review the exact file digest and destination. A

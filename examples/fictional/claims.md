@@ -2,6 +2,12 @@
 
 **SYNTHETIC EXAMPLE**
 
+TEST_SAFETY_STATUS=PASS
+CLAIM_REVIEW_STATUS=PASS
+
+The fictional scope uses synthetic images only, no account or network, and
+disposable storage. These decisions are not approval for any real action.
+
 ## Exact sources
 
 The invented listing says the app creates cleaned copies and never changes an

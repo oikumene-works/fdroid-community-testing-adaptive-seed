@@ -20,7 +20,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-printf '%s\n' 'synthetic claim review' >"$test_root/claims.md"
+printf '%s\n' 'TEST_SAFETY_STATUS=PASS' 'CLAIM_REVIEW_STATUS=PASS' 'synthetic claim review' >"$test_root/claims.md"
 printf '%s\n' 'synthetic qualification' >"$test_root/qualification.md"
 case_dir="$test_root"
 CASE_ID=fictional-dry-run
@@ -28,6 +28,7 @@ EXAMPLE_ONLY=true
 CLAIM_REVIEW_FILE=claims.md
 EXPECTED_CLAIM_REVIEW_SHA256="$(sha256sum "$test_root/claims.md" | cut -d' ' -f1)"
 CLAIM_REVIEW_STATUS=PASS
+TEST_SAFETY_STATUS=PASS
 APK_QUALIFICATION_FILE=qualification.md
 EXPECTED_APK_QUALIFICATION_SHA256="$(sha256sum "$test_root/qualification.md" | cut -d' ' -f1)"
 APK_QUALIFICATION_STATUS=NOT_STARTED
@@ -43,10 +44,20 @@ CLAIM_REVIEW_STATUS=CLARIFICATION_REQUIRED
 if (require_claim_gate) >/dev/null 2>&1; then
     die "Clarification-required claim gate unexpectedly passed"
 fi
-echo "DENIAL=unresolved public claim blocks executable gates"
+echo "DENIAL=unclassified public claim blocks executable gates"
 
-CLAIM_REVIEW_STATUS=PASS
+CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
+printf '%s\n' 'TEST_SAFETY_STATUS=PASS' 'CLAIM_REVIEW_STATUS=FINDINGS_RECORDED' \
+    'Known missing feature; synthetic offline scope retained.' >"$test_root/claims.md"
+EXPECTED_CLAIM_REVIEW_SHA256="$(sha256sum "$test_root/claims.md" | cut -d' ' -f1)"
 require_claim_gate
+echo "ELIGIBLE=recorded product findings with reviewed safe scope"
+TEST_SAFETY_STATUS=BLOCKED
+if (require_claim_gate) >/dev/null 2>&1; then
+    die "Safety blocker unexpectedly passed"
+fi
+echo "DENIAL=blocked test safety prevents executable gates"
+TEST_SAFETY_STATUS=PASS
 if (require_qualification_gate) >/dev/null 2>&1; then
     die "Incomplete qualification gate unexpectedly passed"
 fi

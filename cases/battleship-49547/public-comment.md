@@ -1,7 +1,8 @@
-# Public communication state
+# F-Droid communication state
 
 NOT PREPARED. NOT APPROVED. NOT POSTED.
 
-The user explicitly restricted this case to read-only selection and preflight.
-No upstream issue, F-Droid comment, account-bound posting approval, upload,
-remote push or other external mutation occurred. No public text is proposed.
+No F-Droid comment or posting approval exists. The user separately authorized
+one courteous upstream GitHub issue, now published and verified as #55; its
+exact body and receipt are upstream-issue-body.md and upstream-issue-record.md.
+No further issue comment/edit or public mutation is authorized.

@@ -215,3 +215,6 @@ recorded in the
 An ignored local profile exposed a live-worktree test assumption before any
 candidate or external action; the corrected test passed an isolated
 profile-bearing offline-verification rerun.
+
+The operator-authorized separation of test safety from product findings is
+recorded in [Test Eligibility](test-eligibility.md). Historical stops remain history.

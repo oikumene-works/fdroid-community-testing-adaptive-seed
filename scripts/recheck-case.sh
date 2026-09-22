@@ -20,7 +20,7 @@ for name in GITLAB_TARGET_PROJECT_ID GITLAB_SOURCE_PROJECT_ID MR_IID \
     SOURCE_MANIFEST_PATH EXPECTED_SOURCE_PERMISSIONS UPSTREAM_APK_NAME \
     UPSTREAM_APK_SHA256 CODE_QUALITY_APK_URL PUBLIC_CLAIM_PATHS \
     EXPECTED_PUBLIC_CLAIMS_SHA256 CLAIM_REVIEW_FILE EXPECTED_CLAIM_REVIEW_SHA256 \
-    CLAIM_REVIEW_STATUS; do
+    CLAIM_REVIEW_STATUS TEST_SAFETY_STATUS; do
     require_value "$name"
 done
 [[ "$UPSTREAM_PROVIDER" == "github" ]] || die "Unsupported upstream provider"
@@ -105,9 +105,7 @@ source_surface_sha256="$(printf '%s\n' "$source_surface" | sha256sum | cut -d' '
 [[ "$source_surface_sha256" == "$EXPECTED_SOURCE_SURFACE_SHA256" ]] || \
     die "Source surface changed: $source_surface_sha256"
 
-case "$CLAIM_REVIEW_STATUS" in PASS | CLARIFICATION_REQUIRED) ;; *) die "Invalid claim status" ;; esac
-verify_digest_bound_file "$CLAIM_REVIEW_FILE" "$EXPECTED_CLAIM_REVIEW_SHA256" \
-    "public claim review"
+verify_claim_review
 public_claims="$("$repo_root/scripts/inspect-public-claims.sh" --case "$CASE_ID" --machine)"
 public_claims_sha256="$(printf '%s\n' "$public_claims" | sha256sum | cut -d' ' -f1)"
 [[ "$public_claims_sha256" == "$EXPECTED_PUBLIC_CLAIMS_SHA256" ]] || \
@@ -130,6 +128,7 @@ echo "METADATA_SHA256=$metadata_sha256"
 echo "SOURCE_SURFACE_SHA256=$source_surface_sha256"
 echo "PUBLIC_CLAIMS_SHA256=$public_claims_sha256"
 echo "CLAIM_REVIEW_STATUS=$CLAIM_REVIEW_STATUS"
+echo "TEST_SAFETY_STATUS=$TEST_SAFETY_STATUS"
 echo "APK_HEAD_HTTP=$http_code"
 echo "ARTIFACT_EXPIRES=${artifact_expiry:-none reported}"
 echo "SOURCE=$UPSTREAM_SOURCE_COMMIT"

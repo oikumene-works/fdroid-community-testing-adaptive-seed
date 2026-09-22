@@ -14,7 +14,9 @@ total active work, and end-to-end elapsed time.
 
 ## Public claim review
 
-Record claim-surface/review digests, gate status, and material limitations.
+Record claim-surface/review digests, claim and safety statuses, and limitations.
+Retain known product findings, their evidence class and excluded test actions.
+A partial functional pass does not resolve another missing or inaccurate claim.
 
 ## Basic and policy-facing observations
 

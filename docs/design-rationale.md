@@ -7,6 +7,13 @@ The workflow therefore binds observations to one MR head, pipeline, build job,
 upstream source, version, APK digest, certificate, and claim surface. A useful
 report says what was tested, not merely which app was named.
 
+## Test eligibility versus product quality
+
+A safe bounded test can investigate a known defect. The digest-bound review
+separates test safety from claim findings; see [Test Eligibility](test-eligibility.md).
+Safety/identity uncertainty blocks; a documented safe product finding remains
+visible without requiring a defect-free candidate. Neither decision grants authority.
+
 ## Separate approval boundaries
 
 Read-only research has a different risk profile from downloading an executable,

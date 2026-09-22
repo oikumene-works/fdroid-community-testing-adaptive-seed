@@ -43,10 +43,16 @@ against exact source and UI paths. Examine universal terms such as “never”,
 “no”, “every”, “all”, “only”, “unchanged”, and “untouched”. Bind the completed
 review to a digest in `claims.md`.
 
-Set `CLAIM_REVIEW_STATUS=CLARIFICATION_REQUIRED` for an unresolved material
-contradiction. That status blocks activation, candidate download, emulator or
-ADB use, installation, and execution. A changed candidate needs a new exact
-preflight; editing the status alone is not a resolution.
+Classify safety separately from product correctness using
+[the test-eligibility policy](test-eligibility.md). Record TEST_SAFETY_STATUS
+(PASS, BLOCKED or NOT_REVIEWED) and CLAIM_REVIEW_STATUS (PASS,
+FINDINGS_RECORDED or CLARIFICATION_REQUIRED) in both case.env and claims.md.
+A safe missing feature or stale description may remain a reported finding.
+Unresolved identity, containment, data-risk or authority questions block testing;
+unclassified claims also block. Document the bounded synthetic scope and every
+finding's effect on the checklist. Bind the complete review to its digest.
+Only safety PASS plus claim PASS/FINDINGS_RECORDED permits the next separately
+approved gate. A changed candidate requires a new exact preflight.
 
 ## Gate 2B: Built-APK qualification
 
@@ -61,7 +67,8 @@ deleting the APK.
 
 Run APK parsers inside the provided no-network, read-only Bubblewrap sandbox.
 Reconcile the observed surface against source and claims, replace the pending
-values, and stop on any material contradiction. Record a sanitized
+values, and stop on any identity/safety conflict or unclassified discrepancy.
+Retain safe product findings and update the review if their classification changes. Record a sanitized
 qualification result and digest, run the offline checks, and leave a clean
 checkpoint before activation or emulator approval.
 

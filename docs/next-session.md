@@ -2,60 +2,57 @@
 
 ## Objective and current gate
 
-This fresh public-seed case clone owns the bounded Battleship !49547 preflight.
-User scope: a previously untested candidate, separate local state, discovery and
-only necessary normal growth, read-only selection/exact source review, then stop.
-APK download, Android startup and all external mutations were explicitly excluded.
+Battleship !49547 is inactive with source-only product findings retained.
+The operator authorized a courteous upstream notification and implementation of
+test-safety/product-finding separation on 2026-09-22. Both are complete locally;
+only the upstream issue was published. No APK or Android work was authorized.
 
-Completed: source-preflight rejection at a clean inactive case checkpoint.
-`cases/battleship-49547/case.env` is the machine record; read the complete case,
-claims, evidence index, qualification and report before resuming.
-`cases/active-case` must remain absent.
+Read the complete cases/battleship-49547 records. Machine decisions are now
+TEST_SAFETY_STATUS=PASS and CLAIM_REVIEW_STATUS=FINDINGS_RECORDED, bound to the
+new claims.md digest. This is eligibility for a separately approved next gate,
+not a statement that the app or its claims are correct. The original rejection
+at checkpoint 641156a remains historical evidence under the former policy.
 
-## Exact state
+## Exact candidate and completed work
 
-- Acquired public seed HEAD: `cb4ab8bd35952acb204c0920086d14a379996066`.
-- Candidate: fdroiddata !49547, Battleship 1.0.11 (1000011).
-- MR head: `f2577e78cab813fde78b11d16b7c7b05dd88ea69`.
-- Successful exact-head pipeline `2867295579`, build job `16624306623`.
-- Upstream tag v1.0.11/source: `35189f727db1cc80bdc55e9996bdcaa443914571`.
-- Claim status: `CLARIFICATION_REQUIRED`. The advertised two-player/drag
-  functionality does not match the source paths, and backup wording is overbroad.
-- Stock final read-only recheck passed all pinned inputs. This is not a passing
-  claim gate or a binary/functional result.
-- APK qualification NOT_STARTED; all built surfaces remain pending.
+- Seed acquired at cb4ab8bd35952acb204c0920086d14a379996066.
+- Development policy change e27f447afa4c67a5ed6cc30a017a5b4c80a8bb3b applied here
+  with the case-specific handoff retained; see docs/test-eligibility.md.
+- App: Battleship 1.0.11 (1000011), fdroiddata !49547.
+- MR head f2577e78cab813fde78b11d16b7c7b05dd88ea69.
+- Exact-head pipeline 2867295579 and build job 16624306623.
+- Upstream v1.0.11/source 35189f727db1cc80bdc55e9996bdcaa443914571.
+- Advertised two-player/drag paths and documentation discrepancies remain
+  source-only findings. Synthetic AI play does not require those missing paths.
+- The safety scope excludes real data, accounts, external links, backup/restore
+  and any network-capable or unexpectedly sensitive merged APK surface.
+- Fresh read-only recheck passed after migration with unchanged candidate pins.
+- APK qualification NOT_STARTED; every built-surface field remains pending.
+  cases/active-case is absent. No installation or runtime result exists.
 
-## Environment and local/external state
+## External and local state
 
-The ignored mode-600 Linux profile was created from fresh discovery through the
-seed preview/apply path. The offline wrapper, full checks and fictional dry run
-passed and preserved profile/Git state. No scripts or portable policy changed.
-No old profile/case data was imported, and no tooling was installed.
+One issue was created and exact-body/author verified:
+<https://github.com/cocodedk/Battleship/issues/55>, account oikumene-admin.
+The receipt and canonical body are in the case. No F-Droid comment, seed push,
+release, upload or other service mutation occurred. No future posting authority
+is inferred. The configured origin is the normal public clone remote.
 
-Only the local profile remains as case-local ignored state after cleanup.
-No Android config/AVD, case APK, raw source archive, API response, build trace,
-screenshot, fixture, emulator or isolated ADB service is retained.
-Unrelated host ADB processes were observed read-only and left untouched; do not
-stop them as case cleanup. Case ports 5041/5580/5581 had no listener.
+The separate ignored Linux profile remains mode 600. No Android config/AVD,
+case APK, emulator, isolated ADB server, raw source/archive/API/build trace or
+communication-test log is retained. Existing unrelated host ADB processes were
+not targeted. No tools, SDK components, provider adapters or execution lanes
+were installed or added. Offline regressions and the fictional dry run verify
+local gates with mocks, not real Android or parser-sandbox behavior.
 
-The network was used only for public reads and APK HEAD availability. Existing
-read-only clients served GitHub/GitLab public data; glab username Jyriwee was
-verified after anonymous GitLab endpoints required authentication. No credential
-value was recorded. No issue, comment, upload, push, publication or other external
-mutation occurred. origin remains the normal public HTTPS clone remote.
+## Resume and stop
 
-## Resume and stop condition
+Run ./scripts/session-bootstrap.sh; read AGENTS.md, this handoff, the complete
+case, docs/session-continuity.md, docs/protocol.md, docs/first-case-runbook.md and
+docs/test-eligibility.md. Inspect Git/local state; infer no identity, credential
+access, authority or approval from previous sessions or configured clients.
 
-Treat these records as the handoff; infer no identity, credential access,
-authority or approval from a previous session or a configured remote/client.
-
-1. Run ./scripts/session-bootstrap.sh and inspect Git/local state.
-2. Read AGENTS.md, this handoff, docs/session-continuity.md, docs/protocol.md,
-   docs/first-case-runbook.md and the complete inactive Battleship case.
-3. Preserve the rejection unless an explicitly scoped new review pins changed
-   upstream/MR/listing state and resolves every material claim conflict.
-
-No action is pending in this completed slice. Recommend a new session if a
-corrected candidate is later reviewed. Qualification, execution/cleanup, and
-public communication remain distinct future decisions. Do not activate, download
-an APK, start Android, contact upstream, publish or broaden the seed now.
+Stop at this clean inactive checkpoint. The next possible step is an explicitly
+approved exact download-inspect-delete APK qualification after a fresh live
+recheck. Recommend a new session for it. Do not activate, download, start Android,
+edit/comment on the issue, post to F-Droid or push without the applicable decision.

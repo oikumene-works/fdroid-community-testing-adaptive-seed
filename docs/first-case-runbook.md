@@ -105,8 +105,10 @@ The source scan covers common Android, React/TypeScript/JavaScript, Capacitor,
 Flutter, dependency, network, document, share, provider, and external-navigation
 surfaces. Review findings manually; scan absence is not proof of absence.
 
-Complete `case.md` and `claims.md`, compute the review digest, and set
-`CLAIM_REVIEW_STATUS=PASS` only if no material contradiction remains. Keep
+Complete `case.md` and `claims.md` using [test eligibility](test-eligibility.md).
+Bind TEST_SAFETY_STATUS and CLAIM_REVIEW_STATUS in claims.md and case.env.
+Safety must be PASS; claims may be PASS or FINDINGS_RECORDED with a safe scope.
+Compute the review digest; never migrate an old case by status edit alone. Keep
 `EXPECTED_APK_PERMISSIONS`, `EXPECTED_APK_FEATURES`,
 `EXPECTED_APK_NATIVE_CODE`, and `EXPECTED_APK_MANIFEST_XMLTREE_SHA256` at
 `PENDING_APK_QUALIFICATION`. Run `check-all.sh`, commit, and require a clean HEAD.
@@ -130,7 +132,8 @@ components, and relevant manifest lines before deleting the APK.
 
 With pending built fields, the success marker is
 `APK_QUALIFICATION=RECONCILIATION_REQUIRED`, not `PASS`. Reconcile the observed
-surface against source and claims. Stop on any material contradiction. Otherwise
+surface against source and claims. Stop on identity/safety conflicts or an
+unclassified discrepancy; retain safe product findings in the report. Otherwise
 record it in `qualification.md`, replace every pending built field with the exact
 observed value, set the qualification file digest and status to `PASS`, run
 `check-all.sh`, and commit the clean qualification checkpoint.

@@ -1,20 +1,22 @@
-# Battleship MR !49547: source-preflight rejection
+# Battleship MR !49547: source findings and bounded test eligibility
 
 ## Current gate
 
-Selected and reviewed, inactive, `CLAIM_REVIEW_STATUS=CLARIFICATION_REQUIRED`.
-The exact source is sufficient to reject this candidate from later gates.
-No built-APK qualification or functional test started. This is an independent
-community preflight, not an F-Droid decision or a security assessment.
+Inactive; TEST_SAFETY_STATUS=PASS and CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
+under the operator-authorized test-eligibility policy. This permits consideration
+of a separately approved exact APK qualification, not a download or activation
+now. APK_QUALIFICATION_STATUS remains NOT_STARTED and all built surfaces pending.
 
-The effective listing advertises pass-and-play for two people, while the pinned
-navigation/state/turn code implements one human against AI. It also advertises
-drag-and-drop, while placement is wired to cell clicks. The privacy policy's
-only-on-device/never-shared/deleted wording conflicts with its own OS-backup
-exception and the enabled, unrestricted shared-preferences backup configuration.
-See `claims.md` for the complete bounded matrix and `evidence-index.md` for
-per-file digests and immutable links. Merely changing the local status cannot
-resolve a source/claim contradiction.
+The source-only observations are unchanged. Missing advertised two-player/drag
+paths, backup wording and stale descriptions are retained as product/documentation
+findings. The bounded synthetic scope and safety reasons are in claims.md,
+with a new digest. The old rejection at checkpoint 641156a is historical, not an
+upstream correction or a runtime result. This is independent community review.
+
+One courteous source-only issue was posted and verified as authorized:
+<https://github.com/cocodedk/Battleship/issues/55>. The exact body and receipt are
+upstream-issue-body.md and upstream-issue-record.md. No F-Droid comment or seed
+push occurred. No approval for another external mutation is retained.
 
 ## Exact candidate
 
@@ -98,7 +100,7 @@ Normalized public-claim file-index SHA-256:
 All built permissions/features/native code/components/manifest digest remain
 unverified; the machine fields remain `PENDING_APK_QUALIFICATION`.
 
-## Local discovery and bounded growth
+## Original local discovery and bounded growth (historical)
 
 Fresh anonymous HTTPS clone of public seed commit
 `cb4ab8bd35952acb204c0920086d14a379996066`. Bootstrap named no active case.
@@ -145,7 +147,7 @@ Stop on changed pins, target ambiguity, unexpected network or sensitive merged
 permission, account/payment gate, unexpected external intent/write, repeated
 crash/ANR or cleanup failure. Use synthetic moves only and no personal data.
 
-## Observed timeline and external state
+## Original preflight timeline and external state (before issue publication)
 
 - 2026-09-22T02:00:49Z: fresh public clone (Git reflog timestamp).
 - 2026-09-22T02:02:43Z: inactive case record created (filesystem birth timestamp).
@@ -170,7 +172,7 @@ started, targeted or stopped by this case. No emulator process or listener on
 reference case ports 5041/5580/5581 was observed at the checkpoint inspection.
 This is a case-scoped cleanliness claim, not a claim that the entire host lacks ADB.
 
-## Bounded retrospective and stop
+## Original preflight retrospective (historical)
 
 Environment/tools: the existing lane was sufficient; missing Android config did
 not justify creating Android state for source review. Codex: claim-to-code tracing
@@ -179,7 +181,25 @@ joint coordination: the task's existing read-only/local-checkpoint authorization
 was sufficient; no additional effect boundary was crossed. No material process
 change is proposed or implemented. Disposition: no change (owners: Codex/shared).
 
-Stop at the committed, clean, inactive rejection checkpoint. A new session
-should read this case and handoff. A newly pinned correction requires a new
-read-only preflight; APK qualification needs a later exact decision and may not
-start while this claim status remains unresolved. No upstream contact is planned.
+## Current checkpoint and next boundary
+
+The seed change from development commit e27f447 was applied locally without
+replacing the case handoff. A new explicit safety/claim assessment in claims.md
+retains every original finding and narrows the future test scope. It does not
+pretend the source changed or the APK was inspected. Source/pipeline/artifact
+pins passed the stock read-only recheck after reassessment at 2026-09-22T02:40:00Z:
+READ_ONLY_RECHECK=PASS, TEST_SAFETY_STATUS=PASS,
+CLAIM_REVIEW_STATUS=FINDINGS_RECORDED, APK HEAD HTTP 200.
+No APK body was requested. Full offline regressions and the fictional dry run
+verify the local policy; they do not qualify the actual APK.
+
+The only external mutation is upstream issue #55; no seed push, F-Droid comment,
+APK download, Android command, activation or installation occurred. Temporary
+communication/source/API logs were removed; the ignored profile remains. Unrelated
+host ADB processes are outside the case and were not targeted.
+
+Current stop: checked clean inactive checkpoint, waiting for a separate exact
+qualification decision. If that is later requested, start a new session, recheck
+all pins and plan download-inspect-delete. Reconcile the built surface before
+any activation/Android decision. Keep the public product findings open unless
+new evidence actually resolves them. No further process expansion is proposed.
