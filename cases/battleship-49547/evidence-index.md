@@ -50,3 +50,22 @@ without an added newline. No raw API reply, source archive, trace, or APK is ret
 - Latest non-system note 3871514834: `4d94dc663a57655fefc8244c342f35cfcb9d7f20bf8d0b843545eacc62cbec22`.
 - Note content: author acknowledgement of the review/testing queue; no new technical requirement.
 - All paginated notes/discussions were reviewed; the two non-system notes are non-resolvable queue/acknowledgement notes.
+
+
+## Runtime follow-up — 2026-09-22
+
+The sanitized functional record is report.md. It owns UI-derived observations,
+source/runtime distinctions, timing and verified deletion of every raw artifact.
+The original review digests remain unchanged; observed runtime behavior does not
+rewrite the historical static qualification or the submitted source-only issue.
+
+Additional read-only source interpretation for repeated weapon-cell statistics,
+at the same pinned source commit (no code executed):
+
+| Path | SHA-256 |
+| --- | --- |
+| app/src/main/java/com/cocode/battleship/presentation/game/GameTrackers.kt | `1d3e5cfb887fd832bed632c182d2451e449fb8f0ac36699e948489fafd2b5658` |
+| app/src/main/java/com/cocode/battleship/presentation/game/GameWeaponLogic.kt | `574e3815d3bb1c40883566f17e4041a6c2581af9ea581df97e90a7371adec515` |
+
+The re-read GameViewModel.kt matched its existing digest above. All three
+transient snippets were removed by verified case cleanup.

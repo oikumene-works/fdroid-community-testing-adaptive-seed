@@ -2,13 +2,14 @@
 
 ## Current gate
 
-Active for the operator-authorized bounded Android execution-through-cleanup
-slice on 2026-09-22. TEST_SAFETY_STATUS=PASS,
-CLAIM_REVIEW_STATUS=FINDINGS_RECORDED and APK_QUALIFICATION_STATUS=PASS remain
-bound to the unchanged claims/qualification digests. Runtime work has not yet
-started at this preparation checkpoint. No publication is authorized.
+Inactive after the completed bounded Android execution and verified cleanup on
+2026-09-22. TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED and
+APK_QUALIFICATION_STATUS=PASS retain their unchanged bound review digests.
+report.md owns the actual runtime observations, partial coverage and cleanup.
+One synthetic AI game reached victory; four weapons were used and career
+persistence passed the sampled cold-relaunch check. No publication is authorized.
 
-The source-only observations are unchanged. Missing advertised two-player/drag
+The original source-only observations remain recorded. Missing advertised two-player/drag
 paths, backup wording and stale descriptions are retained as product/documentation
 findings. The bounded synthetic scope and safety reasons are in claims.md,
 with a new digest. The old rejection at checkpoint 641156a is historical, not an
@@ -200,7 +201,7 @@ APK download, Android command, activation or installation occurred. Temporary
 communication/source/API logs were removed; the ignored profile remains. Unrelated
 host ADB processes are outside the case and were not targeted.
 
-Current stop: checked clean inactive checkpoint, waiting for a separate exact
+Stop at that historical checkpoint: checked clean inactive checkpoint, waiting for a separate exact
 qualification decision. If that is later requested, start a new session, recheck
 all pins and plan download-inspect-delete. Reconcile the built surface before
 any activation/Android decision. Keep the public product findings open unless
@@ -217,7 +218,7 @@ provider/receiver controls. qualification.md owns the exact binary results,
 review rationale, timing and limitations. claims.md incorporates that evidence
 without resolving or discarding the source-only product findings.
 
-Current stop: inactive qualification PASS checkpoint. No APK or raw case journal
+Stop at that historical checkpoint: inactive qualification PASS checkpoint. No APK or raw case journal
 remains. Local growth consists solely of the mode-600 parser build-tools setting;
 it is not a complete Android configuration. No AVD, Android session, active-case
 pointer or new external mutation was created. The next possible slice requires
@@ -251,7 +252,7 @@ Android start or installation occurred during publication. Further execution or
 external mutation requires its own scoped decision. Recommend a new session
 for any separately authorized execution-through-cleanup slice.
 
-## Android execution authorization and preparation — 2026-09-22
+## Android execution authorization and preparation — 2026-09-22 (historical)
 
 The operator explicitly authorized this exact case from prerequisite discovery,
 activation, disposable AOSP API34 x86_64 preparation, exact APK re-download and
@@ -275,3 +276,45 @@ Doctor then found all prerequisites, with only the normal clone-remote warning.
 No SDK package, license or portable seed change was needed. Previewed guarded
 offline verification and fictional dry run passed with profile/Git preservation.
 The active-case pointer and this authority are committed before executable work.
+
+## Completed Android execution checkpoint — 2026-09-22
+
+The authorized slice ran from clean preparation commit
+206e03cd99f6899fb489e287be7583f86dd668ce. Fresh helper rechecks and the exact APK
+inspection passed. See report.md for the full bounded checklist, environment,
+UTC intervals, runtime counting observation and untested surfaces. Runtime
+corroborated the 33-item registry count and career persistence; it did not turn
+the source-only two-human/drag or backup observations into tested features.
+No claims/qualification pin or seed executable was changed.
+
+Stock CLEANUP_VERIFICATION=PASS at 03:30:38Z followed actual uninstall,
+wipe/reboot, package/Downloads absence, emulator/isolated-ADB stop and port/process
+checks. The created AVD was additionally deleted; at 03:31:09Z recursive local
+inventory contained only the mode-600 seed profile and Android config. All APK,
+UI, automation, source-snippet and journal material is gone. Unrelated ADB
+processes were untouched. cases/active-case is removed for the final checkpoint.
+No external mutation occurred. The report is local and not approved for posting.
+
+Stop at the checked clean local commit. A later report review or public action
+is a separate slice; recommend a new session from docs/next-session.md. No test
+resumption or public-action authority is implied by the retained local config.
+
+## Bounded execution retrospective
+
+1. Environment/tooling: the intentionally partial qualification-only config
+   caused doctor.sh to exit on EXPECTED_ANDROID_API instead of reporting a
+   missing runtime field. Completing the already-reviewed local reference config
+   resolved this case; actual boot/install/cleanup then passed. Park a bounded
+   doctor diagnostic improvement in this existing case record (owner: Codex;
+   pointer: scripts/doctor.sh and docs/environment-setup.md). Smallest outcome:
+   name missing runtime fields without an unbound-variable exit or any mutation.
+   Revisit when a partial config is next supported or doctor is changed; stop
+   when a partial-config regression and the existing complete-config path pass.
+   Portable implementation and its maintenance are a later scoped decision.
+2. Codex execution, operator experience and shared coordination: existing
+   authorization covered the complete slice; no renewed approval or human UI
+   handoff was needed. A transient UI driver stopped for new weapon/result
+   screens, and observations were kept separate from source interpretation.
+   Timing separates helper/execution/cleanup intervals but not active/waiting
+   subphases. Retain that limitation rather than infer precise effort. Owner:
+   Codex/shared; disposition: no additional process change in this slice.
