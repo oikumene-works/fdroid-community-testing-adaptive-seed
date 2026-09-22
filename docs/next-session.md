@@ -55,6 +55,13 @@ A later response or new test is a separate task; no automatic monitoring, reply,
 Android action or additional public message is authorized by this handoff.
 Recommend a new session if the operator selects a later reviewer-response slice.
 
+The operator also requested recording a possible seed-research continuation in
+[the comparison document](starter-kit-seed-comparison.md#proposed-research-continuation--2026-09-22).
+It proposes a one-page study plan as the next separately selected outcome,
+followed conditionally by an unfamiliar-human introductory evaluation and a
+common-policy comparison. Recording does not authorize those activities.
+After the break, use a new session if the operator selects that research work.
+
 Start with ./scripts/session-bootstrap.sh, AGENTS.md, docs/session-continuity.md,
 docs/protocol.md, docs/first-case-runbook.md and complete case records. Recheck
 actual local/remote state; infer no identity, credential access, authority or

@@ -87,3 +87,56 @@ This independent project is public as
 starter-kit ancestry. Later pushes, cross-links, metadata changes, or changes
 to the original starter kit remain distinct decisions. This document authorizes
 none of them.
+
+## Proposed research continuation — 2026-09-22
+
+Codex proposed the following direction after reviewing the retained evaluation
+and Battleship records. The operator requested that it be recorded for later
+consideration. This is a proposal, not an approved experiment, implementation,
+recruitment activity or publication. It sets no automatic execution priority.
+
+**Question:** Does adaptive discovery and guidance help an unfamiliar user reach
+a useful verified outcome with less outside help than a fixed starter kit?
+Success of the overall task alone would not establish an adaptive advantage.
+
+**Evidence so far:** Codex completed one bounded real Android case using the
+seed; the report and deleted-raw-evidence limits are in
+[the case report](../cases/battleship-49547/report.md). Earlier
+[newcomer evaluations](seed-newcomer-evaluation.md) used agents and do not
+establish human comprehension. The separate traditional Battleship comparison
+stopped before APK qualification under its stricter product-claim policy.
+That outcome isolates a policy difference, not adaptive superiority; it was
+not a comparison of two completed Android tests.
+
+**Revisit trigger and first bounded outcome:** When the operator chooses seed
+research after the break, prepare a one-page study plan before changing the
+product. Define the useful endpoint, observable measures, allowed effects,
+evidence retention, and results that would count against the hypothesis.
+Stop when that plan is reviewable; running it is a separate decision.
+
+The proposed sequence is:
+
+1. If an unfamiliar participant is available, propose one 30–45 minute
+   introductory session with Codex. Observe assistance required, unclear
+   choices, understanding of changes and ability to identify the next step.
+   Separate human actions, Codex actions and observer interpretations. Stop at
+   the agreed first useful verified outcome or time limit; a full Android test
+   is unnecessary. One session finds obstacles, not general effectiveness.
+2. If no suitable person is available, leave human comprehension unanswered.
+   Another agent run may answer a named technical question but cannot replace
+   the human study. Correct only a demonstrated material obstacle under a
+   separately selected change, then verify that correction.
+3. Later isolate adaptive versus fixed preparation with a common eligibility
+   policy, matched initial conditions and a predefined measurement plan.
+   Control learning/order effects; do not rank the unequal historical runs by
+   speed, effort or coverage. A simpler fixed kit performing equally well is
+   a useful result, not a failed research outcome.
+4. Explore generality only when a small real need outside Android testing is
+   selected. Use it to distinguish reusable principles from F-Droid-specific
+   machinery. Defer a general framework until such evidence justifies its
+   additional complexity and maintenance.
+
+Owner: shared selection and review; Codex prepares the proposed plan if later
+requested. Existing evaluation methods suffice; no new tracker, framework or
+standing maintenance obligation is proposed. Recording is the current stop
+condition. No experiment, product change or external action follows from it.
