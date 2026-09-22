@@ -144,3 +144,21 @@ preference, not a change to that preference or to the earlier published texts.
 Codex prepared workflow-offer-comment.md. The approved destination remains
 fdroid/fdroiddata!49547 and account Jyriwee. This offer grants no authority to
 send later links, recruit a participant, start a test or claim acceptance.
+
+The approved offer was posted once and verified:
+
+- URL: https://gitlab.com/fdroid/fdroiddata/-/merge_requests/49547#note_3882222351
+- Note ID: 3882222351; author: Jyriwee; created: 2026-09-22T05:51:47.783Z.
+- Posting checkpoint: c05b15444c6d27e495260df8645579effae5a96a.
+- Canonical body: workflow-offer-comment.md; SHA-256 with one final newline:
+  60277302717864c838c60fdb653885cd882eb441210d486834fadbab24ae250e.
+- Status: POSTED AND VERIFIED. Do not post this body again.
+
+The offline suite, full stock read-only case recheck, account/clean-checkpoint
+verification, exact digest and paginated duplicate checks passed before POST.
+Separate note readback matched author and body, and a fresh paginated lookup
+found exactly one copy. No retry was needed. The temporary receipt was removed
+after durable capture. Earlier public messages and their attribution remain
+unchanged. No repository push, Android action or GitHub issue mutation occurred.
+Retrospective: the existing bounded API path and combined record updates
+sufficed; no new tooling or process change was needed. Stop after this record.

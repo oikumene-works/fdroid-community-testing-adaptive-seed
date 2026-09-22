@@ -2,6 +2,12 @@
 
 ## Completed work and current gate
 
+After developer closing note 3882192208, the operator approved a short offer
+to share workflow links, explicitly omitting its final drafting attribution.
+The exact offer was posted once as note 3882222351 by @Jyriwee at 05:51:47.783Z
+on 2026-09-22 and independently verified. The body and receipt are in the case
+publication record. No later link message, collaboration or test is authorized.
+
 The approved follow-up reply is published and verified as GitLab note 3882155370
 by @Jyriwee at 2026-09-22T05:25:53.191Z. After an ambiguous first attempt, the
 operator checked its absence and explicitly authorized retrying. Fresh preflight
@@ -49,8 +55,8 @@ independently checked. No human Android rerun or F-Droid acceptance is establish
 - TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED,
   APK_QUALIFICATION_STATUS=PASS; static review digests are unchanged.
 - case.env records our posted note 3881992480 and the observed latest
-  non-system note 3882155370. The stock full read-only case recheck passed before
-  the follow-up retry; this does not validate a later release or behavior change.
+  non-system note 3882222351. The stock full read-only case recheck passed before
+  the workflow offer; this does not validate a later release or behavior change.
 
 ## Local state and external effects
 
@@ -60,8 +66,8 @@ helper, emulator or isolated-ADB session remains for this case. The temporary
 posting receipt was deleted after permanent capture and separate verification.
 No Android action was performed during report review or publication.
 
-The original report and the separately approved follow-up are published GitLab
-comments. Historical upstream issue #55 remains separately recorded; no GitHub
+The original report, approved follow-up and short workflow offer are published
+GitLab comments. Historical upstream issue #55 remains separately recorded; no GitHub
 follow-up or edit was sent.
 The operator also authorized relevant normal pushes to the existing adaptive
 seed origin/main. No label/discussion edit, tag, release, forced update or
