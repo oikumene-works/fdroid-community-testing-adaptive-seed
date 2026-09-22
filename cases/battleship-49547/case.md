@@ -2,11 +2,11 @@
 
 ## Current gate
 
-Inactive; TEST_SAFETY_STATUS=PASS and CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
-under the operator-authorized test-eligibility policy. APK_QUALIFICATION_STATUS
-is now PASS after the separately authorized download-inspect-delete and manual
-merged-surface reconciliation in qualification.md. The case remains inactive;
-Android start, installation and publication were explicitly excluded.
+Active for the operator-authorized bounded Android execution-through-cleanup
+slice on 2026-09-22. TEST_SAFETY_STATUS=PASS,
+CLAIM_REVIEW_STATUS=FINDINGS_RECORDED and APK_QUALIFICATION_STATUS=PASS remain
+bound to the unchanged claims/qualification digests. Runtime work has not yet
+started at this preparation checkpoint. No publication is authorized.
 
 The source-only observations are unchanged. Missing advertised two-player/drag
 paths, backup wording and stale descriptions are retained as product/documentation
@@ -128,12 +128,11 @@ profile stayed local. Optional Android/network/provider growth was unnecessary
 and was not implemented. A writable local case record was required to bind the
 read-only findings; it grants no subsequent executable or external authority.
 
-## Hypothetical later checklist (not authorized)
+## Bounded runtime checklist
 
-Only after an exact qualified candidate passes a fresh recheck and receives
-separate activation/execution authority: use the project-local wiped
+After the separately authorized fresh exact-state recheck, use the project-local wiped
 AOSP API34 x86_64 Pixel 7 profile, isolated ADB port 5041 and emulator port 5580,
-snapshots disabled. Do not create that AVD as part of this checkpoint. Real
+snapshots disabled. The current authorization includes AVD preparation. Real
 hardware haptics are outside emulator coverage. Estimated execution and verified
 cleanup window is 30–40 uninterrupted minutes; Codex operates and the user may
 observe unless a later explicit handoff changes the role.
@@ -236,7 +235,7 @@ approval or Android action was needed. Owner: Codex/shared. Disposition: no
 material process change; retain this case evidence and existing gate boundaries.
 No new reusable improvement proposal was identified.
 
-## Current results-publication checkpoint
+## Results-publication checkpoint (historical)
 
 The operator separately authorized publishing the results on 2026-09-22. The
 case records and existing test-eligibility separation were published to
@@ -251,3 +250,28 @@ runtime tests Not tested. No app-author follow-up, F-Droid comment, release,
 Android start or installation occurred during publication. Further execution or
 external mutation requires its own scoped decision. Recommend a new session
 for any separately authorized execution-through-cleanup slice.
+
+## Android execution authorization and preparation — 2026-09-22
+
+The operator explicitly authorized this exact case from prerequisite discovery,
+activation, disposable AOSP API34 x86_64 preparation, exact APK re-download and
+inspection, installation and the checklist above through verified cleanup and a
+clean local commit. Codex executes; optional operator observation is not a human
+usability test. No physical/shared device, personal profile, real data/account,
+external link, backup/restore, profiling/benchmark broadcast or publication is
+included. No further approval is needed within this bounded slice.
+
+Starting local HEAD and read-only origin main both matched
+`bec8dfbe9cff45dad7464cb539ebfba79bcac5ae`; the worktree was clean and case inactive.
+The stock live recheck passed; claim/qualification file digests and separately
+checked MR description, release body and latest note body matched. Reference
+ports were unbound; only unrelated host ADB processes existed and were untouched.
+
+Discovery found the existing Linux reference profile, KVM/display and installed
+AOSP API34 x86_64 image revision 2. Doctor initially exited on an unset API field
+in the intentionally qualification-only configuration. The existing reference
+configuration was reviewed and copied only into ignored local config (mode 600).
+Doctor then found all prerequisites, with only the normal clone-remote warning.
+No SDK package, license or portable seed change was needed. Previewed guarded
+offline verification and fictional dry run passed with profile/Git preservation.
+The active-case pointer and this authority are committed before executable work.
