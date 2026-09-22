@@ -16,8 +16,9 @@ upstream correction or a runtime result. This is independent community review.
 
 One courteous source-only issue was posted and verified as authorized:
 <https://github.com/cocodedk/Battleship/issues/55>. The exact body and receipt are
-upstream-issue-body.md and upstream-issue-record.md. No F-Droid comment or seed
-push occurred. No approval for another external mutation is retained.
+upstream-issue-body.md and upstream-issue-record.md. The operator later authorized
+publication of the case results to the seed repository; see the publication
+checkpoint below. No F-Droid comment was posted.
 
 ## Exact candidate
 
@@ -206,7 +207,7 @@ all pins and plan download-inspect-delete. Reconcile the built surface before
 any activation/Android decision. Keep the public product findings open unless
 new evidence actually resolves them. No further process expansion is proposed.
 
-## Current qualification checkpoint and next boundary
+## APK-qualification checkpoint (before results publication)
 
 On 2026-09-22 the user authorized this exact APK qualification after a live
 recheck, explicitly excluding Android start, installation and publication. The
@@ -234,3 +235,19 @@ covered this qualification and its minimal local prerequisite; no redundant
 approval or Android action was needed. Owner: Codex/shared. Disposition: no
 material process change; retain this case evidence and existing gate boundaries.
 No new reusable improvement proposal was identified.
+
+## Current results-publication checkpoint
+
+The operator separately authorized publishing the results on 2026-09-22. The
+case records and existing test-eligibility separation were published to
+oikumene-works/fdroid-community-testing-adaptive-seed main, results commit
+`ba990f713d57d01049d1deb2d9239040b4f699e2`, verified at 03:04:40Z.
+See docs/publication-plan.md for the exact receipt, metadata hygiene and original
+local-to-public commit mapping. Historical source/qualification checkpoint IDs
+above are original local identifiers; their file trees were preserved.
+
+The case remains inactive, qualification PASS, claims FINDINGS_RECORDED and all
+runtime tests Not tested. No app-author follow-up, F-Droid comment, release,
+Android start or installation occurred during publication. Further execution or
+external mutation requires its own scoped decision. Recommend a new session
+for any separately authorized execution-through-cleanup slice.

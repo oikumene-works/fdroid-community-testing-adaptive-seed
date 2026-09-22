@@ -122,3 +122,52 @@ topics, and zero tags and releases.
 
 The later self-referential handoff loop and its correction are recorded in the
 [Seed Publication Evolution Log](seed-publication-evolution.md).
+
+## Battleship results publication — 2026-09-22
+
+After reviewing the distinction between locally committed results and GitHub
+state, the operator explicitly requested publication of the results. The
+authorized destination was this repository's existing public main branch.
+This included the case records and the already implemented eligibility policy
+needed to interpret them, not an upstream issue update or F-Droid comment.
+
+Results commit `ba990f713d57d01049d1deb2d9239040b4f699e2` was pushed by the
+authenticated oikumene-admin account and verified through both the Git remote
+and GitHub commits API at 2026-09-22T03:04:40Z. The previous remote head was
+`cb4ab8bd35952acb204c0920086d14a379996066`. The update was a normal fast-forward
+of main only; no forced update, tag, release or repository metadata change.
+
+The four unpublished commits inherited workstation-specific author/committer
+metadata. Before publication, their metadata was replaced with the established
+public oikumene-agent[bot] no-reply identity, preserving every file tree and
+commit timestamp. Original local checkpoint identifiers in historical case
+records map to these public commits:
+
+| Original local checkpoint | Identical public file-tree checkpoint |
+| --- | --- |
+| `641156a18e35c732537387b8028413dc2e29f260` | `8ce54c2905362aaae2d8d61278b030f1005bb8c7` |
+| `83c7ee36ac4b5563cc580be31ee9629fa05fbce4` | `428cea9255dd8a7c072b24f35ec100ce12106cd9` |
+| `29be0405a1883c107233325d182c7cca4d0912d1` | `8ffec5e55998660f9c20f40f335af13894091e86` |
+| `f4d1e94e1d87d2d303a299595eeab8e23e3aae15` | `ba990f713d57d01049d1deb2d9239040b4f699e2` |
+
+The originals remain in a local recovery ref, which was not pushed. The clone
+now explicitly uses the established public identity for later local commits.
+This identity choice supplies no future publication authority.
+
+Pre-publication verification passed all offline repository checks, both
+digest-bound case gates, clean-worktree checks, and a bounded scan of all four
+new commits (125 unique file blobs) for known credential/workstation patterns,
+symlinks, ignored local state, oversized blobs and forbidden artifacts. These
+checks are limited evidence, not a comprehensive security audit.
+
+The published qualification remains static: no Android start or installation,
+all functional tests Not tested, product findings still open. The APK/raw journal
+were deleted before publication; only sanitized records and reviewed seed changes
+were pushed. The later publication receipt/handoff update records this completed
+result without describing its own pending push.
+
+Retrospective: installed Git/GitHub tools sufficed. Metadata review caught the
+local identity issue before exposure; the existing public-identity rule was
+applied without changing test evidence. Codex/shared coordination used the
+operator's existing publication instruction, with no additional authority or
+material process change. This is a known rule, not a new improvement proposal.

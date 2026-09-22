@@ -17,6 +17,8 @@ POSTED AND VERIFIED.
 - Canonical submitted text: upstream-issue-body.md. GitHub's body was verified
   against it, allowing only removal of the final newline.
 
-This single issue is the only external mutation in this case. No F-Droid
-comment, duplicate issue, edit, push or other publication was made. No authority
+At this issue-publication checkpoint, this issue was the only external mutation.
+The later separately authorized seed-repository results publication is recorded
+in case.md and docs/publication-plan.md. No F-Droid comment, duplicate issue or
+issue edit was made. No authority
 for future comments or edits is retained. The seed policy change is separate.

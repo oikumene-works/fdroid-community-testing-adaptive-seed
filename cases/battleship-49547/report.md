@@ -10,4 +10,6 @@ battle, weapon, audio/haptic, score/persistence, runtime permission, Android
 backup, crash/ANR or device cleanup behavior was observed.
 No emulator, ADB session, installation, execution fixture or functional evidence
 was created. This checkpoint does not establish app quality, general security
-or F-Droid acceptance. No new public communication was authorized or performed.
+or F-Droid acceptance. Static case results were subsequently published to the
+seed repository under separate authorization; see case.md. No functional test
+report or additional upstream/F-Droid comment was published.

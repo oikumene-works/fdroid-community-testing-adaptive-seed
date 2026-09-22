@@ -4,7 +4,9 @@
 
 Battleship !49547 reached a clean inactive APK-qualification checkpoint on
 2026-09-22. The user authorized the exact download-inspect-delete after a fresh
-recheck, and explicitly excluded Android start, installation and publication.
+recheck, and explicitly excluded Android start, installation and publication during
+qualification. The operator subsequently authorized repository publication;
+the sanitized results were published and verified on the same date.
 Qualification is complete: APK_QUALIFICATION_STATUS=PASS after manual
 reconciliation. TEST_SAFETY_STATUS=PASS and CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
 remain bound to the updated claims.md digest. This is static qualification,
@@ -32,12 +34,15 @@ not a functional test or a general security verdict. cases/active-case is absent
 
 ## External and local state
 
-No external mutation occurred in this qualification. The only historical
-publication remains the authorized source-only issue:
+No external mutation occurred during qualification. The later authorized
+repository publication reached results commit
+`ba990f713d57d01049d1deb2d9239040b4f699e2`; see docs/publication-plan.md for
+verification and the mapping from original local to public commit identifiers.
+The separate historical source-only issue remains:
 <https://github.com/cocodedk/Battleship/issues/55>, account oikumene-admin.
-Its canonical text and receipt remain in the case. No F-Droid comment, push,
-upload, release or additional issue action occurred. The normal origin remote
-grants no publication authority.
+Its canonical text and receipt remain in the case. No F-Droid comment, APK/raw
+evidence upload, release or additional issue action occurred. No authority for
+further publication follows from this completed repository update.
 
 The APK and raw case journal were deleted. No case source/API/build trace,
 fixture, AVD, emulator or isolated ADB session is retained. Existing unrelated
@@ -57,15 +62,15 @@ change to implement.
 
 Stop here. Recommend a new session if the operator later chooses functional
 execution through verified cleanup. That needs a separately scoped decision;
-this qualification grants no activation, Android or publication authority.
+neither qualification nor results publication grants activation, Android or
+further publication authority.
 
 Resume with ./scripts/session-bootstrap.sh, then AGENTS.md, this handoff,
 docs/session-continuity.md, docs/protocol.md, docs/first-case-runbook.md,
 docs/test-eligibility.md and the complete cases/battleship-49547 records.
 Recheck Git/local state and live candidate pins; infer no identity, credential
 access, authority or approval from earlier sessions or configured clients.
-Discover and prepare only the
-local Android prerequisites actually needed by the approved next slice.
+Discover and prepare only the local Android prerequisites actually needed by the approved next slice.
 Preserve synthetic inputs, no account/cloud image, no external links, no backup/
 restore and no profile/benchmark broadcast actions. Keep source-only product
 findings separate from later runtime evidence.
