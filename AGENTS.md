@@ -19,6 +19,8 @@
 - At every completed slice, update only records whose owned truth changed,
   record the current gate and local/external state, run `./scripts/check-all.sh`,
   and leave a clean worktree when practical.
+- Consolidate related closeout records, checks and commits as described in
+  `docs/session-continuity.md`; retain required clean pre-action checkpoints.
 - Recommend continuing, compacting, or starting a new chat after each slice.
   Default to a new chat before execution through cleanup, public posting, work
   expected to exceed 30 minutes, or whenever context capacity is uncertain.

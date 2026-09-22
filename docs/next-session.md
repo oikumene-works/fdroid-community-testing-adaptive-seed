@@ -70,6 +70,12 @@ its separate local clone and is not part of this publication.
 
 ## Resume and stop
 
+The operator-requested closeout self-audit, his premise clarification and the
+authorized administrative consolidation are recorded in
+[the evolution log](seed-publication-evolution.md#battleship-closeout-audit--2026-09-22).
+Use the consolidated-closeout rule for later work; it does not select a new
+experiment, Android action or publication.
+
 The authorized report and runtime-record publication is complete. Stop here.
 A later response or new test is a separate task; no automatic monitoring, reply,
 Android action or additional public message is authorized by this handoff.

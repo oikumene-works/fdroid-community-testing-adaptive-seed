@@ -21,10 +21,12 @@ Prefer independently resumable slices:
 6. separately approved public posting; and
 7. any later repository publication or report-link note.
 
-Do not carry approval from one slice, candidate, or session into another. Keep
-APK qualification as a download-inspect-delete slice. Keep functional execution
-through uninstall, wipe, artifact deletion, and emulator/ADB stop as one atomic
-slice whenever possible.
+Do not infer approval for a different candidate or additional effects from an
+earlier slice. An explicit approval remains valid for its unchanged targets,
+text and effects; a new session alone does not expire it. Recheck actual state
+and its recorded scope before proceeding. Keep APK qualification as a
+download-inspect-delete slice and functional execution through verified cleanup
+as one atomic slice whenever possible.
 
 Before an executable action, confirm that enough uninterrupted operator time
 and context remain to finish the authorized slice and cleanup. Otherwise stop
@@ -91,6 +93,27 @@ Do not update durable files merely to log a routine read-only check when no
 owned truth changed. Never commit an APK, raw log, screenshot, UI dump, packet
 capture, credential, signed transient URL, workstation path, or temporary
 device identifier.
+
+## Consolidated closeout
+
+Within one authorized scope, prepare related evidence, receipt and handoff
+updates together, then run the required checks on the final change set and
+prefer one coherent commit. Do not create a separate commit and full check
+cycle for each paragraph or file. Preserve clean committed checkpoints required
+before qualification, execution or posting; do not batch across an unresolved
+safety, approval or recovery boundary.
+
+A passing check applies to the unchanged tree and relevant environment it
+examined. Commit creation or pushing that exact tree alone does not invalidate
+it. Changed files, failed checks or changed inputs require the applicable
+checks again. This rule does not replace live preflight or external readback.
+
+Record an external effect only after it is verified. If the resulting receipt
+needs a later commit, keep that completed-effect record stable. Publish it
+within existing authority when that includes the receipt, or retain it for the
+next selected publication. Do not request or initiate an extra push solely
+because the receipt exists, and do not recursively record receipt-only pushes.
+No new automation or verification cache is required.
 
 ## Next-session handoff
 
