@@ -28,7 +28,8 @@ Use existing local reference tools/config; no SDK changes are needed.
 
 ## Local and historical state
 
-The case is inactive and no Android tooling has yet been started for this rerun.
+The case is active at its qualified checkpoint. Runtime/cleanup is authorized.
+No Android tooling has yet been started for this rerun.
 Ignored temporary source review files exist and must be removed at cleanup.
 Initial HEAD was 1ad497d, clean and three commits ahead of origin/main.
 Local configuration/profile remain; the qualification APK was downloaded and deleted.

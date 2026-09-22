@@ -47,3 +47,10 @@ Every changed input closes the gate. Existing product findings are preserved;
 no all-functions, security, policy or publication-acceptance conclusion. Stop
 with an inactive case, sanitized report, no runtime artifacts, clean local commit
 and a public-comment draft awaiting separate review/publication approval.
+
+## Execution checkpoint
+
+Fresh APK qualification passed at 51215e8baa806c939e2c755239483133e2bc1bc6.
+The case was activated from that clean commit. Continue in the current session:
+context and an uninterrupted bounded runtime/cleanup window are sufficient.
+No additional effect beyond the operator-approved verification is needed.
