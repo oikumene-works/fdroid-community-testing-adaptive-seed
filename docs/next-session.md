@@ -38,10 +38,17 @@ Stock cleanup PASS at 06:26:26Z; AVD deletion and final inventory at 06:26:48Z.
 Only ignored mode-600 seed/profile.env and config/android.env remain. No APK,
 AVD, case emulator, isolated ADB, UI driver or raw evidence remains. Unrelated
 host ADB was untouched. Deleted evidence cannot be independently re-audited.
-No external mutation, upload, push or public message occurred in this task.
-The new public-comment.md is a local draft, not approved or published.
-Initial HEAD was clean 1ad497d, three commits ahead of origin/main. This task
-adds local gate/report commits; verify actual Git state rather than assuming push.
+After verification, the operator approved the revised report and final pushes.
+The exact public-comment.md was posted once by @Jyriwee as note 3882384508 at
+06:37:11.577Z; separate GET and paginated readback verified its body/author and
+one copy. Do not repost. cases/battleship-49547-v1012/public-comment-record.md
+owns the canonical digest, authority, receipt and push record.
+
+The eight pending commits through ccbb7e3bee43a2e716d28f5268820fdc26acae82 were
+pushed to the existing public seed origin/main and independently verified by
+Git and GitHub API. This receipt/handoff is within the same authorized closeout.
+Verify the actual local/remote tips; the receipt does not recursively record
+its own push. No tag, release, forced update or other-project push is included.
 
 The completed 1.0.11 case remains in cases/battleship-49547 with original pins,
 report and publication receipts. Its report and replies were already published
@@ -51,11 +58,11 @@ runtime proof, and old raw files remain unavailable.
 
 ## Stop and resume
 
-The requested verification is complete. Human review of the new report/draft is
-the next possible step; public posting or repository push needs separate scope.
-No automatic monitoring, additional Android test or public reply is authorized.
-Continue this conversation for short review, or use a new session for any later
-separately approved public action after fresh destination/text/state verification.
+The requested verification, report publication and scoped closeout are complete.
+Stop after final local/remote verification. No automatic monitoring, additional
+Android test or public reply is authorized. A later reviewer response is a new
+selected task; use a fresh session before a later public action and recheck its
+exact scope, text, destination and current state.
 The closeout audit remains in docs/seed-publication-evolution.md; parked research
 in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
 

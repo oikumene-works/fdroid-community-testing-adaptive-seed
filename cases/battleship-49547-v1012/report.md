@@ -153,5 +153,8 @@ case emulator or isolated-ADB session remains. The pre-existing unrelated host
 ADB server was not targeted. This is a case-scoped cleanup claim.
 
 No external mutation, push, report/comment publication, upload or release occurred
-in this task. Existing public notes concern the historical case. public-comment.md
-is a new local draft, not approved or sent. The case is inactive after cleanup.
+in the verification-through-cleanup slice. In a later separately authorized slice,
+the operator approved the revised public-comment.md and pushes. The unchanged
+comment was posted and independently verified as note 3882384508 by @Jyriwee
+at 06:37:11.577Z; public-comment-record.md owns publication and push receipts.
+Publication adds no runtime evidence. The case remains inactive after cleanup.

@@ -87,3 +87,15 @@ process change or new maintenance proposal. No measured workflow advantage.
 The local public-comment.md draft targets fdroid/fdroiddata!49547 as @Jyriwee.
 Its digest is prepared in case.env for review; those fields do not constitute
 posting approval. POSTED_NOTE_ID is empty. No external message was sent.
+
+## Verified report publication and closeout
+
+The operator subsequently approved the revised report, publication and pushes.
+The unchanged canonical text was posted once as GitLab MR note 3882384508 by
+@Jyriwee at 06:37:11.577Z and verified by independent readback. The result records
+through ccbb7e3bee43a2e716d28f5268820fdc26acae82 were pushed and independently
+verified on the existing seed origin/main. public-comment-record.md owns the
+complete authority, receipts and bounded closeout. case.env records the posted
+note/latest note; source and qualification pins remain unchanged. No Android
+resumption, other-project action or further message occurred. Stop after final
+record publication and local/remote verification; do not repost.
