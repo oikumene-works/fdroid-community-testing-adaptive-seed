@@ -487,3 +487,16 @@ The exact body, authority, preflight and unresolved result are recorded in
 [the publication record](public-comment-record.md#follow-up-reply-attempt--2026-09-22).
 The original report remains verified; the follow-up is not verified published.
 Case activity, original report digests and POSTED_NOTE_ID are unchanged.
+
+## Follow-up publication resolved — 2026-09-22
+
+After checking the MR himself, the operator explicitly authorized retrying the
+unchanged reply. A fresh full case recheck, account/clean-checkpoint verification
+and paginated duplicate check passed. One new POST succeeded as note 3882155370
+by @Jyriwee at 05:25:53.191Z; independent readback verified the body, author and
+exactly one copy. The permanent receipt is in
+[the publication record](public-comment-record.md#follow-up-reply-published-after-authorized-retry--2026-09-22).
+The temporary receipt was deleted. case.env now expects latest note 3882155370
+while retaining the original report's POSTED_NOTE_ID and digest. No Android,
+APK, Git push or upstream issue mutation occurred. The case remains inactive;
+stop after recording the verified result.

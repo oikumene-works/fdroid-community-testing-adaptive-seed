@@ -2,13 +2,14 @@
 
 ## Completed work and current gate
 
-The later approved follow-up reply is UNCONFIRMED after one failed POST on
-2026-09-22. Two paginated checks found no matching note, latest at 05:17:57Z.
-Do not retry automatically. Read the exact body and recovery state in
-[the publication record](../cases/battleship-49547/public-comment-record.md#follow-up-reply-attempt--2026-09-22).
-The original report publication below remains verified; no follow-up note ID
-exists in the retained evidence. Any newly authorized retry must first scan
-for duplicates again. No Android action or repository push occurred.
+The approved follow-up reply is published and verified as GitLab note 3882155370
+by @Jyriwee at 2026-09-22T05:25:53.191Z. After an ambiguous first attempt, the
+operator checked its absence and explicitly authorized retrying. Fresh preflight
+and duplicate checks passed; one new POST and separate readback verified the
+exact body/author and one copy. Do not post again. Read
+[the publication record](../cases/battleship-49547/public-comment-record.md#follow-up-reply-published-after-authorized-retry--2026-09-22).
+The original report remains unchanged. No Android action or repository push
+occurred in the follow-up task; the temporary posting receipt was deleted.
 
 Battleship !49547 completed its bounded Codex-executed Android test and verified
 cleanup on 2026-09-22. The case is inactive; cases/active-case is absent.
@@ -46,8 +47,8 @@ independently checked. No human Android rerun or F-Droid acceptance is establish
 - TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED,
   APK_QUALIFICATION_STATUS=PASS; static review digests are unchanged.
 - case.env records our posted note 3881992480 and the observed latest
-  non-system note 3882043297. Original preflight information is historical;
-  the feedback check did not revalidate the full candidate.
+  non-system note 3882155370. The stock full read-only case recheck passed before
+  the follow-up retry; this does not validate a later release or behavior change.
 
 ## Local state and external effects
 
@@ -57,8 +58,9 @@ helper, emulator or isolated-ADB session remains for this case. The temporary
 posting receipt was deleted after permanent capture and separate verification.
 No Android action was performed during report review or publication.
 
-The single approved GitLab comment is the new public message. Historical
-upstream issue #55 remains separately recorded; no follow-up or edit was sent.
+The original report and the separately approved follow-up are published GitLab
+comments. Historical upstream issue #55 remains separately recorded; no GitHub
+follow-up or edit was sent.
 The operator also authorized relevant normal pushes to the existing adaptive
 seed origin/main. No label/discussion edit, tag, release, forced update or
 repository setting change is included. The traditional comparison remains in

@@ -48,7 +48,8 @@ change is included. Completed push receipts belong in docs/publication-plan.md.
 
 ## Follow-up reply attempt — 2026-09-22
 
-Status: UNCONFIRMED; DO NOT RETRY AUTOMATICALLY.
+Historical status after the first attempt: UNCONFIRMED; DO NOT RETRY
+AUTOMATICALLY. Resolved by the separately authorized retry recorded below.
 
 The operator reviewed the reply, requested the name Codex without a vendor
 modifier, and explicitly answered that Codex should publish the corrected reply
@@ -81,3 +82,32 @@ Retrospective: preserve sanitized failure diagnostics in any later posting
 attempt so a definite failure can be distinguished from an ambiguous outcome.
 Owner: Codex; apply within the next separately selected recovery operation,
 without a new framework or changes to portable posting policy. Stop here.
+
+## Follow-up reply published after authorized retry — 2026-09-22
+
+Status: POSTED AND VERIFIED. Do not post this body again.
+
+The operator inspected the MR, reported that the reply was absent and explicitly
+authorized another attempt. Codex reran the full stock read-only case recheck,
+verified account Jyriwee, the clean checkpoint, unchanged approved body digest,
+latest note 3882043297 and zero matching bodies across all note pages.
+
+One newly authorized POST using the CLI's raw-field body argument succeeded.
+Its result and a separate GET matched the approved text and author; another
+paginated lookup found exactly one matching note. This confirms the completed
+publication without establishing why the first attempt failed.
+
+- URL: https://gitlab.com/fdroid/fdroiddata/-/merge_requests/49547#note_3882155370
+- Note ID: 3882155370; author: Jyriwee.
+- Created: 2026-09-22T05:25:53.191Z.
+- Posting checkpoint: f09268acd208b407b410717592ad197d9439797a.
+- Canonical body: followup-comment.md; SHA-256 including one final newline:
+  e64ff0313019761bc9c402d02120add0c4859a6edde659e0fd37616a9a9125b2.
+
+The reply uses the name Codex and distinguishes the operator's direction from
+Codex implementation, testing, analysis and drafting. It makes no claim of
+queue reduction or adaptive superiority. The original report was not edited.
+The temporary receipt was removed after durable capture. No Android action,
+APK download, Git push, GitHub issue edit or other public message occurred.
+Retrospective: the explicit retry instruction, fresh duplicate check and
+separate readback resolved the uncertain state; no portable tooling change.
