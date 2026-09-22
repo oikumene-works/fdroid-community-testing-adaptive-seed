@@ -54,3 +54,36 @@ Fresh APK qualification passed at 51215e8baa806c939e2c755239483133e2bc1bc6.
 The case was activated from that clean commit. Continue in the current session:
 context and an uninterrupted bounded runtime/cleanup window are sufficient.
 No additional effect beyond the operator-approved verification is needed.
+
+## Completed verification and cleanup
+
+Codex completed one bounded defeat game, sampled placement/rotation/auto-deploy
+and a successful nonzero career cold-restart comparison. report.md owns all
+observations, exclusions, timing and remaining source-description findings.
+Qualification/safety remain PASS; claims FINDINGS_RECORDED. The final pinned-text
+check also found an English 15 MEDALS heading; the claim digest now includes it
+without changing the source, safety or executed scope. No workflow comparison.
+
+Stock cleanup passed at 06:26:26Z; AVD deletion and final file inventory were
+verified by 06:26:48Z. Only the two mode-600 local configuration/profile files
+remain. No APK, AVD, emulator/isolated ADB or raw evidence remains. No external
+mutation or push occurred. cases/active-case is removed. Stop after a checked
+clean local report checkpoint; publication requires separate review/approval.
+
+## Bounded retrospective
+
+Environment/tooling: existing tools completed qualification, runtime and cleanup.
+AVD creation emitted SDK-schema/location warnings but succeeded; no environment
+change was needed. Codex: source comparison found incomplete corrections across
+English/Persian surfaces; runtime stayed focused on placement and persisted career
+data. One complete loss supplied meaningful nonzero data without testing weapons.
+The handoff check initially rejected a missing invariant reminder; it was restored
+and all checks passed before executable action. Operator/shared coordination:
+existing explicit authorization covered every proposed effect without renewed
+approval requests. Required clean gate checkpoints were kept separate, final
+report/receipt updates consolidated. Owners: Codex/shared. Disposition: no material
+process change or new maintenance proposal. No measured workflow advantage.
+
+The local public-comment.md draft targets fdroid/fdroiddata!49547 as @Jyriwee.
+Its digest is prepared in case.env for review; those fields do not constitute
+posting approval. POSTED_NOTE_ID is empty. No external message was sent.

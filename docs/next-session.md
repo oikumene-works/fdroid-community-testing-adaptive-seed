@@ -1,50 +1,63 @@
 # Next Session
 
-## Current task
+## Completed task and current gate
 
-The operator authorized bounded adaptive re-verification of Battleship 1.0.12
-on 2026-09-22. The new case is cases/battleship-49547-v1012; read all its records.
-The source preflight is complete, safety PASS, claims FINDINGS_RECORDED.
-APK qualification passed after fresh inspection and deletion; next is activation,
-exact execution re-download and disposable Android test through verified cleanup.
-The present authorization covers these proposed effects for this exact version;
-no redundant approval is required while scope and pins remain unchanged.
-No publication or repository push is authorized by this task.
+The operator-authorized bounded adaptive re-verification of Battleship 1.0.12
+completed on 2026-09-22. Read cases/battleship-49547-v1012/report.md and its
+complete case records. The case is inactive; cases/active-case is absent.
+Codex executed the test, reviewed evidence, wrote the report and cleaned up.
+No human gameplay or independent human reproduction is recorded.
 
-## Pinned state and scope
+Sampled install/English launch, tap placement, separate rotation control,
+auto-deployment, one AI game ending in defeat and nonzero career persistence
+across force-stop/cold restart passed. Result: 51 shots, 8 hits, 43 misses,
+15% accuracy, score 358, ENSIGN. Both registries showed 2/33 after restart.
+No weapons or new victory path were tested; detailed limits are in report.md.
+This is not a human usability test, all-functions pass or workflow comparison.
+
+## Exact candidate and findings
 
 MR !49547 head dc779e4e3ddacfaa69edeadecd5e744f81b6e883;
 pipeline 2870057107; build job 16644446213; source/tag
  d1cdd2e3afe02865a901a51d3e05daedbc4b24ed / v1.0.12.
-case.env owns exact pins and review digests. Stock live rechecks remain required.
-No app/src files changed, but native-library packaging did. Source descriptions
-remain partly wrong; see claims.md. Do not call the release fully corrected.
+APK 8109f17500a1d8ab69fb717355b10b69ced22920c92e5114d4fbdd86a5ecc6ba.
+case.env owns complete pins and digests. New APK qualification passed; safety
+PASS, claims FINDINGS_RECORDED. No app/src changes, but native-library packaging
+changed. No independent rebuild was performed.
 
-Test launch, sampled placement/rotation, AI play and nonzero career persistence
-within at most one 15-minute game, then package/crash checks and full cleanup.
-Codex executes; this is not a human usability test or workflow comparison.
-No external links, accounts, real data, backup/restore or physical device.
-Use existing local reference tools/config; no SDK changes are needed.
+Both Fastlane descriptions still advertise two-human mode. Rotation wording
+should identify its button. English website retains one 15-medal heading;
+Persian site retains several 15-medal claims and whole-row Sonar wording.
+English web privacy text adds the backup-copy qualification, while privacy.md
+and its Persian web counterpart remain unaligned. llms.txt persistence wording
+was corrected. These are pinned-source findings, not deployed-website attestations.
 
-## Local and historical state
+## Verified local and external state
 
-The case is active at its qualified checkpoint. Runtime/cleanup is authorized.
-No Android tooling has yet been started for this rerun.
-Ignored temporary source review files exist and must be removed at cleanup.
-Initial HEAD was 1ad497d, clean and three commits ahead of origin/main.
-Local configuration/profile remain; the qualification APK was downloaded and deleted.
+Stock cleanup PASS at 06:26:26Z; AVD deletion and final inventory at 06:26:48Z.
+Only ignored mode-600 seed/profile.env and config/android.env remain. No APK,
+AVD, case emulator, isolated ADB, UI driver or raw evidence remains. Unrelated
+host ADB was untouched. Deleted evidence cannot be independently re-audited.
+No external mutation, upload, push or public message occurred in this task.
+The new public-comment.md is a local draft, not approved or published.
+Initial HEAD was clean 1ad497d, three commits ahead of origin/main. This task
+adds local gate/report commits; verify actual Git state rather than assuming push.
 
-The completed 1.0.11 case remains in cases/battleship-49547 with unchanged pins
-and historical reports. Its report and two replies were already published and
-verified in MR notes 3881992480, 3882155370 and 3882222351. Do not repost them.
-Developer release update 3882248703 prompted the separately requested new test.
-Old raw evidence was deleted; it cannot be re-audited or transferred to 1.0.12.
+The completed 1.0.11 case remains in cases/battleship-49547 with original pins,
+report and publication receipts. Its report and replies were already published
+as MR notes 3881992480, 3882155370 and 3882222351. Do not repost them. Developer
+release update 3882248703 prompted the new test. Old evidence is not new-version
+runtime proof, and old raw files remain unavailable.
 
-The closeout audit is in docs/seed-publication-evolution.md; parked research is
-in docs/starter-kit-seed-comparison.md. Neither authorizes a new research task.
-Continue this bounded task through cleanup and report, then stop at a clean
-local checkpoint for human review. Rebootstrap and inspect actual state after
-any interruption; do not assume an emulator target or resume gameplay blindly.
+## Stop and resume
 
-Start with ./scripts/session-bootstrap.sh and the project instructions; infer no identity,
+The requested verification is complete. Human review of the new report/draft is
+the next possible step; public posting or repository push needs separate scope.
+No automatic monitoring, additional Android test or public reply is authorized.
+Continue this conversation for short review, or use a new session for any later
+separately approved public action after fresh destination/text/state verification.
+The closeout audit remains in docs/seed-publication-evolution.md; parked research
+in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
+
+Start with ./scripts/session-bootstrap.sh and project instructions; infer no identity,
 credential access or action authority from configured clients or passing checks.
