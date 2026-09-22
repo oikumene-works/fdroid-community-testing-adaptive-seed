@@ -477,3 +477,13 @@ the separate issue count prevented conflating two reporting channels. Codex
 recorded the developer's claims separately from tested evidence. Owner: Codex;
 disposition: no tooling change. Stop at this local record; any later response,
 release review, test or publication requires its own selected scope.
+
+## Approved follow-up attempt — 2026-09-22
+
+The operator explicitly approved publishing the corrected followup-comment.md
+to GitLab. One API POST returned an ambiguous failure; two paginated read-only
+checks found no matching comment, last checked at 05:17:57Z. No retry occurred.
+The exact body, authority, preflight and unresolved result are recorded in
+[the publication record](public-comment-record.md#follow-up-reply-attempt--2026-09-22).
+The original report remains verified; the follow-up is not verified published.
+Case activity, original report digests and POSTED_NOTE_ID are unchanged.

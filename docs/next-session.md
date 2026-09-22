@@ -2,6 +2,14 @@
 
 ## Completed work and current gate
 
+The later approved follow-up reply is UNCONFIRMED after one failed POST on
+2026-09-22. Two paginated checks found no matching note, latest at 05:17:57Z.
+Do not retry automatically. Read the exact body and recovery state in
+[the publication record](../cases/battleship-49547/public-comment-record.md#follow-up-reply-attempt--2026-09-22).
+The original report publication below remains verified; no follow-up note ID
+exists in the retained evidence. Any newly authorized retry must first scan
+for duplicates again. No Android action or repository push occurred.
+
 Battleship !49547 completed its bounded Codex-executed Android test and verified
 cleanup on 2026-09-22. The case is inactive; cases/active-case is absent.
 The operator reviewed the report, required prominent Codex attribution, then

@@ -45,3 +45,39 @@ main default branch and existing configured destination were verified.
 The separate traditional-process comparison is outside this push and remains
 in its own local clone. No tag, release, forced update or repository setting
 change is included. Completed push receipts belong in docs/publication-plan.md.
+
+## Follow-up reply attempt — 2026-09-22
+
+Status: UNCONFIRMED; DO NOT RETRY AUTOMATICALLY.
+
+The operator reviewed the reply, requested the name Codex without a vendor
+modifier, and explicitly answered that Codex should publish the corrected reply
+to GitLab. The destination remains fdroid/fdroiddata!49547 and account Jyriwee.
+Canonical body: followup-comment.md; SHA-256 including its final newline:
+e64ff0313019761bc9c402d02120add0c4859a6edde659e0fd37616a9a9125b2.
+Posting checkpoint: 1e03d06 (full identifier resolvable locally).
+
+Offline checks and the stock full read-only case recheck passed. The account,
+clean checkpoint, exact digest, absence of duplicates and latest note 3882043297
+were verified before one POST. The original one-report posting helper was not
+reused: its POSTED_NOTE_ID correctly prevents reposting the completed report.
+A bounded API operation submitted the separately approved follow-up body.
+The original report text, digest and posted-note record were preserved.
+
+The POST command returned a nonzero exit status. Its diagnostic response was
+not retained, so neither an HTTP rejection nor a definite no-effect failure
+can be claimed. No successful note identifier or receipt was returned. Two
+subsequent paginated read-only note lookups found zero matching bodies and only
+the four previously known non-system notes, most recently at 05:17:57Z.
+This is not a verified publication. No second POST was attempted.
+
+Before any newly authorized retry, re-read all note pages and stop if a matching
+body exists; verify that note rather than posting again. The original approval
+and prepared body remain recorded, but the protocol forbids automatic retry
+after an ambiguous result. No Android action, APK download, Git push, earlier
+comment edit or GitHub issue mutation occurred in this follow-up task.
+
+Retrospective: preserve sanitized failure diagnostics in any later posting
+attempt so a definite failure can be distinguished from an ambiguous outcome.
+Owner: Codex; apply within the next separately selected recovery operation,
+without a new framework or changes to portable posting policy. Stop here.
