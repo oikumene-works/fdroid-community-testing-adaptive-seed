@@ -207,3 +207,14 @@ sufficed. Codex recorded the completed effect and continued the authorized
 receipt push without a repeated approval loop. Owner: Codex/shared; disposition:
 no process change. The bounded publication task is complete after verification;
 any reviewer-response work is a separately selected later slice.
+
+## Research proposal and developer-feedback records — 2026-09-22
+
+On the operator's explicit push instruction, oikumene-admin fast-forwarded main
+from `61ef7b8904cee1c1999e7ce33d52e9168e69240f` to
+`f0e4f5cc0d734adaa1a9961b385e98b78c82ccaa`. Git and GitHub API verified the
+commit/tree at 04:56:05Z. Both commits had passed offline checks; a scoped
+publication audit of five changed blobs passed with public bot identities.
+This published the research proposal and verified developer-feedback record.
+The same bounded push task includes this receipt; no GitLab reply, Android
+action, force, tag, release or settings change is included.
