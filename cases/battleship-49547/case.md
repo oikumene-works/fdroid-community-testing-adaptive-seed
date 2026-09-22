@@ -360,3 +360,11 @@ partial game test becoming an all-functions/policy pass. Codex prepared the
 exact reviewable body before asking for publication approval. Owner: Codex/shared;
 disposition: no process implementation change. Continue in this conversation
 for exact-text review; publication remains its own short guarded slice.
+
+The operator then requested more prominent Codex attribution. The proposed
+comment now names Codex in the title and a dedicated execution/authorship
+section: Android inputs, source inspection, evidence analysis, report writing
+and cleanup were Codex's work. Human direction/authorization is separated from
+human gameplay or independent reproduction, neither of which is recorded.
+This replaces the previous proposed comment digest; no version has been
+approved or posted. The current digest is pinned in case.env.

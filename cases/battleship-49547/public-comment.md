@@ -1,12 +1,23 @@
-## Bounded functional test: Battleship 1.0.11
+## Codex-executed bounded functional test: Battleship 1.0.11
 
 Following the request for testing, here is a partial functional result from
-2026-09-22. OpenAI Codex executed the synthetic inputs through targeted ADB and
-inspected UI trees/screenshots under operator direction. This was not a human
-usability test. The exercised single-player AI path worked through one complete
+2026-09-22. The exercised single-player AI path worked through one complete
 game; advertised-feature discrepancies remain below. This is independent
 community evidence, not an F-Droid approval or a comprehensive policy/security
 assessment.
+
+### Test execution and report authorship
+
+**OpenAI Codex performed the Android test, source-code inspection, analysis of
+the recorded evidence, and preparation of this report.** Codex supplied the
+synthetic gameplay inputs through targeted ADB, inspected UI trees and
+screenshots, and carried out the recorded cleanup. The observations and
+interpretations below are therefore Codex-produced results.
+
+The human operator commissioned and directed the work and authorized its scope
+and actions. No human-operated gameplay session or independent human
+reproduction of the test observations is recorded. This was not a human
+usability test.
 
 ### Exact build and environment
 

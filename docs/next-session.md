@@ -9,6 +9,10 @@ Its digest and proposed account Jyriwee are pinned in case.env, but operator
 approval of the exact text, destination fdroid/fdroiddata!49547 and account is
 still pending. Nothing has been posted. The report review clarifications are
 incorporated in report.md; no new runtime evidence was collected.
+The operator requested stronger Codex attribution; the current draft names
+Codex in its title and a dedicated execution/authorship section, with human
+direction and authorization distinguished from hands-on testing. The earlier
+proposed body digest is superseded; approval remains pending.
 
 TEST_SAFETY_STATUS=PASS, CLAIM_REVIEW_STATUS=FINDINGS_RECORDED and
 APK_QUALIFICATION_STATUS=PASS retain the unchanged static review digests.
