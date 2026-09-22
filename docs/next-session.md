@@ -2,20 +2,32 @@
 
 ## Current task and gate
 
-The operator approved the complete workflow-link publication chain on 2026-09-22,
-then requested removal of only the final reply-drafting clause and explicitly
-continued the whole chain. Canonical body, approved SHA-256, destination/account,
-guide commits and publication receipts belong to
-cases/battleship-49547-v1012/workflow-links-record.md. Read that record and
-workflow-links-draft.md before any public action. The exact reply identifies
-Codex's source comparison and correction review; Codex also prepared the draft.
+The workflow guides are published and verified in both repositories. The MR
+reply has one attempted POST with no confirmed receipt: the one-off wrapper
+lost the response before validation, and repeated paginated reads found zero
+copies. Do not retry automatically. The operator asked for robust GitLab handling
+in response to the retry-approval question; this did not grant a new send.
 
-At this checkpoint publication has not begun. The authorized order is guide
-pushes to both existing repositories, public README/starting-guide verification,
-then the exact approved MR reply as @Jyriwee, followed by verified receipt and
-closeout records. The starter-kit changes are in sibling starter-kit-docs;
-the historical comparison checkout is untouched. Do not repost an existing note
-or retry an ambiguous POST. No new approval is needed for this unchanged scope.
+Read cases/battleship-49547-v1012/workflow-links-record.md for approved body digest,
+publication receipts, the failed-attempt evidence limit and local recovery helper.
+workflow-links-draft.md is unchanged from the final approved text, with only the
+reply-drafting clause removed at the operator's request. Source comparison and
+correction review remain explicitly attributed to Codex; Codex also drafted it.
+
+Codex verified a missing JSON Content-Type in the original invocation on a local
+loopback receiver and corrected it in ignored .local/runtime/workflow-reply-publish.py.
+The original failure cause remains unproven. The helper retains diagnostics,
+bounds timeouts, blocks duplicate sends and recovers by readback; four offline
+failure-path checks and its live read-only preflight passed. No second POST.
+
+Next gate: obtain explicit approval of one new attempt with the unchanged text,
+fdroid/fdroiddata!49547 and @Jyriwee, then run the helper's read-only preflight.
+Require a clean committed HEAD; use the helper's exact digest guard only with
+that approval. After a verified note, record the receipt, remove bounded recovery
+files and finish the authorized closeout. The guide/recovery receipts and helper
+remain intentionally under .local/runtime; no Android or browser session exists.
+The starter-kit checkout is starter-kit-docs; its guide publication and receipt
+are pushed. The historical comparison checkout is untouched.
 
 The developer requested both links in note 3882563252. Codex verified the five
 reported description corrections at 1.0.13 source
@@ -82,11 +94,11 @@ runtime proof, and old raw files remain unavailable.
 
 ## Stop and resume
 
-The 1.0.12 execution and report publication are complete. Continue the approved
-workflow-link publication in the order above, then stop after verified receipts,
-clean local worktrees and remote state. No monitoring, additional Android test
-or further public reply is included. Existing passing checks apply only to the
-unchanged tree; run the required checks after this final text/record revision.
+The 1.0.12 execution/report publication and both workflow-guide publications are
+complete. The new MR reply remains unconfirmed and awaits one-new-attempt
+approval. Preserve the recovery state; do not resend earlier notes. No monitor,
+additional Android test or different public reply is included. A fresh session
+can resume from this checked checkpoint and the canonical workflow-link record.
 The closeout audit remains in docs/seed-publication-evolution.md; parked research
 in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
 
