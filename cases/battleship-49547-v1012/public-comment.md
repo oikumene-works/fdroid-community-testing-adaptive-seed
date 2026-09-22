@@ -2,7 +2,7 @@
 
 Thank you for the release update. Codex inspected the pinned corrections and
 performed a fresh, limited Android check under my direction and authorization
-on 2026-09-22; Codex also analyzed the evidence and prepared this report.
+on 2026-09-22, then analyzed the evidence and prepared this report.
 This is independent community evidence, not a human usability test or an
 F-Droid acceptance decision.
 
