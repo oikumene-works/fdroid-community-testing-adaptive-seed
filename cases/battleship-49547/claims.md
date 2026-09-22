@@ -3,8 +3,10 @@
 TEST_SAFETY_STATUS=PASS
 CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
 
-Evidence class: exact-source review only; bounded eligibility, not a security
-assessment or execution approval. Reassessed under docs/test-eligibility.md.
+Evidence class: exact-source review plus bounded merged-APK qualification;
+not a security assessment or runtime result. Reassessed under docs/test-eligibility.md.
+The original source findings below remain source-only; the later binary evidence
+is separately classified in qualification.md and the addendum below.
 
 ## Bound inputs
 
@@ -21,8 +23,10 @@ The exact file list and individual digests are in `evidence-index.md`.
 GitHub release ID `392185392` is a non-draft, non-prerelease maintenance release.
 Its body concerns version metadata and does not resolve the following conflicts.
 
-## Claim-to-source findings
+## Original claim-to-source findings (before APK qualification)
 
+Binary-pending statements in this original table describe that earlier source
+review. The qualification addendum below owns the subsequent built evidence.
 All paths below refer to the exact source commit above. Statements about source
 behavior are static findings, not observations of a running app.
 
@@ -45,8 +49,8 @@ APK download-inspect-delete qualification. App identity/source/release/signer
 expectations and the exact artifact URL remain pinned. The source declares
 VIBRATE only, exports a launcher, and has no observed network, account, payment,
 sensitive permission, document input or arbitrary-file write path. APK parsers
-must use the existing no-network read-only sandbox; actual sandbox behavior and
-merged APK contents remain unverified until that separate qualification.
+must use the existing no-network read-only sandbox; the original review did not yet verify sandbox operation or merged APK contents.
+The subsequent qualification evidence is recorded separately below.
 
 The eventual bounded functional scope would use only synthetic game moves in
 the disposable AOSP API34 x86_64 environment, no account, no Google/cloud-backed
@@ -62,8 +66,8 @@ This scope excludes the app's external footer links and any OS/cloud backup
 behavior. If qualification reveals INTERNET, sensitive permissions, an
 unexpected component/data route, a different identity/signer or unexplained
 writes, stop and reassess. Unknown built surfaces are a qualification prerequisite,
-not evidence that the executable is already safe. No qualification or Android
-approval is present and no case is active.
+not evidence that the executable is already safe. Qualification was separately
+authorized and completed as recorded below; no Android approval or active case exists.
 
 The deployed website could not previously be read through the web reader. The
 review binds its exact source files and retains this limitation. It does not
@@ -91,3 +95,26 @@ It grants no approval for further comments, APK action, Android or publication.
 Android backup interpretation follows the official documentation:
 <https://developer.android.com/identity/data/autobackup>. Shared preferences are
 included by default; actual backup also depends on device/user/transport state.
+
+## APK qualification addendum — 2026-09-22
+
+The separately authorized exact download-inspect-delete completed. See
+qualification.md for binary identity, signer, SDK, alignment, normalized manifest
+digest, cleanup and evidence limits. The original safety and product decisions
+remain PASS / FINDINGS_RECORDED after reviewing the newly observed merged surface.
+
+The built app requests VIBRATE plus its own signature-protected
+DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION; the source-only wording “VIBRATE only”
+is not an exact description of the merged request set. This is a wording
+qualification, not an observed dangerous permission. No INTERNET or dangerous
+requested permission was found. AndroidX contributes a non-exported startup
+provider and an exported ProfileInstallReceiver protected by the caller's DUMP
+permission; DUMP is not requested by the app. These documented library surfaces
+are reconciled in qualification.md. No invocation of profile/benchmark receiver
+actions is included in the synthetic game scope. Native ABIs include x86_64;
+individual native-code behavior/provenance remains outside this inspection.
+
+No game feature, persistence or backup claim became a runtime pass. The existing
+synthetic-data, no-account, no-external-link and no-backup/restore restrictions
+remain. No network or Android lane was added. This addendum refreshes the
+digest-bound assessment rather than treating source expectations as binary facts.

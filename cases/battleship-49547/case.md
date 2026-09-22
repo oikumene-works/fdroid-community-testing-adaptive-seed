@@ -3,9 +3,10 @@
 ## Current gate
 
 Inactive; TEST_SAFETY_STATUS=PASS and CLAIM_REVIEW_STATUS=FINDINGS_RECORDED
-under the operator-authorized test-eligibility policy. This permits consideration
-of a separately approved exact APK qualification, not a download or activation
-now. APK_QUALIFICATION_STATUS remains NOT_STARTED and all built surfaces pending.
+under the operator-authorized test-eligibility policy. APK_QUALIFICATION_STATUS
+is now PASS after the separately authorized download-inspect-delete and manual
+merged-surface reconciliation in qualification.md. The case remains inactive;
+Android start, installation and publication were explicitly excluded.
 
 The source-only observations are unchanged. Missing advertised two-player/drag
 paths, backup wording and stale descriptions are retained as product/documentation
@@ -30,7 +31,8 @@ push occurred. No approval for another external mutation is retained.
   2,226,524 bytes; expiry `2026-10-21T10:45:26.817Z`. Never downloaded.
 - Exact Code Quality APK link emitted in the build trace:
   <https://gitlab.com/cocodedk/fdroiddata/-/jobs/16624306623/artifacts/raw/tmp/binaries/com.cocode.battleship_1000011.binary.apk>.
-  HEAD-only availability returned HTTP 200. No response body/APK was requested.
+  Initial HEAD-only availability returned HTTP 200. The later authorized
+  qualification downloaded this exact APK once and deleted it; see qualification.md.
 - Metadata: `metadata/com.cocode.battleship.yml`, SHA-256
   `d87bd9b623d228b8c580614063dfe641f0fff80f2a344ed74f40041b514bc3d9`.
 - App ID `com.cocode.battleship`; version `1.0.11`, code `1000011`.
@@ -41,7 +43,7 @@ push occurred. No approval for another external mutation is retained.
   `27c558552dc9cbd00fbb34c619aab72dbc21bd870d68a48f4cc4bc9f7b32a0d9`.
 - Metadata's allowed signer SHA-256:
   `6120b56d569c8ccb013f5fa08dd08790194ba2c390fa97e12e0eb36ef1599e21`.
-  Asset digest and signer are expectations, not locally verified binary facts.
+  These began as expectations and were matched by the local APK qualification.
 - MR is open, non-draft, conflict-free; blocking_discussions_resolved=true.
   Labels: New App, review-requested, reproducible-builds; no waiting-on-response.
 - Latest non-system note `3871514834`, `2026-09-20T09:40:31.791Z`, author
@@ -97,8 +99,8 @@ Normalized source-surface SHA-256:
 `b5d90031dc922b942bfd279e1c382e8bef25e1b77a1c9fe801be616807453721`.
 Normalized public-claim file-index SHA-256:
 `19e3f8a7bfdeb9a7f922c33f5d5f4cd3c714a8aa05b1a6134e8958ede0c5cfbf`.
-All built permissions/features/native code/components/manifest digest remain
-unverified; the machine fields remain `PENDING_APK_QUALIFICATION`.
+These are source-only facts. The later merged APK adds AndroidX surfaces and
+native ABIs, separately reconciled and pinned in qualification.md and case.env.
 
 ## Original local discovery and bounded growth (historical)
 
@@ -127,8 +129,8 @@ read-only findings; it grants no subsequent executable or external authority.
 
 ## Hypothetical later checklist (not authorized)
 
-Only after a changed candidate passes a fresh claim preflight and a separately
-approved download-inspect-delete qualification: use the project-local wiped
+Only after an exact qualified candidate passes a fresh recheck and receives
+separate activation/execution authority: use the project-local wiped
 AOSP API34 x86_64 Pixel 7 profile, isolated ADB port 5041 and emulator port 5580,
 snapshots disabled. Do not create that AVD as part of this checkpoint. Real
 hardware haptics are outside emulator coverage. Estimated execution and verified
@@ -181,7 +183,7 @@ joint coordination: the task's existing read-only/local-checkpoint authorization
 was sufficient; no additional effect boundary was crossed. No material process
 change is proposed or implemented. Disposition: no change (owners: Codex/shared).
 
-## Current checkpoint and next boundary
+## Policy migration checkpoint (historical, before APK qualification)
 
 The seed change from development commit e27f447 was applied locally without
 replacing the case handoff. A new explicit safety/claim assessment in claims.md
@@ -203,3 +205,32 @@ qualification decision. If that is later requested, start a new session, recheck
 all pins and plan download-inspect-delete. Reconcile the built surface before
 any activation/Android decision. Keep the public product findings open unless
 new evidence actually resolves them. No further process expansion is proposed.
+
+## Current qualification checkpoint and next boundary
+
+On 2026-09-22 the user authorized this exact APK qualification after a live
+recheck, explicitly excluding Android start, installation and publication. The
+stock rechecks passed and the helper inspected and deleted the APK from clean
+HEAD 29be0405a1883c107233325d182c7cca4d0912d1. Its RECONCILIATION_REQUIRED result
+was manually resolved against the actual signature permission and AndroidX
+provider/receiver controls. qualification.md owns the exact binary results,
+review rationale, timing and limitations. claims.md incorporates that evidence
+without resolving or discarding the source-only product findings.
+
+Current stop: inactive qualification PASS checkpoint. No APK or raw case journal
+remains. Local growth consists solely of the mode-600 parser build-tools setting;
+it is not a complete Android configuration. No AVD, Android session, active-case
+pointer or new external mutation was created. The next possible slice requires
+a separate decision for activation and execution through verified cleanup, fresh
+recheck and local Android preparation. Recommend a new session for that slice.
+
+## Qualification retrospective
+
+Environment/tools: the installed parser tools and real Bubblewrap invocation
+worked; only a build-tools selection was missing. Codex: merged APK permissions
+and components were reconciled explicitly rather than copied from source.
+Operator experience and shared coordination: existing scoped authorization
+covered this qualification and its minimal local prerequisite; no redundant
+approval or Android action was needed. Owner: Codex/shared. Disposition: no
+material process change; retain this case evidence and existing gate boundaries.
+No new reusable improvement proposal was identified.
