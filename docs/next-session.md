@@ -68,6 +68,11 @@ invites test reports before merging. This does not guarantee acceptance of
 partial coverage. The pinned metadata categories fit the tested game path.
 Upstream issue #55 remains open with zero comments; @Jyriwee is the verified
 GitLab identity. The proposed comment leaves icon/terms/policy/scan gaps explicit.
+A publication-obstacle review found no confirmed blanket AI ban in the checked
+contribution guidance, but F-Droid admin issues #699 and #575 remain disputed
+policy discussions. case.md records the sources and limits. Do not present a
+proposal as adopted policy or promise that this Codex report satisfies the
+maintainer's test requirement. The canonical body is unchanged.
 Historical source-only issue: <https://github.com/cocodedk/Battleship/issues/55>;
 its original body/receipt are retained. Earlier static-result publication is
 recorded in case.md and docs/publication-plan.md. GitHub main remains at the

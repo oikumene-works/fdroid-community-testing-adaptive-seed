@@ -368,3 +368,28 @@ and cleanup were Codex's work. Human direction/authorization is separated from
 human gameplay or independent reproduction, neither of which is recorded.
 This replaces the previous proposed comment digest; no version has been
 approved or posted. The current digest is pinned in case.env.
+
+## Publication-obstacle review — 2026-09-22
+
+The operator asked whether publication has any obstacle. The draft remains
+unchanged at SHA-256 35e71817fac4cf92c88706f97e0678984e689177aa1838d4c0777c3e27c952e1.
+The worktree/checkpoint and body binding were checked. Fresh public GETs found
+the same open MR head, successful pipeline and two non-system notes; there is
+no existing copy of this report. Authenticated GitLab identity remains Jyriwee.
+No content blocker was identified in the disclosed bounded report.
+
+A bounded policy lookup found no AI prohibition in fdroiddata CONTRIBUTING.md.
+However, F-Droid's [interim AI policy proposal](https://gitlab.com/fdroid/admin/-/work_items/699)
+and [broader policy discussion](https://gitlab.com/fdroid/admin/-/work_items/575)
+remain open. The former is a proposal, not verified adopted policy; the latter
+has recent disagreement. Some participants oppose generated text in issue/MR
+comments, while other maintainers emphasize individual review. This lookup
+does not establish either blanket permission or a binding blanket ban.
+
+Recommendation: the accurately attributed partial report is suitable to offer
+as community evidence after exact operator approval; acceptance as satisfying
+the maintainer's test requirement remains uncertain. Disclosure cannot compel
+acceptance, and the deleted raw data limits independent audit. Do not silently
+convert a disputed proposal into a new mandatory gate, claim human testing, or
+send a separate preliminary message without operator instruction. No report
+text, publication authority, external service state or runtime state changed.
