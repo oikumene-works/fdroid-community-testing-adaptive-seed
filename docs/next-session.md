@@ -2,6 +2,13 @@
 
 ## Current task and gate
 
+New local task: address newcomer issue #1 in both workflow repositories. The
+operator authorized implementation and a reply draft, with the Battleship MR
+left quiet. Read [missing-tool-review.md](missing-tool-review.md) for exact
+scope, reproduced facts, tests and the canonical reply digest. No new push or
+issue comment has been approved. Stop at checked local commits for review.
+The completed publication history below remains unchanged.
+
 The complete workflow-link publication chain is finished. Both repositories'
 guides were pushed and verified publicly before the approved MR reply was sent.
 The exact reply is note 3882930526 by @Jyriwee, created at
@@ -38,10 +45,10 @@ The application code, resources and build configuration are unchanged from
 1.0.12 apart from version numbers. No new APK qualification or Android run
 occurred; prior runtime evidence remains specific to 1.0.12.
 
-## Waiting condition
+## Earlier waiting condition and new feedback
 
-The operator selected a clean stop after publication. Await voluntary feedback
-on either workflow or a concrete later need; no response, adoption or newcomer
+The operator had selected a clean stop after publication. Newcomer feedback
+now supplies the bounded issue #1 task above; no response, adoption or newcomer
 benefit is assumed. There is no scheduled monitor or additional experiment.
 Revisit the existing guide when an actual question exposes a gap. Research
 remains parked until separately selected. The operator requested flagging any
@@ -113,11 +120,10 @@ runtime proof, and old raw files remain unavailable.
 
 ## Stop and resume
 
-The 1.0.12 execution/report publication, both workflow-guide publications and
-the subsequent workflow-link MR reply are complete. Stop after checked closeout,
-clean worktrees and verified remote state. Start a fresh session for any later
-selected task. Do not resend earlier notes, infer a monitoring obligation or
-restart Android. There is no pending publication approval for this completed chain.
+The previous Battleship publication chain is complete and must not be repeated.
+The issue #1 fixes and reply are a new local slice awaiting review and separate
+publication approval. Continue here for short review; use a fresh session before
+publishing. No MR reply, Android action or experiment is selected by this fix.
 The closeout audit remains in docs/seed-publication-evolution.md; parked research
 in docs/starter-kit-seed-comparison.md. Neither is selected for implementation.
 
